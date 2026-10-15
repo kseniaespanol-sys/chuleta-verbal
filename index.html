@@ -1,45 +1,301 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Спасибо за предзаказ! | Chuleta Verbal</title>
+    <title>Chuleta Verbal — Все о глаголах испанского языка | Ксения Северинова</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandDark: '#3A2052',
+                        brandPurple: '#4A2E65',
+                        brandAccent: '#F49F1C',
+                        brandOrange: '#E87A00',
+                        paperBg: '#F9F8F6',
+                        gridLine: '#E2E8F0'
+                    }
+                }
+            }
+        }
+    </script>
     <style>
+        /* Эффект тетрадной клетки на фоне */
         body {
             background-color: #F9F8F6;
-            font-family: system-ui, sans-serif;
+            background-image: 
+                linear-gradient(to right, #E8EEF5 1px, transparent 1px),
+                linear-gradient(to bottom, #E8EEF5 1px, transparent 1px);
+            background-size: 24px 24px;
             color: #2D3748;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
         }
         .paper-card {
             background: #ffffff;
             border: 2px solid #4A2E65;
             box-shadow: 4px 4px 0px #4A2E65;
         }
+        .badge-tag {
+            background-color: #F49F1C;
+            color: #1A202C;
+            font-weight: 800;
+            text-transform: uppercase;
+            border: 1.5px solid #1A202C;
+            box-shadow: 2px 2px 0px #1A202C;
+        }
     </style>
 </head>
-<body class="antialiased flex items-center justify-center min-h-screen p-4">
-    <div class="max-w-xl w-full paper-card p-8 md:p-10 rounded-3xl text-center">
-        <div class="text-5xl mb-4">🎉</div>
-        <h1 class="text-3xl font-black text-brandDark mb-4" style="color: #4A2E65;">Оплата прошла успешно!</h1>
-        <p class="text-gray-700 text-sm leading-relaxed mb-6">
-            Огромное спасибо за доверие! Вы в числе участников ранней предпродажи проекта <strong style="color: #4A2E65;">Chuleta Verbal</strong>.
-        </p>
-        <div class="bg-purple-50 p-4 rounded-xl border-2 border-purple-200 text-left text-xs text-purple-900 mb-6 space-y-2">
-            <p>📦 <strong>Что дальше?</strong></p>
-            <p>1. Вся информация и чек отправлены на вашу электронную почту.</p>
-            <p>2. Через <strong>2 недели</strong> справочник (PDF + ePub) прилетит к вам на почту.</p>
-            <p>3. Через <strong>3 недели</strong> откроется доступ к закрытой интерактивной платформе.</p>
-        </div>
-        <p class="text-xs text-gray-500 mb-6">
-            Если у вас возникли вопросы или что-то пошло не так, напишите мне напрямую в мессенджер:
-        </p>
-        <a href="https://t.me/ТВОЙ_ТЕЛЕГРАМ" target="_blank" class="inline-block bg-[#F49F1C] hover:bg-[#E87A00] text-gray-900 font-extrabold px-6 py-3 rounded-xl border-2 border-gray-900 shadow-[3px_3px_0px_#1A202C] transition">
-            💬 Написать Ксении в Telegram
-        </a>
-        <div class="mt-8">
-            <a href="index.html" class="text-xs text-purple-700 underline font-bold">Вернуться на главную страницу</a>
-        </div>
+<body class="antialiased">
+
+    <!-- Верхняя плашка предпродажи -->
+    <div class="bg-brandDark text-white text-center py-2 px-4 text-sm font-semibold tracking-wide border-b-2 border-brandAccent">
+        🚀 ЭКСКЛЮЗИВНАЯ ПРЕДПРОДАЖА: Минимальная цена только 2 недели! Выдача книги через 2 недели, платформы — через 3.
     </div>
+
+    <!-- Шапка / Навигация -->
+    <header class="max-w-6xl mx-auto px-4 py-6 flex justify-between items-center">
+        <div class="flex items-center space-x-3">
+            <span class="badge-tag px-3 py-1 text-xs rotate-[-1deg]">CHULETA VERBAL</span>
+            <span class="text-xs uppercase tracking-widest font-bold text-brandPurple hidden sm:inline">Bla-Bla e.Spanish con Ksenia</span>
+        </div>
+        <div>
+            <a href="#buy" class="bg-brandAccent hover:bg-brandOrange text-brandDark font-extrabold px-5 py-2.5 rounded-lg border-2 border-brandDark shadow-[3px_3px_0px_#3A2052] transition transform hover:-translate-y-0.5">
+                Забрать по спеццене
+            </a>
+        </div>
+    </header>
+
+    <!-- Первый экран (Hero) -->
+    <section class="max-w-5xl mx-auto px-4 pt-12 pb-16 text-center">
+        <div class="inline-block bg-white border-2 border-brandPurple px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-brandPurple mb-6 shadow-[2px_2px_0px_#4A2E65] rotate-[1deg]">
+            Для тех, кто устал зубрить таблицы, но так и не заговорил
+        </div>
+        <h1 class="text-4xl md:text-6xl font-black text-brandDark mb-6 leading-tight">
+            Chuleta Verbal — <span class="text-brandOrange underline decoration-wavy decoration-2">ALL ABOUT VERBs</span> in Spanish.
+        </h1>
+        <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-10 leading-relaxed">
+            Хватит бояться испанских глаголов. Полная практическая шпаргалка с историями по всем временам, глагольным перифразам и коварным ловушкам испанского языка от эксперта с 14-летним стажем.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="#buy" class="bg-brandAccent hover:bg-brandOrange text-brandDark font-extrabold text-lg px-8 py-4 rounded-xl border-3 border-brandDark shadow-[4px_4px_0px_#3A2052] transition transform hover:-translate-y-1">
+                🔥 Забрать по предпродажной цене (-50%)
+            </a>
+            <a href="#leadform" class="bg-white hover:bg-gray-50 text-brandPurple font-extrabold text-lg px-8 py-4 rounded-xl border-3 border-brandPurple shadow-[4px_4px_0px_#4A2E65] transition">
+                📋 Заполнить анкету предзаписи
+            </a>
+        </div>
+    </section>
+
+    <!-- Блок 2: Проблематика (Знакомо?) -->
+    <section class="max-w-5xl mx-auto px-4 py-12">
+        <div class="paper-card p-8 rounded-2xl bg-white">
+            <h2 class="text-2xl md:text-3xl font-black text-brandDark mb-8 text-center">
+                Почему испанские глаголы кажутся минным полем?
+            </h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="p-5 rounded-xl bg-red-50 border-2 border-red-200">
+                    <span class="text-xl font-bold">❌ Таблицы не работают:</span>
+                    <p class="text-sm mt-2 text-gray-700">Зубришь спряжения и маркеры «для этого времени используем то», но в реальном разговоре всё равно зависаешь между Indefinido и Imperfecto.</p>
+                </div>
+                <div class="p-5 rounded-xl bg-red-50 border-2 border-red-200">
+                    <span class="text-xl font-bold">❌ Перевод в голове:</span>
+                    <p class="text-sm mt-2 text-gray-700">Пытаешься перевести конструкции своего родного языка на испанский и получаешь франкенштейна вроде «Yo seré trabajar».</p>
+                </div>
+                <div class="p-5 rounded-xl bg-red-50 border-2 border-red-200">
+                    <span class="text-xl font-bold">❌ Ожидание vs Реальность:</span>
+                    <p class="text-sm mt-2 text-gray-700">Учишь язык по классическим учебникам, а выходишь на улицу в Испании и видишь, что носители используют времена и маркеры совсем по-другому.</p>
+                </div>
+                <div class="p-5 rounded-xl bg-red-50 border-2 border-red-200">
+                    <span class="text-xl font-bold">❌ Ловушки мышления:</span>
+                    <p class="text-sm mt-2 text-gray-700">Возвратные конструкции вроде <em class="font-bold">«Se me cayó»</em> (когда испанцы говорят, что «оно само упало») и коварный Subjuntivo вводят в ступор.</p>
+                </div>
+            </div>
+            <div class="mt-8 p-6 bg-purple-50 rounded-xl border-2 border-brandPurple text-center">
+                <p class="text-brandDark font-bold text-lg">
+                    💡 Спойлер: с тобой всё в порядке. Просто тебе никогда не давали ни систему, ни понимание того, что зачем нужно и какие смыслы передает каждая конструкция. <span class="underline decoration-brandAccent decoration-2">Испанский — это язык логики и окончаний.</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Блок 3: Что входит в проект -->
+    <section class="max-w-5xl mx-auto px-4 py-12">
+        <h2 class="text-3xl font-black text-brandDark mb-8 text-center">
+            Что входит в проект «Chuleta Verbal»?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="paper-card p-8 rounded-2xl flex flex-col justify-between">
+                <div>
+                    <span class="badge-tag px-3 py-1 text-xs">Модуль 1</span>
+                    <h3 class="text-xl font-black text-brandDark mt-4 mb-3">Справочник-учебник (PDF + ePub)</h3>
+                    <p class="text-gray-700 text-sm leading-relaxed mb-4">
+                        Все времена (от Indicativo до Subjuntivo), глагольные перифразы, многозначные глаголы, разбор реальных ошибок русскоязычных учеников и разговорный хит Испании — глагол <strong class="text-brandPurple">PILLAR</strong> во всех бытовых значениях.
+                    </p>
+                    <ul class="text-sm space-y-2 text-gray-600">
+                        <li>✔️ Удобно читать с телефона (формат ePub)</li>
+                        <li>✔️ PDF для печати с живыми QR-кодами на аудио и песни</li>
+                        <li>✔️ Разрушаем мифы классических уровней («как на А2, а потом на В2...»)</li>
+                    </ul>
+                </div>
+                <div class="mt-6 pt-4 border-t border-gray-200 text-xs font-bold text-brandPurple uppercase tracking-wider">
+                    📦 Получение через 2 недели
+                </div>
+            </div>
+
+            <div class="paper-card p-8 rounded-2xl flex flex-col justify-between">
+                <div>
+                    <span class="badge-tag px-3 py-1 text-xs">Модуль 2</span>
+                    <h3 class="text-xl font-black text-brandDark mt-4 mb-3">Закрытая интерактивная платформа</h3>
+                    <p class="text-gray-700 text-sm leading-relaxed mb-4">
+                        Веб-кабинет с тренажерами и упражнениями, шкалой прогресса и трекингом пройденных тем.
+                    </p>
+                    <ul class="text-sm space-y-2 text-gray-600">
+                        <li>✔️ Наглядные визуальные схемы и живые истории вместо сухой теории</li>
+                        <li>✔️ Автопроверка упражнений и интерактивные блоки</li>
+                        <li>✔️ Много аудиоматериалов и видео-разборов прямо в кабинете</li>
+                    </ul>
+                </div>
+                <div class="mt-6 pt-4 border-t border-gray-200 text-xs font-bold text-brandPurple uppercase tracking-wider">
+                    🚀 Получение через 3 недели
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Блок 4: Как устроена предпродажа -->
+    <section class="max-w-5xl mx-auto px-4 py-12">
+        <div class="bg-brandPurple text-white p-8 md:p-12 rounded-3xl border-3 border-brandDark shadow-[6px_6px_0px_#3A2052]">
+            <h2 class="text-2xl md:text-3xl font-black mb-6 text-center">Как устроена предпродажа?</h2>
+            <p class="text-center text-purple-200 max-w-2xl mx-auto mb-10 text-sm">
+                Вся Chuleta — это не скопированный ИИ учебник, а 14 лет моего опыта и ответов на вопросы учеников. Для тех, кто поддерживает проект на старте, действует минимальная цена.
+            </p>
+            <div class="grid md:grid-cols-3 gap-6 text-center">
+                <div class="bg-white/10 p-6 rounded-2xl border border-white/20">
+                    <div class="text-3xl font-black text-brandAccent mb-2">Шаг 1</div>
+                    <div class="font-bold mb-1">Оформление предзаказа</div>
+                    <p class="text-xs text-purple-200">Выбираете удобную оплату (Stripe для Европы/UK или Prodamus для РФ).</p>
+                </div>
+                <div class="bg-white/10 p-6 rounded-2xl border border-white/20">
+                    <div class="text-3xl font-black text-brandAccent mb-2">Шаг 2</div>
+                    <div class="font-bold mb-1">Книга у вас (через 2 недели)</div>
+                    <p class="text-xs text-purple-200">Готовый справочник в PDF и ePub прилетает на вашу почту.</p>
+                </div>
+                <div class="bg-white/10 p-6 rounded-2xl border border-white/20">
+                    <div class="text-3xl font-black text-brandAccent mb-2">Шаг 3</div>
+                    <div class="font-bold mb-1">Доступ к платформе (через 3 недели)</div>
+                    <p class="text-xs text-purple-200">Открывается веб-кабинет с тренажерами, аудио и упражнениями.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Блок 5: Об авторе -->
+    <section class="max-w-4xl mx-auto px-4 py-12">
+        <div class="paper-card p-8 md:p-10 rounded-2xl flex flex-col md:flex-row items-center gap-8 bg-white">
+            <!-- Место под твое фото на GitHub. Залей фото как img/ksenia.jpg -->
+            <div class="w-40 h-40 md:w-48 md:h-48 rounded-2xl border-3 border-brandDark overflow-hidden flex-shrink-0 bg-gray-200 shadow-[3px_3px_0px_#4A2E65]">
+                <img src="DSC06141.jpg" alt="Ксения Северинова" class="w-full h-full object-cover">
+            </div>
+            <div>
+                <span class="badge-tag px-3 py-1 text-xs">Автор проекта</span>
+                <h3 class="text-2xl font-black text-brandDark mt-3 mb-3">Ксения Северинова</h3>
+                <p class="text-gray-700 text-sm leading-relaxed mb-4">
+                    Специалист по испанской филологии топ-3 университета мира по испанскому языку (<strong class="text-brandPurple">Alcalá de Henares 🇪🇸</strong>), преподаватель с 14-летним стажем, экс-переводчик латиноамериканских послов и автор EdTech-проекта <em class="font-bold">Bla-Bla e.Spanish</em>.
+                </p>
+                <p class="text-xs text-gray-600 italic">
+                    «Мои ученики говорят, что со мной нет шанса не заговорить. Я обожаю сложные случаи и упаковываю грамматику в понятные, живые системы без воды и зубрежки».
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Блок предпродажи / Оплаты (CTA) -->
+    <section id="buy" class="max-w-3xl mx-auto px-4 py-12 text-center">
+        <div class="paper-card p-8 md:p-12 rounded-3xl bg-amber-50/50">
+            <span class="badge-tag px-4 py-1.5 text-sm mb-4 inline-block">Оформление предзаказа</span>
+            <h2 class="text-3xl font-black text-brandDark mb-4">Получите доступ по лучшей цене</h2>
+            <p class="text-gray-600 mb-8 text-sm">Выберите удобный для вас регион для оплаты:</p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <!-- Кнопка для Европы / UK (Stripe) -->
+                <a href="ВСТАВЬТЕ_ССЫЛКУ_STRIPE_ЗДЕСЬ" class="bg-brandDark hover:bg-brandPurple text-white font-extrabold px-6 py-4 rounded-xl border-2 border-brandDark shadow-[3px_3px_0px_#F49F1C] transition">
+                    🇪🇺 Оплатить из Европы / UK (EUR / GBP)
+                </a>
+                <!-- Кнопка для России (Prodamus / ЮKassa / др.) -->
+                <a href="ВСТАВЬТЕ_ССЫЛКУ_PRODAMUS_ЗДЕСЬ" class="bg-brandAccent hover:bg-brandOrange text-brandDark font-extrabold px-6 py-4 rounded-xl border-2 border-brandDark shadow-[3px_3px_0px_#3A2052] transition">
+                    🇷🇺 Оплатить из России (RUB)
+                </a>
+            </div>
+            <p class="text-xs text-gray-500 mt-6">После оплаты вы автоматически перейдете на страницу подтверждения, а также получите письмо на указанный email.</p>
+        </div>
+    </section>
+
+    <!-- Блок 6: Анкета предзаписи (Для сомневающихся) -->
+    <section id="leadform" class="max-w-3xl mx-auto px-4 py-12">
+        <div class="paper-card p-8 rounded-2xl bg-white">
+            <h3 class="text-xl font-black text-brandDark mb-2 text-center">Хотите первыми узнать о запуске?</h3>
+            <p class="text-xs text-gray-600 mb-6 text-center">Заполните анкету, и мы пришлем вам уведомление и лучшие условия.</p>
+            
+            <!-- Форма, отправляющая данные в Google Таблицу через Apps Script -->
+            <form id="leadForm" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold uppercase text-brandDark mb-1">Ваше имя</label>
+                    <input type="text" name="name" required class="w-full px-4 py-2 border-2 border-brandDark rounded-lg focus:outline-none focus:ring-2 focus:ring-brandAccent">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase text-brandDark mb-1">Email или мессенджер (Telegram / WhatsApp)</label>
+                    <input type="text" name="contact" required class="w-full px-4 py-2 border-2 border-brandDark rounded-lg focus:outline-none focus:ring-2 focus:ring-brandAccent">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase text-brandDark mb-1">Страна проживания</label>
+                    <select name="country" class="w-full px-4 py-2 border-2 border-brandDark rounded-lg focus:outline-none focus:ring-2 focus:ring-brandAccent">
+                        <option value="Spain/Europe">Испания / Еврозона</option>
+                        <option value="UK">Великобритания</option>
+                        <option value="Russia">Россия</option>
+                        <option value="LatinAmerica">Латинская Америка</option>
+                        <option value="Other">Другая страна</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full bg-brandPurple hover:bg-brandDark text-white font-extrabold py-3 rounded-lg border-2 border-brandDark shadow-[3px_3px_0px_#F49F1C] transition">
+                    Получить уведомление на старте
+                </button>
+            </form>
+            <div id="formSuccess" class="hidden mt-4 p-4 bg-green-100 border-2 border-green-400 text-green-800 text-sm font-bold text-rounded rounded-lg text-center">
+                Спасибо! Ваши данные успешно сохранены. Скоро увидимся!
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал и плавающая поддержка -->
+    <footer class="max-w-5xl mx-auto px-4 py-8 text-center text-xs text-gray-500 border-t border-gray-300 mt-12">
+        <p>© 2026 Bla-Bla e.Spanish con Ksenia. Все права защищены.</p>
+    </footer>
+
+    <!-- Плавающая кнопка связи (WhatsApp / Telegram) -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+        <a href="https://t.me/ТВОЙ_ТЕЛЕГРАМ" target="_blank" class="bg-sky-500 hover:bg-sky-600 text-white p-3.5 rounded-full shadow-lg border-2 border-brandDark flex items-center justify-center transition transform hover:scale-110" title="Написать в Telegram">
+            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18 1.897-.962 6.502-1.359 8.627-.168.9-.5 1.201-.82 1.23-.697.064-1.226-.461-1.901-.903-1.056-.693-1.653-1.124-2.678-1.8-1.185-.781-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635.099-.002.321.023.465.14.12.098.153.228.166.331.016.126.032.412.016.643z"/></svg>
+        </a>
+    </div>
+
+    <!-- Скрипт отправки формы в Google Таблицу -->
+    <script>
+        const scriptURL = 'ВСЬАВЬТЕ_ССЫЛКУ_GOOGLE_APPS_SCRIPT_ЗДЕСЬ';
+        const form = document.getElementById('leadForm');
+        const successMsg = document.getElementById('formSuccess');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    form.reset();
+                    successMsg.classList.remove('hidden');
+                })
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
 </body>
 </html>
