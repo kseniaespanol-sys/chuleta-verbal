@@ -266,19 +266,18 @@
     </section>
 
     <!-- Блок: Анкета предзаписи -->
-    <section id="leadform" class="max-w-3xl mx-auto px-4 py-12">
-        <div class="paper-card p-8 rounded-2xl bg-white">
-            <h3 class="text-xl font-black text-brandDark mb-2 text-center">Хотите первыми узнать о запуске?</h3>
-            <p class="text-xs text-gray-600 mb-6 text-center">Заполните анкету, и мы пришлем вам уведомление, лучшие условия и ссылки на вебинары.</p>
-            
-            <form id="leadForm" class="space-y-4">
+    <form id="leadForm" class="space-y-4">
                 <div>
                     <label class="block text-xs font-bold uppercase text-brandDark mb-1">Ваше имя</label>
                     <input type="text" name="name" required class="w-full px-4 py-2 border-2 border-brandDark rounded-lg focus:outline-none focus:ring-2 focus:ring-brandAccent">
                 </div>
                 <div>
-                    <label class="block text-xs font-bold uppercase text-brandDark mb-1">Email или мессенджер (Telegram / WhatsApp)</label>
+                    <label class="block text-xs font-bold uppercase text-brandDark mb-1">Email или основной контакт</label>
                     <input type="text" name="contact" required class="w-full px-4 py-2 border-2 border-brandDark rounded-lg focus:outline-none focus:ring-2 focus:ring-brandAccent">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase text-brandDark mb-1">Номер телефона для WhatsApp / Telegram</label>
+                    <input type="text" name="phone" placeholder="+34 ... или +7 ..." class="w-full px-4 py-2 border-2 border-brandDark rounded-lg focus:outline-none focus:ring-2 focus:ring-brandAccent">
                 </div>
                 <div>
                     <label class="block text-xs font-bold uppercase text-brandDark mb-1">Страна проживания</label>
@@ -294,8 +293,6 @@
                     Получить уведомление и бонусы на старте
                 </button>
             </form>
-        </div>
-    </section>
 
     <!-- Блок: Анонс Verboleo в финале -->
     <section class="py-12 px-4 max-w-4xl mx-auto">
