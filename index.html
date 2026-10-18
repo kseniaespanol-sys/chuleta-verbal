@@ -246,24 +246,78 @@
         </div>
     </section>
 
-    <!-- Блок предпродажи / Оплаты (CTA) -->
+    <!-- Блок предпродажи / Оплаты с формой сбора телефона перед редиректом -->
     <section id="buy" class="max-w-3xl mx-auto px-4 py-12 text-center">
         <div class="paper-card p-8 md:p-12 rounded-3xl bg-amber-50/50">
             <span class="badge-tag px-4 py-1.5 text-sm mb-4 inline-block">Оформление предзаказа</span>
             <h2 class="text-3xl font-black text-brandDark mb-4">Получите доступ по лучшей цене</h2>
-            <p class="text-gray-600 mb-8 text-sm">Выберите удобный для вас регион для оплаты:</p>
+            <p class="text-gray-600 mb-8 text-sm">Заполните данные для заказа, выберите регион, и система переведет вас к оплате:</p>
             
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="thanks.html" class="bg-brandDark hover:bg-brandPurple text-white font-extrabold px-6 py-4 rounded-xl border-2 border-brandDark shadow-[3px_3px_0px_#F49F1C] transition">
-                    🇪🇺 Оплатить из Европы / UK (EUR)
-                </a>
-                <a href="thanks.html" class="bg-brandAccent hover:bg-brandOrange text-brandDark font-extrabold px-6 py-4 rounded-xl border-2 border-brandDark shadow-[3px_3px_0px_#3A2052] transition">
-                    🇷🇺 Оплатить из России (RUB)
-                </a>
-            </div>
-            <p class="text-xs text-gray-500 mt-6">После оплаты вы получите доступ к материалам и закрытым вебинарам.</p>
+            <form id="orderForm" class="space-y-4 text-left max-w-lg mx-auto">
+                <div>
+                    <label class="block text-xs font-bold uppercase text-brandDark mb-1">Ваше имя</label>
+                    <input type="text" name="name" required class="w-full px-4 py-2 border-2 border-brandDark rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-brandAccent">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase text-brandDark mb-1">Email или мессенджер</label>
+                    <input type="text" name="contact" required class="w-full px-4 py-2 border-2 border-brandDark rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-brandAccent">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase text-brandDark mb-1">Телефон для связи (WhatsApp / Telegram)</label>
+                    <input type="text" name="phone" required class="w-full px-4 py-2 border-2 border-brandDark rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-brandAccent" placeholder="+34 ... или +7 ...">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase text-brandDark mb-1">Регион оплаты</label>
+                    <select name="country" id="paymentRegion" class="w-full px-4 py-2 border-2 border-brandDark rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-brandAccent">
+                        <option value="Europe (EUR)">Европа / UK (EUR)</option>
+                        <option value="Russia (RUB)">Россия (RUB)</option>
+                    </select>
+                </div>
+                <!-- Скрытые поля для передачи статуса и суммы заказа -->
+                <input type="hidden" name="type" value="Заказ (Попытка оплаты)">
+                <input type="hidden" name="amount" id="orderAmount" value="24 EUR">
+
+                <button type="submit" id="orderBtn" class="w-full bg-brandAccent hover:bg-brandOrange text-brandDark font-extrabold py-4 rounded-xl border-2 border-brandDark shadow-[3px_3px_0px_#3A2052] transition text-center">
+                    🔥 Оплатить со скидкой 50%
+                </button>
+            </form>
+            <p class="text-xs text-gray-500 mt-6">После нажатия вы перейдете на страницу подтверждения и выдачи бонусов.</p>
         </div>
     </section>
+
+    <!-- Скрипт обработки формы заказа с отправкой в таблицу и редиректом -->
+    <script>
+        const orderForm = document.getElementById('orderForm');
+        const orderBtn = document.getElementById('orderBtn');
+        const paymentRegion = document.getElementById('paymentRegion');
+        const orderAmount = document.getElementById('orderAmount');
+
+        // Меняем сумму в зависимости от выбранного региона (можешь поставить свои цифры)
+        paymentRegion.addEventListener('change', () => {
+            if (paymentRegion.value.includes('EUR')) {
+                orderAmount.value = '24 EUR';
+            } else {
+                orderAmount.value = '1990 RUB';
+            }
+        });
+
+        orderForm.addEventListener('submit', e => {
+            e.preventDefault();
+            orderBtn.disabled = true;
+            orderBtn.textContent = 'Сохранение заказа...';
+
+            // Отправляем данные в ту же Google Таблицу через Apps Script
+            fetch(scriptURL, { method: 'POST', body: new FormData(orderForm), mode: 'no-cors' })
+                .then(() => {
+                    // Перенаправляем на страницу успешной оплаты (или здесь же можно перенаправлять на реальную ссылку Stripe/Prodamus)
+                    window.location.href = 'thanks.html';
+                })
+                .catch(error => {
+                    console.error('Error!', error.message);
+                    window.location.href = 'thanks.html';
+                });
+        });
+    </script>
 
     <!-- Блок: Анкета предзаписи -->
     <form id="leadForm" class="space-y-4">
