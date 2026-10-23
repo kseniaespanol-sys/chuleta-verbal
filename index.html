@@ -1,419 +1,1170 @@
-<!DOCTYPE html>
-<html lang="ru" class="scroll-smooth">
+<!doctype html>
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chuleta Verbal — Все о глаголах и временах испанского языка | Ксения Северинова</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brandDark: '#3A2052',
-                        brandPurple: '#4A2E65',
-                        brandAccent: '#F49F1C',
-                        brandOrange: '#E87A00',
-                        paperBg: '#F9F8F6',
-                        gridLine: '#E2E8F0'
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body {
-            background-color: #F9F8F6;
-            background-image: 
-                linear-gradient(to right, #E8EEF5 1px, transparent 1px),
-                linear-gradient(to bottom, #E8EEF5 1px, transparent 1px);
-            background-size: 24px 24px;
-            color: #2D3748;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-        }
-        .paper-card {
-            background: #ffffff;
-            border: 2px solid #4A2E65;
-            box-shadow: 4px 4px 0px #4A2E65;
-        }
-        .badge-tag {
-            background-color: #F49F1C;
-            color: #1A202C;
-            font-weight: 800;
-            text-transform: uppercase;
-            border: 1.5px solid #1A202C;
-            box-shadow: 2px 2px 0px #1A202C;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chuleta Verbal — Все о глаголах и временах испанского | Ксения Северинова</title>
+  <meta name="description" content="Курс и практический справочник по всей системе испанских глаголов, времён и смыслов от филолога и преподавателя с 14-летним стажем. Предпродажа −50%: 4 990 ₽ / 49 €.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Dela+Gothic+One&family=Golos+Text:wght@400;500;600;700&display=swap">
+  
+  <style>
+/* Verboleo Design System Tokens & Base */
+:root {
+  --palette-paper: #f9f8f4;
+  --palette-paper-warm: #fff8e8;
+  --palette-sheet: #ffffff;
+  --palette-grid: #e2e9f2;
+  --palette-grid-strong: #c9d6e6;
+  --palette-ink-900: #2b1744;
+  --palette-ink-700: #3a2052;
+  --palette-ink-500: #6a5683;
+  --palette-ink-300: #b7aac6;
+  --palette-ink-100: #ece6f2;
+  --palette-marigold-300: #ffd98a;
+  --palette-marigold-500: #f2a93b;
+  --palette-marigold-700: #b86f0c;
+  --palette-red-500: #e0442e;
+  --palette-red-100: #fde7e2;
+  --palette-red-700: #b42a18;
+  --palette-mint-500: #2f9e6e;
+
+  --color-bg: var(--palette-paper);
+  --color-grid: var(--palette-grid);
+  --color-grid-strong: var(--palette-grid-strong);
+  --color-surface: var(--palette-sheet);
+  --color-surface-warm: var(--palette-paper-warm);
+  --color-surface-ink: var(--palette-ink-700);
+  --color-text: var(--palette-ink-700);
+  --color-text-strong: var(--palette-ink-900);
+  --color-text-muted: var(--palette-ink-500);
+  --color-text-on-ink: var(--palette-paper);
+  --color-text-on-ink-muted: var(--palette-ink-300);
+  --color-line: var(--palette-ink-700);
+  --color-line-soft: var(--palette-ink-300);
+  --color-tint: var(--palette-ink-100);
+  --color-accent: var(--palette-marigold-500);
+  --color-accent-soft: var(--palette-marigold-300);
+  --color-accent-text: var(--palette-marigold-700);
+  --color-pen: var(--palette-red-500);
+  --color-pen-soft: var(--palette-red-100);
+  --color-pen-text: var(--palette-red-700);
+  --color-ok: var(--palette-mint-500);
+  --color-focus: var(--palette-red-500);
+
+  --font-display: 'Dela Gothic One', 'Arial Black', system-ui, sans-serif;
+  --font-hand: 'Caveat', 'Segoe Print', 'Bradley Hand', cursive;
+  --font-body: 'Golos Text', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --text-xs: 0.8125rem;
+  --text-sm: 0.9375rem;
+  --text-md: 1.0625rem;
+  --text-lg: 1.3125rem;
+  --text-xl: 1.625rem;
+  --text-2xl: clamp(1.875rem, 1.3rem + 2.2vw, 2.75rem);
+  --text-h2-compact: clamp(2rem, 1.3rem + 2.4vw, 3.25rem);
+  --text-done: clamp(2.5rem, 1.4rem + 3.4vw, 4rem);
+  --text-price: clamp(2.75rem, 1.6rem + 4.6vw, 5.5rem);
+  --text-3xl: clamp(2.5rem, 1.4rem + 4.6vw, 4.75rem);
+  --text-hero: clamp(3.25rem, 1.2rem + 9vw, 8.5rem);
+  --text-hand-xs: 1.1rem;
+  --text-hand-sm: 1.4rem;
+  --text-hand-md: 1.6rem;
+  --text-hand-xl: 2rem;
+  --text-display-sm: 2.4rem;
+  --text-sticker-sm: 1.35rem;
+  --text-hand-lg: clamp(1.75rem, 1.3rem + 1.6vw, 2.5rem);
+  --leading-tight: 1.02;
+  --leading-snug: 1.25;
+  --leading-body: 1.6;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 72px;
+  --space-9: 112px;
+  --grid-cell: 28px;
+  --page-max: 1200px;
+  --gutter: clamp(16px, 4vw, 40px);
+  --measure: 64ch;
+
+  --stroke: 2.5px;
+  --stroke-bold: 3px;
+  --shadow-offset: 7px;
+  --radius-sketch: 18px 7px 20px 6px / 6px 20px 7px 18px;
+  --radius-sketch-alt: 7px 20px 6px 18px / 18px 6px 20px 7px;
+  --radius-chip: 12px 5px 13px 4px / 4px 13px 5px 12px;
+  --radius-pill: 999px;
+
+  --dur-1: 120ms;
+  --dur-2: 220ms;
+  --dur-3: 480ms;
+  --dur-draw: 900ms;
+  --ease-out: cubic-bezier(.2, .8, .2, 1);
+  --ease-spring: cubic-bezier(.34, 1.56, .64, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: clip; }
+body {
+  margin: 0;
+  font: 400 var(--text-md)/var(--leading-body) var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  background-image:
+    linear-gradient(to right, var(--color-grid) 1px, transparent 1px),
+    linear-gradient(var(--color-grid) 1px, transparent 1px);
+  background-size: var(--grid-cell) var(--grid-cell);
+  overflow-x: clip;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+p { margin: 0 0 var(--space-4); }
+h1, h2, h3 { margin: 0; color: var(--color-text-strong); font-weight: 400; text-wrap: balance; }
+h2 { font-family: var(--font-display); font-size: var(--text-3xl); line-height: var(--leading-tight); letter-spacing: -0.01em; }
+h3 { font-family: var(--font-body); font-weight: 700; font-size: var(--text-xl); line-height: var(--leading-snug); }
+em { font-style: italic; }
+:focus-visible { outline: 3px solid var(--color-focus); outline-offset: 3px; border-radius: 6px; }
+.only-narrow { display: none; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.wrap { width: min(100% - 2 * var(--gutter), var(--page-max)); margin-inline: auto; }
+.hand { font-family: var(--font-hand); font-weight: 700; line-height: 1.1; }
+.es { font-style: italic; font-weight: 600; color: var(--color-text-strong); }
+
+.sketch { position: relative; isolation: isolate; }
+.sketch::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: var(--sk-bg, var(--color-surface));
+  border: var(--stroke) solid var(--color-line);
+  border-radius: var(--sk-radius, var(--radius-sketch));
+  filter: url(#rough);
+}
+.sketch::after {
+  content: ""; position: absolute; inset: 0; z-index: -2;
+  transform: translate(var(--sk-shadow, var(--shadow-offset)), var(--sk-shadow, var(--shadow-offset)));
+  border-radius: var(--sk-radius, var(--radius-sketch));
+  background: repeating-linear-gradient(-45deg, var(--color-line) 0 1.6px, transparent 1.6px 6px);
+  filter: url(#rough);
+  transition: transform var(--dur-1) var(--ease-out);
+}
+.tape {
+  position: absolute; width: 96px; height: 26px; z-index: 3;
+  background: color-mix(in srgb, var(--color-accent-soft) 75%, transparent);
+  border-left: 2px dashed color-mix(in srgb, var(--color-accent) 70%, transparent);
+  border-right: 2px dashed color-mix(in srgb, var(--color-accent) 70%, transparent);
+  box-shadow: 0 1px 0 rgba(58, 32, 82, .08);
+}
+.marker {
+  background: linear-gradient(transparent 52%, color-mix(in srgb, var(--color-accent-soft) 90%, transparent) 52%, color-mix(in srgb, var(--color-accent-soft) 90%, transparent) 90%, transparent 90%);
+  padding-inline: .1em; box-decoration-break: clone; -webkit-box-decoration-break: clone;
+}
+.draw path { stroke-dasharray: var(--len, 1200); stroke-dashoffset: 0; }
+
+.btn {
+  --sk-shadow: 5px; --sk-radius: 14px 6px 16px 5px / 5px 16px 6px 14px;
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 56px; padding: 14px 26px;
+  font: 700 var(--text-md)/1.2 var(--font-body); color: var(--color-text-strong);
+  text-decoration: none; cursor: pointer; border: 0; background: none;
+  transition: transform var(--dur-1) var(--ease-out);
+}
+.btn--main { --sk-bg: var(--color-accent); }
+.btn--paper { --sk-bg: var(--color-surface); }
+.btn--ink { --sk-bg: var(--color-surface-ink); color: var(--color-text-on-ink); }
+.btn:hover { transform: translate(-1px, -1px); }
+.btn:hover::after { transform: translate(7px, 7px); }
+.btn:active { transform: translate(4px, 4px); }
+.btn:active::after { transform: translate(1px, 1px); }
+
+.ribbon {
+  background: var(--color-surface-ink); color: var(--color-text-on-ink);
+  font-size: var(--text-sm); text-align: center; padding: 10px var(--gutter);
+}
+.ribbon b { color: var(--color-accent); font-weight: 700; }
+
+.top { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); padding-block: var(--space-5); }
+.logo { display: flex; align-items: center; gap: var(--space-4); text-decoration: none; }
+.logo__label {
+  --sk-bg: var(--color-accent); --sk-shadow: 4px; --sk-radius: 6px 3px 7px 3px / 3px 7px 3px 6px;
+  font-family: var(--font-display); font-size: var(--text-hand-xs); line-height: 1; padding: 10px 14px 9px; transform: rotate(-2deg); color: var(--color-text-strong);
+}
+.logo__by { font-family: var(--font-hand); font-size: var(--text-hand-sm); font-weight: 700; color: var(--color-text-muted); line-height: 1; }
+.top .btn { min-height: 48px; padding: 10px 20px; font-size: var(--text-sm); }
+.top__end { display: flex; align-items: center; gap: var(--space-5); }
+.top__contacts { display: flex; gap: 6px; }
+.top__contacts a { width: 44px; height: 44px; display: grid; place-items: center; color: var(--color-text-strong); border: 2px solid var(--color-line); border-radius: 50% 46% 52% 44% / 48% 54% 44% 50%; background: var(--color-surface); transition: transform var(--dur-1) var(--ease-out); }
+.top__contacts a:hover { transform: rotate(-8deg); }
+
+.foot { background: var(--color-surface-ink); color: var(--color-text-on-ink); padding: var(--space-8) 0 calc(var(--space-7) + 60px); position: relative; }
+.foot::before { content: ""; position: absolute; left: 0; right: 0; top: -18px; height: 20px; background: var(--color-surface-ink); clip-path: polygon(0 60%, 4% 30%, 9% 70%, 14% 25%, 20% 65%, 26% 35%, 31% 75%, 37% 30%, 43% 60%, 49% 20%, 55% 70%, 61% 35%, 67% 65%, 72% 25%, 78% 70%, 84% 40%, 90% 65%, 95% 30%, 100% 55%, 100% 100%, 0 100%); }
+.foot__grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--space-7); align-items: end; }
+.foot .foot__name { font-family: var(--font-display); font-size: var(--text-xl); color: var(--color-text-on-ink); margin-bottom: var(--space-3); }
+.foot p { color: var(--color-text-on-ink-muted); font-size: var(--text-sm); max-width: 60ch; }
+.foot__links { display: flex; flex-wrap: wrap; gap: var(--space-3); justify-content: flex-end; }
+.foot__links a { font-weight: 600; font-size: var(--text-sm); padding: 8px 14px; border: 2px solid var(--color-text-on-ink-muted); border-radius: var(--radius-chip); text-decoration: none; }
+.foot__links a:hover { border-color: var(--color-accent); color: var(--color-accent); }
+.foot__legal { margin-top: var(--space-6); padding-top: var(--space-5); border-top: 1.5px dashed color-mix(in srgb, var(--color-text-on-ink-muted) 35%, transparent); display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-3); font-size: var(--text-xs); color: var(--color-text-on-ink-muted); }
+
+/* Hero */
+.hero { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: var(--space-7); align-items: center; padding-block: var(--space-6) var(--space-9); }
+.hero__for { display: flex; align-items: flex-end; gap: 8px; max-width: 38ch; font-weight: 600; font-size: var(--text-md); line-height: 1.35; color: var(--color-text-muted); margin-bottom: var(--space-4); }
+.hero__for svg { flex: none; margin-bottom: -22px; color: var(--color-pen); }
+.hero h1 { font-family: var(--font-display); font-size: var(--text-hero); line-height: .9; letter-spacing: -0.02em; }
+.hero h1 .line { display: block; }
+.hero h1 .line--2 { padding-left: .55em; }
+.hero__sub {
+  position: relative; display: inline-block; margin-top: var(--space-4);
+  font-family: var(--font-hand); font-weight: 700; font-size: clamp(2rem, 1.2rem + 3vw, 3.5rem); line-height: 1; color: var(--color-text-strong);
+}
+.hero__sub svg { position: absolute; left: -2%; bottom: -16px; width: 104%; height: 22px; overflow: visible; }
+.hero__lead { max-width: 34em; margin-top: var(--space-6); font-size: var(--text-lg); line-height: 1.5; }
+.hero__lead b { color: var(--color-text-strong); }
+.hero__cta { display: flex; flex-wrap: wrap; gap: var(--space-4) var(--space-5); margin-top: var(--space-6); }
+
+/* Chuleta Sheet */
+.chuleta { position: relative; justify-self: center; width: min(100%, 440px); }
+.chuleta__sheet {
+  --sk-bg: linear-gradient(90deg, transparent 22px, color-mix(in srgb, var(--color-pen) 45%, transparent) 22px 24px, transparent 24px), repeating-linear-gradient(transparent 0 31px, var(--color-grid-strong) 31px 32px) 0 6px, var(--color-surface-warm);
+  --sk-shadow: 10px;
+  padding: 38px 30px 30px 40px; transform: rotate(2.5deg);
+}
+.chuleta .tape--a { top: -12px; left: 34%; transform: rotate(-4deg); }
+.chuleta__title { font-family: var(--font-hand); font-weight: 700; font-size: var(--text-hand-xl); line-height: 1; color: var(--color-text-strong); margin-bottom: 14px; }
+.chuleta__title small { font-size: var(--text-hand-sm); color: var(--color-text-muted); font-weight: 500; }
+.chuleta__row { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; align-items: baseline; font-family: var(--font-hand); font-size: var(--text-hand-sm); line-height: 32px; }
+.chuleta__row dt { font-weight: 700; color: var(--color-text-strong); }
+.chuleta__row dd { margin: 0; color: var(--color-text-muted); font-weight: 500; }
+.chuleta__move { margin: 18px 0 6px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 8px; font-family: var(--font-hand); font-size: var(--text-hand-sm); font-weight: 700; text-align: center; }
+.chuleta__move span:first-child { text-align: right; }
+.chuleta__move span:last-child { text-align: left; }
+.chuleta__pillar { margin-top: 12px; font-family: var(--font-hand); font-size: var(--text-hand-sm); line-height: 32px; }
+.chuleta__pillar b { font-size: var(--text-hand-md); }
+.chuleta__pillar .circle { position: relative; display: inline-block; padding: 0 6px; }
+.chuleta__pillar .circle svg { position: absolute; inset: -6px -10px; width: calc(100% + 20px); height: calc(100% + 12px); overflow: visible; }
+.sticker {
+  position: absolute; right: -26px; top: -40px; z-index: 4;
+  width: 140px; height: 140px; display: grid; place-items: center; text-align: center;
+  font-family: var(--font-display); color: var(--color-text-strong); transform: rotate(12deg);
+}
+.sticker svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.sticker span { position: relative; font-size: var(--text-hand-md); line-height: .9; }
+.sticker small { display: block; margin-top: 4px; font-family: var(--font-hand); font-weight: 700; font-size: var(--text-hand-xs); line-height: .95; }
+
+/* Marquee */
+.marquee { border-block: var(--stroke-bold) solid var(--color-line); background: var(--color-accent); overflow: hidden; transform: rotate(-1.2deg); margin-inline: -20px; }
+.marquee__track { display: flex; width: max-content; animation: marquee 48s linear infinite; }
+.marquee:hover .marquee__track { animation-play-state: paused; }
+.marquee__group { display: flex; align-items: center; flex: none; }
+.marquee__item { display: flex; align-items: baseline; gap: 10px; padding: 14px 22px; white-space: nowrap; color: var(--color-text-strong); }
+.marquee__item b { font-family: var(--font-display); font-weight: 400; font-size: var(--text-hand-md); }
+.marquee__item span { font-family: var(--font-hand); font-weight: 700; font-size: var(--text-hand-sm); }
+.marquee__star { flex: none; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+/* Sections Common */
+.section { padding-block: var(--space-9) 0; }
+.head { display: flex; flex-wrap: wrap; align-items: flex-end; gap: var(--space-3) var(--space-5); margin-bottom: var(--space-7); }
+.head__note { font-weight: 600; font-size: var(--text-md); color: var(--color-text-muted); padding-bottom: 10px; }
+
+/* Basta Block */
+.basta__title { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 .3em; }
+.basta__title .es-word { font-family: var(--font-hand); font-weight: 700; font-size: 1.15em; color: var(--color-pen); transform: rotate(-4deg); display: inline-block; }
+.myths { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-6); }
+.myth { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: var(--space-5); align-items: start; max-width: 940px; }
+.myth__x { width: 56px; height: 56px; }
+.myth__quote { font-family: var(--font-display); font-size: var(--text-xl); line-height: 1.25; color: var(--color-text-strong); margin-bottom: var(--space-3); }
+.strike {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='24' viewBox='0 0 240 24' preserveAspectRatio='none'%3E%3Cpath d='M2 14c40-5 70 3 118-2s80-4 118 1' fill='none' stroke='%23e0442e' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E") 0 55% / 100% .7em no-repeat;
+  box-decoration-break: clone; -webkit-box-decoration-break: clone;
+}
+.myth p:not([class]) { max-width: var(--measure); color: var(--color-text); }
+.myth code { white-space: nowrap; font: 600 .95em var(--font-body); font-style: italic; background: var(--color-pen-soft); color: var(--color-text-strong); padding: 2px 8px; border-radius: 6px; }
+.myth__pen { font-family: var(--font-hand); font-weight: 700; font-size: var(--text-hand-xl); transform: rotate(-1.5deg); display: inline-block; color: var(--color-pen); line-height: 1.2; }
+
+/* Truths */
+.truths { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-6); margin-top: var(--space-8); align-items: start; }
+.truth { padding: var(--space-6); }
+.truth:nth-child(1) { transform: rotate(-1.2deg); }
+.truth:nth-child(2) { --sk-bg: var(--color-surface-warm); transform: rotate(.8deg); margin-top: var(--space-5); }
+.truth:nth-child(3) { transform: rotate(-.6deg); }
+.truth__kicker { font-family: var(--font-body); font-weight: 600; font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.1; margin-bottom: var(--space-3); }
+.truth h3 { font-size: var(--text-lg); margin-bottom: var(--space-4); }
+.vocab { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-3); }
+.vocab li { display: grid; gap: 0; padding-bottom: var(--space-3); border-bottom: 1.5px dashed var(--color-line-soft); }
+.vocab li:last-child { border-bottom: 0; padding-bottom: 0; }
+.vocab b { font-family: var(--font-display); font-weight: 400; font-size: var(--text-hand-sm); color: var(--color-text-strong); }
+.vocab span { font-size: var(--text-sm); color: var(--color-text-muted); }
+
+.snyat__word { font-family: var(--font-display); font-size: var(--text-display-sm); line-height: 1; color: var(--color-text-strong); margin-bottom: var(--space-4); }
+.snyat__chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: var(--space-5); }
+.chip {
+  font: 600 var(--text-sm)/1 var(--font-body); color: var(--color-text);
+  padding: 9px 13px; border: 2px solid var(--color-line); border-radius: var(--radius-chip);
+  background: var(--color-surface); cursor: pointer; transition: transform var(--dur-1) var(--ease-out), background var(--dur-1);
+}
+.chip:hover { transform: rotate(-2deg) translateY(-1px); }
+.chip[aria-pressed="true"] { background: var(--color-surface-ink); color: var(--color-text-on-ink); transform: rotate(-2deg); }
+.snyat__answer { min-height: 112px; padding: var(--space-4) var(--space-5); background: var(--color-surface); border: 2px dashed var(--color-line-soft); border-radius: var(--radius-sketch-alt); }
+.snyat__verb { font-family: var(--font-display); font-size: var(--text-hand-xl); line-height: 1.05; color: var(--color-accent-text); }
+.snyat__ex { margin: 6px 0 0; font-size: var(--text-sm); }
+.snyat__ex i { color: var(--color-text-strong); font-weight: 600; }
+.snyat__ex span { display: block; color: var(--color-text-muted); }
+.snyat__count { margin-top: var(--space-4); font-weight: 600; font-size: var(--text-sm); color: var(--color-text-muted); }
+
+.dir { display: grid; gap: var(--space-2); }
+.dir__scene { width: 100%; height: auto; margin-bottom: var(--space-2); }
+.dir__list { display: flex; flex-wrap: wrap; gap: 6px 14px; font-family: var(--font-display); font-size: var(--text-hand-xs); color: var(--color-text-strong); margin-top: var(--space-2); }
+
+.basta__end {
+  --sk-bg: var(--color-surface-ink); --sk-shadow: 9px;
+  margin-top: var(--space-8); padding: var(--space-7) clamp(24px, 5vw, 64px);
+  color: var(--color-text-on-ink); display: grid; grid-template-columns: auto 1fr; gap: var(--space-6); align-items: center;
+}
+.basta__end p { margin: 0; font-family: var(--font-display); font-size: var(--text-2xl); line-height: 1.15; color: var(--color-text-on-ink); }
+.basta__end p span { color: var(--color-accent); }
+.basta__end svg { width: 84px; height: 84px; }
+
+/* Who */
+.who { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-7); }
+.who__card { padding: var(--space-7) var(--space-6) var(--space-6); }
+.who__card:nth-child(1) { transform: rotate(-1deg); }
+.who__card:nth-child(2) { --sk-bg: var(--color-surface-warm); transform: rotate(1deg); }
+.who__card .tape { top: -13px; left: 50%; translate: -50% 0; rotate: 3deg; }
+.who__levels { display: flex; gap: 10px; margin-bottom: var(--space-4); }
+.who__levels span {
+  font-family: var(--font-display); font-size: var(--text-hand-md); line-height: 1; padding: 10px 12px 8px;
+  border: 2.5px solid var(--color-line); border-radius: 50% 46% 52% 44% / 48% 54% 44% 50%; color: var(--color-text-strong);
+}
+.who__card h3 { margin-bottom: var(--space-3); }
+.who__card p:not([class]) { margin: 0; max-width: 46ch; }
+.who__warn { margin-top: var(--space-5); display: flex; align-items: center; gap: 8px; font-family: var(--font-hand); font-weight: 700; font-size: var(--text-hand-sm); color: var(--color-pen); transform: rotate(-1.5deg); }
+.who__icon { width: 64px; height: 64px; margin-bottom: var(--space-4); }
+
+/* Path / Modules */
+.path { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-6); }
+.path__line { position: absolute; left: 0; right: 0; top: 14px; height: 40px; width: 100%; overflow: visible; z-index: -1; }
+.stop__when { display: inline-flex; align-items: flex-start; gap: 10px; margin-bottom: var(--space-5); }
+.stop__when .stop__label { padding-top: 2px; }
+.stop__dot { width: 68px; height: 68px; flex: none; display: grid; place-items: center; font-family: var(--font-display); font-size: var(--text-hand-xs); line-height: 1; text-align: center; color: var(--color-text-strong); position: relative; }
+.stop__dot svg { position: absolute; inset: 0; }
+.stop__dot span { position: relative; }
+.stop__label { font-family: var(--font-hand); font-weight: 700; font-size: var(--text-hand-md); line-height: 1; color: var(--color-text-strong); }
+.stop__card { padding: var(--space-6); height: calc(100% - 94px); display: flex; flex-direction: column; }
+.stop--gift .stop__card { --sk-bg: var(--color-accent-soft); }
+.stop__tag { font-weight: 600; font-size: var(--text-sm); color: var(--color-accent-text); line-height: 1.2; margin-bottom: var(--space-2); }
+.stop--gift .stop__tag { color: var(--color-text-strong); }
+.stop__card h3 { margin-bottom: var(--space-3); }
+.stop__card > p { color: var(--color-text); }
+.checks { list-style: none; margin: var(--space-2) 0 0; padding: 0; display: grid; gap: 10px; }
+.checks li { display: grid; grid-template-columns: 24px 1fr; gap: 10px; font-size: var(--text-sm); line-height: 1.45; }
+.checks svg { margin-top: 1px; }
+.stop__card .btn { margin-top: auto; align-self: flex-start; }
+.stop__card .checks + .btn { margin-top: var(--space-5); }
+
+/* Story */
+.story { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--space-8); align-items: center; }
+.grow { position: relative; height: 400px; }
+.grow svg { width: 100%; height: 100%; overflow: visible; }
+.story__text p { max-width: var(--measure); font-size: var(--text-lg); line-height: 1.55; }
+.story__text h2, .ticket h2, .lead h2 { font-size: var(--text-h2-compact); }
+.story__text h2 { margin-bottom: var(--space-6); }
+
+/* Author Polaroid */
+.author { display: grid; grid-template-columns: minmax(0, 380px) minmax(0, 1fr); gap: var(--space-8); align-items: center; }
+.polaroid { position: relative; background: var(--color-surface); padding: 14px 14px 64px; transform: rotate(-3deg); box-shadow: 0 1px 0 rgba(43,23,68,.12), 10px 12px 0 -2px rgba(43,23,68,.12); border: 1.5px solid var(--color-line-soft); justify-self: center; width: min(100%, 360px); }
+.polaroid img { aspect-ratio: 4 / 5; width: 100%; height: auto; object-fit: cover; object-position: center 22%; background: var(--color-tint); }
+.polaroid figcaption { position: absolute; left: 0; right: 0; bottom: 14px; text-align: center; font-family: var(--font-hand); font-weight: 700; font-size: var(--text-hand-md); color: var(--color-text-strong); }
+.polaroid .tape--a { top: -14px; left: -18px; transform: rotate(-38deg); }
+.polaroid .tape--b { bottom: 30px; right: -26px; transform: rotate(-42deg); }
+.author__name { font-family: var(--font-display); font-size: var(--text-3xl); line-height: 1; margin-bottom: var(--space-5); }
+.creds { list-style: none; margin: 0 0 var(--space-6); padding: 0; display: grid; gap: var(--space-3); max-width: 58ch; }
+.creds li { display: grid; grid-template-columns: 28px 1fr; gap: 12px; }
+.author__quote { position: relative; margin: 0; padding: var(--space-3) var(--space-6); max-width: 34em; font-style: italic; font-weight: 500; font-size: var(--text-lg); line-height: 1.5; color: var(--color-text-strong); }
+.author__quote::before { content: ""; position: absolute; left: 0; top: 10px; bottom: 10px; width: 4px; border-radius: 4px; background: var(--color-accent); }
+
+/* Ticket / Buy Form (Вариант Б) */
+.ticket {
+  --sk-bg: var(--color-surface-warm); --sk-shadow: 10px;
+  display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr); gap: 0; max-width: 1080px; margin-inline: auto;
+}
+.ticket__main { padding: var(--space-8) clamp(24px, 4vw, 56px); }
+.ticket__side { padding: var(--space-8) clamp(24px, 4vw, 48px); border-left: 3px dashed var(--color-line); display: flex; flex-direction: column; justify-content: center; position: relative; }
+.ticket__side::before, .ticket__side::after { content: ""; position: absolute; left: -17px; width: 32px; height: 32px; border-radius: 50%; background: var(--color-bg); border: var(--stroke) solid var(--color-line); }
+.ticket__side::before { top: -18px; clip-path: inset(50% 0 0 0); }
+.ticket__side::after { bottom: -18px; clip-path: inset(0 0 50% 0); }
+.ticket h2 { margin-bottom: var(--space-4); }
+.ticket__price { display: flex; flex-direction: column-reverse; align-items: flex-start; gap: var(--space-4); padding-left: 10px; margin-bottom: var(--space-5); }
+.ticket__price .big { font-family: var(--font-display); font-size: var(--text-price); line-height: .9; white-space: nowrap; color: var(--color-text-strong); position: relative; padding: 0 8px; }
+.ticket__price .big svg { position: absolute; inset: -14px -34px; width: calc(100% + 68px); height: calc(100% + 28px); overflow: visible; }
+.ticket__price .label { font-weight: 600; font-size: var(--text-lg); line-height: 1.25; color: var(--color-text-muted); }
+.ticket__price .old { font-weight: 700; color: var(--color-text-strong); text-decoration: none; }
+.ticket__price .old.strike, .js .ticket__price .old.strike { background-size: 100% .7em; transition: none; }
+.ticket__note { font-size: var(--text-sm); color: var(--color-text-muted); margin-top: var(--space-3); }
+
+/* Forms Common */
+.field { display: grid; gap: 2px; margin-bottom: var(--space-4); }
+.field label { font-family: var(--font-hand); font-weight: 700; font-size: var(--text-hand-md); line-height: 1.1; color: var(--color-text-strong); }
+.field input, .field select {
+  width: 100%; font: 500 var(--text-md)/1.3 var(--font-body); color: var(--color-text-strong);
+  padding: 8px 2px 6px; border: 0; border-bottom: 2.5px solid var(--color-line); border-radius: 0; background: transparent;
+  appearance: none; -webkit-appearance: none;
+}
+.field select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='12' viewBox='0 0 18 12'%3E%3Cpath d='M2 3c3 3 4 5 7 7 2-3 4-5 7-8' fill='none' stroke='%233a2052' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 4px center; padding-right: 30px; cursor: pointer;
+}
+.field input::placeholder { color: var(--color-text-muted); opacity: .75; }
+.field input:focus, .field select:focus { outline: none; border-bottom-color: var(--color-line); box-shadow: 0 4px 0 var(--color-accent); }
+.field.is-error input { border-bottom-color: var(--color-pen); }
+.field__err { font-size: var(--text-xs); color: var(--color-pen-text); font-weight: 600; min-height: 1.3em; margin-top: 2px; }
+
+/* Lead Form */
+.lead { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: var(--space-8); align-items: start; }
+.lead__intro p { font-size: var(--text-lg); max-width: 30em; }
+.lead__arrow { margin-top: var(--space-4); transform: rotate(-4deg); }
+.form { padding: var(--space-7) clamp(22px, 4vw, 48px); --sk-bg: var(--color-surface); }
+.form .btn { width: 100%; }
+
+/* Verboleo Ecosystem */
+.eco { padding-block: var(--space-9); }
+.eco__word { display: flex; justify-content: center; flex-wrap: wrap; font-family: var(--font-display); font-size: clamp(3.5rem, 1rem + 12vw, 11rem); line-height: .9; color: var(--color-text-strong); margin-bottom: var(--space-7); user-select: none; }
+.eco__word span { display: inline-block; transform-origin: 50% 90%; }
+.eco__word .v { color: var(--color-accent); -webkit-text-stroke: 3px var(--color-text-strong); paint-order: stroke fill; }
+.eco.is-dancing .eco__word span { animation: sway 1.4s var(--ease-out) both; animation-delay: calc(var(--i) * 70ms); }
+@keyframes sway { 0% { transform: rotate(0) translateY(0); } 30% { transform: rotate(-7deg) translateY(-12px); } 60% { transform: rotate(5deg) translateY(2px); } 100% { transform: rotate(0) translateY(0); } }
+.eco__word:hover span { animation: sway 1.4s var(--ease-out) both; animation-delay: calc(var(--i) * 50ms); }
+.eco__cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-7); max-width: 1000px; margin-inline: auto; }
+.eco__cols p:not([class]) { font-size: var(--text-lg); line-height: 1.55; }
+.eco__formula { font-family: var(--font-hand); font-weight: 700; font-size: var(--text-hand-lg); line-height: 1.15; color: var(--color-text-strong); margin-bottom: var(--space-4); }
+.eco__formula .op { color: var(--color-accent-text); }
+.steps { display: grid; gap: var(--space-4); }
+.steps__item { padding: var(--space-5) var(--space-6); display: grid; grid-template-columns: auto 1fr; gap: var(--space-4); align-items: center; }
+.steps__item:nth-child(2) { margin-left: var(--space-7); --sk-bg: var(--color-surface-warm); }
+.steps__n { font-family: var(--font-display); font-size: var(--text-display-sm); line-height: 1; color: var(--color-accent-text); }
+.steps__item b { display: block; color: var(--color-text-strong); font-size: var(--text-lg); }
+.steps__item span:not([class]) { font-size: var(--text-sm); color: var(--color-text-muted); }
+
+/* Floating Dock */
+.dock { position: fixed; right: 18px; bottom: 18px; z-index: 50; display: none; flex-direction: column; gap: 10px; }
+.dock a { width: 52px; height: 52px; display: grid; place-items: center; position: relative; color: var(--color-text-strong); transition: transform var(--dur-1) var(--ease-out); }
+.dock a svg.ring { position: absolute; inset: 0; width: 100%; height: 100%; }
+.dock a svg.ico { position: relative; }
+.dock a:hover { transform: rotate(-8deg) scale(1.06); }
+.dock .dock__cta { display: none; }
+
+/* Motion */
+@media (prefers-reduced-motion: no-preference) {
+  .js .hero .draw path { stroke-dashoffset: var(--len, 1200); animation: draw var(--dur-draw) var(--ease-out) forwards; animation-delay: var(--d, .3s); }
+  .js .strike { background-size: 0% .7em; transition: background-size 800ms var(--ease-out) 150ms; }
+  .js .myth.is-seen .strike { background-size: 100% .7em; }
+  .js .hero__title .line { opacity: 0; transform: translateY(18px) rotate(-1deg); animation: rise var(--dur-3) var(--ease-spring) forwards; }
+  .js .hero__title .line--2 { animation-delay: .12s; }
+  .js .sticker { animation: slap 520ms var(--ease-spring) 1.1s both; }
+}
+@keyframes draw { to { stroke-dashoffset: 0; } }
+@keyframes rise { to { opacity: 1; transform: none; } }
+@keyframes slap { from { opacity: 0; transform: rotate(40deg) scale(1.6); } to { opacity: 1; transform: rotate(12deg) scale(1); } }
+
+@media (max-width: 1020px) {
+  .hero { grid-template-columns: 1fr; gap: var(--space-8); padding-bottom: var(--space-8); }
+  .chuleta { margin-top: var(--space-4); }
+  .truths { grid-template-columns: 1fr 1fr; }
+  .truth:nth-child(3) { grid-column: 1 / -1; }
+  .story, .author, .lead { grid-template-columns: 1fr; gap: var(--space-7); }
+  .grow { height: 240px; max-width: 420px; }
+  .path { grid-template-columns: 1fr; gap: var(--space-7); }
+  .path__line { display: none; }
+  .stop__card { height: auto; }
+  .stop__card .btn { margin-top: var(--space-5); }
+}
+@media (max-width: 768px) {
+  .myth__quote { font-size: var(--text-hand-xs); }
+  .basta__end p { font-size: var(--text-hand-sm); }
+  .dock { display: flex; visibility: hidden; opacity: 0; transform: translateY(12px); transition: opacity var(--dur-2), transform var(--dur-2) var(--ease-out), visibility 0s var(--dur-2); }
+  .is-scrolled .dock { visibility: visible; opacity: 1; transform: none; transition: opacity var(--dur-2), transform var(--dur-2) var(--ease-out); }
+  .is-buy .dock .dock__cta { display: none; }
+  .is-buy .dock { justify-content: flex-end; }
+  .hero { padding-top: var(--space-4); }
+  .hero h1 .line--2 { padding-left: 0; }
+  .hero__lead { font-size: var(--text-md); }
+  .hero__cta .btn { width: 100%; }
+  .chuleta__sheet { padding: 30px 20px 24px 36px; }
+  .sticker { width: 120px; height: 120px; right: 0; top: -50px; }
+  .sticker span { font-size: var(--text-sticker-sm); }
+  .section { padding-top: var(--space-8); }
+  .myth { grid-template-columns: 40px minmax(0, 1fr); gap: var(--space-3); }
+  .myth__x { width: 38px; height: 38px; }
+  .truths, .who, .eco__cols { grid-template-columns: minmax(0, 1fr); }
+  .truth:nth-child(2) { margin-top: 0; }
+  .basta__end { grid-template-columns: 1fr; gap: var(--space-4); }
+  .basta__end svg { width: 56px; height: 56px; }
+  .ticket { grid-template-columns: minmax(0, 1fr); }
+  .ticket__price { flex-wrap: wrap; }
+  .ticket__side { border-left: 0; border-top: 3px dashed var(--color-line); }
+  .ticket__side::before { left: -18px; top: -17px; clip-path: inset(0 0 0 50%); }
+  .ticket__side::after { left: auto; right: -18px; top: -17px; bottom: auto; clip-path: inset(0 50% 0 0); }
+  .ticket__main, .ticket__side { padding: var(--space-6) var(--space-5); }
+  .steps__item:nth-child(2) { margin-left: var(--space-5); }
+  .polaroid { width: calc(100% - 24px); }
+  .chip { min-height: 44px; }
+  .lead__arrow { display: none; }
+  .dock { left: 0; right: 0; bottom: 0; flex-direction: row; align-items: center; gap: 6px; padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); background: var(--color-bg); border-top: var(--stroke) solid var(--color-line); }
+  .dock a { width: 44px; height: 44px; flex: none; }
+  .dock .dock__cta { display: inline-flex; flex: 1; width: auto; height: auto; min-height: 46px; padding: 8px 14px; margin-right: 8px; --sk-shadow: 4px; }
+  .dock .dock__cta:hover { transform: none; }
+}
+  </style>
 </head>
-<body class="antialiased">
+<body>
+  <!-- SVG rough filter & symbols -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <filter id="rough" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="7" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="3.2" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <symbol id="check" viewBox="0 0 24 24"><path d="M3.5 13.2c2.2 1.6 3.6 3.4 4.8 5.6 3-6.2 6.6-10.6 12.2-14.6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="star" viewBox="0 0 24 24"><path d="M12 2.5c.6 3.9 1.8 6.9 9.5 9.4-6.9 1.5-8.6 3.8-9.4 9.6-1-5.6-2.9-8.2-9.6-9.4 6.6-2 8.6-4.5 9.5-9.6Z" fill="currentColor"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12 3.2c-5 0-9 3.7-9 8.4 0 1.7.5 3.3 1.5 4.6L3.6 20.6l4.6-1.3c1.2.6 2.5.9 3.8.9 5 0 9-3.8 9-8.6 0-4.7-4-8.4-9-8.4Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M9 9.2c.2 2.6 2.6 5.3 5.8 5.8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+    <symbol id="i-tg" viewBox="0 0 24 24"><path d="M3 11.6 20.6 4.2c.6-.2 1.1.3 1 .9l-3 14.2c-.1.6-.8.9-1.3.5l-4.6-3.5-2.4 2.4c-.3.3-.8.1-.8-.3l.2-3.6L17.4 8.2 7.6 13.8 3.3 12.6c-.6-.2-.6-.8-.3-1Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3.5 6.2c5.6-.4 11.4-.4 17 0 .3 4 .3 7.8 0 11.6-5.6.4-11.4.4-17 0-.3-3.8-.3-7.6 0-11.6Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M4 7c3 3 5.4 5 8 6.2C14.6 12 17 10 20 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+    <symbol id="ring" viewBox="0 0 52 52"><path d="M26 3.5c12.6-.3 22.8 9.6 22.6 22.4-.2 12.4-10.4 22.2-22.9 22-12.1-.2-22.4-10-22.2-22.6C3.7 13 13.9 3.8 26 3.5Z" fill="var(--color-surface)" stroke="var(--color-line)" stroke-width="2.4"/></symbol>
+  </svg>
 
-    <!-- Верхняя плашка предпродажи -->
-    <div class="bg-brandDark text-white text-center py-2 px-4 text-sm font-semibold tracking-wide border-b-2 border-brandAccent">
-        🚀 ЭКСКЛЮЗИВНАЯ ПРЕДПРОДАЖА: Минимальная цена только 2 недели! Выдача книги через 2 недели, платформы — через 3.
+  <!-- Ribbon -->
+  <div class="ribbon" role="note">
+    🚀 <b>ЭКСКЛЮЗИВНАЯ ПРЕДПРОДАЖА:</b> скидка 50% только 2 недели (49 € / 4 990 ₽). Выдача книги через 2 недели, платформы — через 3.
+  </div>
+
+  <!-- Header -->
+  <header class="wrap top">
+    <a class="logo" href="#top">
+      <span class="logo__label sketch">CHULETA VERBAL</span>
+      <span class="logo__by">Bla-Bla e.Spanish con Ksenia</span>
+    </a>
+    <div class="top__end">
+      <nav class="top__contacts" aria-label="Связь с автором">
+        <a href="https://wa.me/5491168169407?text=Здравствуйте,%20Ксения!%20Хочу%20узнать%20про%20Chuleta%20Verbal" target="_blank" aria-label="WhatsApp"><svg width="22" height="22" aria-hidden="true"><use href="#i-wa"/></svg></a>
+        <a href="https://t.me/KseniaSevera" target="_blank" aria-label="Telegram"><svg width="22" height="22" aria-hidden="true"><use href="#i-tg"/></svg></a>
+        <a href="mailto:blablaespanish@gmail.com?subject=Вопрос%20по%20Chuleta%20Verbal" aria-label="Email"><svg width="22" height="22" aria-hidden="true"><use href="#i-mail"/></svg></a>
+      </nav>
+      <a class="btn btn--main sketch" href="#buy"><span class="only-wide">Забрать по спеццене</span><span class="only-narrow">Забрать −50%</span></a>
     </div>
+  </header>
 
-    <!-- Шапка / Навигация -->
-    <header class="max-w-6xl mx-auto px-4 py-6 flex justify-between items-center">
-        <div class="flex items-center space-x-3">
-            <span class="badge-tag px-3 py-1 text-xs rotate-[-1deg]">CHULETA VERBAL</span>
-            <span class="text-xs uppercase tracking-widest font-bold text-brandPurple hidden sm:inline">Bla-Bla e.Spanish con Ksenia</span>
-        </div>
-        <div>
-            <a href="#buy" class="bg-brandAccent hover:bg-brandOrange text-brandDark font-extrabold px-5 py-2.5 rounded-lg border-2 border-brandDark shadow-[3px_3px_0px_#3A2052] transition transform hover:-translate-y-0.5">
-                Забрать по спеццене
-            </a>
-        </div>
-    </header>
-
-    <!-- Первый экран (Hero) -->
-    <section class="max-w-5xl mx-auto px-4 pt-12 pb-16 text-center">
-        <div class="inline-block bg-white border-2 border-brandPurple px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-brandPurple mb-6 shadow-[2px_2px_0px_#4A2E65] rotate-[1deg]">
-            Для тех, кто застрял на А2, В1, В2 и преподавателей испанского
-        </div>
-        <h1 class="text-4xl md:text-6xl font-black text-brandDark mb-6 leading-tight">
-            Chuleta Verbal — <span class="text-brandOrange underline decoration-wavy decoration-2">ALL ABOUT VERBs</span> in Spanish.
-        </h1>
-        <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-10 leading-relaxed">
-            Хватит зубрить таблицы и переводить в голове! Монументальный практический справочник по всей системе глаголов, времен и смыслов от эксперта с 14-летним стажем.
+  <main id="top">
+    <!-- ================= 1. Первый экран (Hero) ================= -->
+    <section class="wrap hero" aria-labelledby="hero-title">
+      <div>
+        <p class="hero__for">
+          для тех, кто застрял на A2, B1, B2, и для преподавателей испанского
+          <svg width="44" height="40" viewBox="0 0 44 40" aria-hidden="true" class="draw"><path style="--len:80;--d:1s" d="M6 4c10 6 18 16 22 32m-9-6c4 2 6 4 9 6 2-4 4-7 6-10" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </p>
-        <div class="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="#buy" class="bg-brandAccent hover:bg-brandOrange text-brandDark font-extrabold text-lg px-8 py-4 rounded-xl border-3 border-brandDark shadow-[4px_4px_0px_#3A2052] transition transform hover:-translate-y-1">
-                🔥 Забрать по предпродажной цене (-50%)
-            </a>
-            <a href="#leadform" class="bg-white hover:bg-gray-50 text-brandPurple font-extrabold text-lg px-8 py-4 rounded-xl border-3 border-brandPurple shadow-[4px_4px_0px_#4A2E65] transition">
-                📋 Заполнить анкету предзаписи
-            </a>
+        <h1 id="hero-title" class="hero__title">
+          <span class="line">Chuleta</span>
+          <span class="line line--2">Verbal</span>
+        </h1>
+        <span class="hero__sub">all about verbs in Spanish
+          <svg viewBox="0 0 400 22" preserveAspectRatio="none" aria-hidden="true" class="draw"><path style="--len:440;--d:.55s" d="M4 13c40-7 70 6 110-1s64-8 100 0 60 7 92-1 54-4 90 2" fill="none" stroke="var(--color-accent)" stroke-width="7" stroke-linecap="round"/></svg>
+        </span>
+        <p class="hero__lead">Хватит зубрить таблицы и переводить в голове. <b>Практический курс-справочник по всей системе глаголов, времён и смыслов</b> от преподавателя и филолога с 14-летним стажем.</p>
+        <div class="hero__cta">
+          <a class="btn btn--main sketch" href="#buy">
+            🔥 Забрать со скидкой 50%
+          </a>
+          <a class="btn btn--paper sketch" href="#leadform">📋 Анкета предзаписи</a>
         </div>
+      </div>
+
+      <div class="chuleta" role="group" aria-label="Пример шпаргалки из справочника">
+        <div class="sticker" aria-hidden="true">
+          <svg viewBox="0 0 128 128" width="140" height="140"><path d="M64 4l9 12 14-7 4 15 15-2-2 15 15 4-7 14 12 9-12 9 7 14-15 4 2 15-15-2-4 15-14-7-9 12-9-12-14 7-4-15-15 2 2-15-15-4 7-14L4 64l12-9-7-14 15-4-2-15 15 2 4-15 14 7Z" fill="var(--color-accent)" stroke="var(--color-line)" stroke-width="3" stroke-linejoin="round"/></svg>
+          <span>−50%<small>только<br>2 недели</small></span>
+        </div>
+        <div class="chuleta__sheet sketch">
+          <span class="tape tape--a" aria-hidden="true"></span>
+          <p class="chuleta__title">mi chuleta <small>· шпаргалка</small></p>
+          <dl class="chuleta__row">
+            <dt>madrugar</dt><dd>вставать ни свет ни заря</dd>
+            <dt>estrenar</dt><dd>надеть что-то впервые</dd>
+            <dt>снять</dt><dd>alquilar · sacar · rodar…</dd>
+          </dl>
+          <div class="chuleta__move" role="img" aria-label="traer — к говорящему, llevar — от говорящего">
+            <span>traer</span>
+            <svg width="120" height="44" viewBox="0 0 120 44" aria-hidden="true" class="draw">
+              <circle cx="60" cy="13" r="6" fill="none" stroke="var(--color-line)" stroke-width="2.2"/>
+              <path style="--d:1.2s;--len:60" d="M60 19v14m0-8-8 5m8-5 8 5m-8 8-6 9m6-9 6 9" fill="none" stroke="var(--color-line)" stroke-width="2.2" stroke-linecap="round"/>
+              <path style="--d:1.4s;--len:70" d="M4 18c12 1 24 2 38 6m-6-7 7 7-8 4" fill="none" stroke="var(--color-pen)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+              <path style="--d:1.6s;--len:70" d="M78 24c13-3 24-5 38-6m-7-5 7 5-6 6" fill="none" stroke="var(--color-pen)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>llevar</span>
+          </div>
+          <p class="chuleta__pillar">
+            <span class="circle"><b>pillar</b><svg viewBox="0 0 100 50" preserveAspectRatio="none" aria-hidden="true" class="draw"><path style="--len:300;--d:1.8s" d="M52 4C24 2 3 13 5 27s26 20 50 19 42-9 41-22S70 2 40 6" fill="none" stroke="var(--color-pen)" stroke-width="2.6" stroke-linecap="round"/></svg></span>
+            = поймать, застать, понять, подхватить простуду… и ещё дюжина значений
+          </p>
+        </div>
+      </div>
     </section>
 
-    <!-- Блок: Манифест «Хватит!» (Новый жесткий подход) -->
-    <section class="max-w-5xl mx-auto px-4 py-12">
-        <div class="paper-card p-8 md:p-12 rounded-2xl bg-white">
-            <h2 class="text-3xl md:text-4xl font-black text-brandDark mb-8 text-center uppercase tracking-wide">
-                Хватит!
-            </h2>
-            <div class="space-y-6 text-gray-800 text-base md:text-lg leading-relaxed">
-                <div class="p-5 rounded-xl bg-red-50 border-2 border-red-200">
-                    <p>❌ <strong>ХВАТИТ</strong> уже учить то, что испанский <em class="font-bold">Indefinido</em> — это прошедшее совершенного вида, а <em class="font-bold">Imperfecto</em> — несовершенного. Хватит разбирать 100500 видов сложноподчиненных предложений для <em class="font-bold">Subjuntivo</em> и продолжать рыться в голове в куче разрозненных примеров и правил, но так и не мочь использовать субхунтив в живой речи!</p>
-                </div>
-                
-                <div class="p-5 rounded-xl bg-red-50 border-2 border-red-200">
-                    <p>❌ <strong>ХВАТИТ</strong> рассуждать: <em>«вот есть маркер YA — значит, тут точно El Pretérito Perfecto Compuesto»</em>.</p>
-                </div>
-
-                <div class="p-5 rounded-xl bg-red-50 border-2 border-red-200">
-                    <p>❌ <strong>ХВАТИТ</strong> переводить дословно в голове: <em>«я сижу» = «я сажусь»</em>, изобретая франкенштейнов вроде <span class="font-mono bg-white px-2 py-1 rounded border border-red-300">«Yo seré trabajar»</span> или пытаясь впихнуть английскую логику времен в гибкий испанский язык.</p>
-                </div>
-
-                <div class="p-5 rounded-xl bg-red-50 border-2 border-red-200">
-                    <p>❌ <strong>ХВАТИТ</strong> относиться к испанским глаголам как к английским или русским. Пора наконец понять базовые истины:</p>
-                    <ul class="list-disc pl-6 mt-3 space-y-2 text-sm md:text-base">
-                        <li>В испанском языке много точных, точечных глаголов для конкретных действий — вспомните хотя бы изящные <em class="font-bold">madrugar</em> (вставать ни свет ни заря), <em class="font-bold">amamantar</em> (кормить грудью) или <em class="font-bold">estrenar</em> (надевать / использовать что-то в первый раз).</li>
-                        <li>Далеко не во всех тех же контекстах мы можем использовать привычные глаголы. Например, русское универсальное слово <em class="font-bold">«снять»</em> (квартиру, деньги с карты, шляпу с головы, фильм, напряжение) в испанском потребует абсолютно разных, непересекающихся глаголов!</li>
-                        <li>Для одного и того же действия, но в зависимости от направления движения или фокуса, испанцы используют принципиально разные слова: <em class="font-bold">traer, llevar, venir, irse, sacar, meter...</em></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="mt-8 p-6 bg-purple-50 rounded-xl border-2 border-brandPurple text-center">
-                <p class="text-brandDark font-bold text-lg">
-                    💡 Пора прекратить хаос в голове. Испанский — это четкая, красивая и логичная система смыслов. И мы разберем её до винтика.
-                </p>
-            </div>
+    <!-- ================= Бегущая строка глаголов ================= -->
+    <div class="marquee">
+      <div class="marquee__track">
+        <div class="marquee__group">
+          <span class="marquee__item"><b>madrugar</b><span>вставать до рассвета</span></span><svg class="marquee__star" width="20" height="20"><use href="#star"/></svg>
+          <span class="marquee__item"><b>estrenar</b><span>надеть впервые</span></span><svg class="marquee__star" width="20" height="20"><use href="#star"/></svg>
+          <span class="marquee__item"><b>amamantar</b><span>кормить грудью</span></span><svg class="marquee__star" width="20" height="20"><use href="#star"/></svg>
+          <span class="marquee__item"><b>pillar</b><span>хит разговорного испанского</span></span><svg class="marquee__star" width="20" height="20"><use href="#star"/></svg>
+          <span class="marquee__item"><b>traer</b><span>нести сюда</span></span><svg class="marquee__star" width="20" height="20"><use href="#star"/></svg>
+          <span class="marquee__item"><b>llevar</b><span>нести туда</span></span><svg class="marquee__star" width="20" height="20"><use href="#star"/></svg>
+          <span class="marquee__item"><b>sacar</b><span>вынуть, снять с карты</span></span><svg class="marquee__star" width="20" height="20"><use href="#star"/></svg>
+          <span class="marquee__item"><b>meter</b><span>засунуть внутрь</span></span><svg class="marquee__star" width="20" height="20"><use href="#star"/></svg>
         </div>
-    </section>
-
-    <!-- Блок: Для кого это пособие -->
-    <section class="max-w-5xl mx-auto px-4 py-12">
-        <div class="bg-brandPurple text-white p-8 md:p-10 rounded-3xl border-3 border-brandDark shadow-[6px_6px_0px_#3A2052]">
-            <h2 class="text-2xl md:text-3xl font-black mb-6 text-center">Кому идеально подойдет «Chuleta Verbal»?</h2>
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="bg-white/10 p-6 rounded-2xl border border-white/20">
-                    <h3 class="text-xl font-black text-brandAccent mb-3">🎯 Студенты уровней А2, В1 и В2</h3>
-                    <p class="text-sm text-purple-100 leading-relaxed">
-                        Тем, кто уже знает базовые правила, но чувствует стеклянный потолок в речи, путает времена в диалогах и хочет раз и навсегда уложить всю систему глаголов по полочкам. <em>(Важно: пособие не для абсолютных новичков «с нуля»).</em>
-                    </p>
-                </div>
-                <div class="bg-white/10 p-6 rounded-2xl border border-white/20">
-                    <h3 class="text-xl font-black text-brandAccent mb-3">👩‍🏫 Преподаватели испанского</h3>
-                    <p class="text-sm text-purple-100 leading-relaxed">
-                        Коллегам-преподавателям! Вашим ученикам (да и вам самим) станет кристально понятно, как объяснять сложные испанские времена без нудной зубрежки, используя готовые визуальные схемы и логику.
-                    </p>
-                </div>
-            </div>
+        <div class="marquee__group" aria-hidden="true">
+          <span class="marquee__item"><b>madrugar</b><span>вставать до рассвета</span></span><svg class="marquee__star" width="20" height="20"><use href="#star"/></svg>
+          <span class="marquee__item"><b>estrenar</b><span>надеть впервые</span></span><svg class="marquee__star" width="20" height="20"><use href="#star"/></svg>
+          <span class="marquee__item"><b>amamantar</b><span>кормить грудью</span></span><svg class="marquee__star" width="20" height="20"><use href="#star"/></svg>
+          <span class="marquee__item"><b>pillar</b><span>хит разговорного испанского</span></span><svg class="marquee__star" width="20" height="20"><use href="#star"/></svg>
+          <span class="marquee__item"><b>traer</b><span>нести сюда</span></span><svg class="marquee__star" width="20" height="20"><use href="#star"/></svg>
+          <span class="marquee__item"><b>llevar</b><span>нести туда</span></span><svg class="marquee__star" width="20" height="20"><use href="#star"/></svg>
+          <span class="marquee__item"><b>sacar</b><span>вынуть, снять с карты</span></span><svg class="marquee__star" width="20" height="20"><use href="#star"/></svg>
+          <span class="marquee__item"><b>meter</b><span>засунуть внутрь</span></span><svg class="marquee__star" width="20" height="20"><use href="#star"/></svg>
         </div>
-    </section>
-
-    <!-- Блок: Что входит в проект -->
-    <section class="max-w-5xl mx-auto px-4 py-12">
-        <h2 class="text-3xl font-black text-brandDark mb-8 text-center">
-            Что входит в проект «Chuleta Verbal»?
-        </h2>
-        <div class="grid md:grid-cols-2 gap-8">
-            <div class="paper-card p-8 rounded-2xl flex flex-col justify-between">
-                <div>
-                    <span class="badge-tag px-3 py-1 text-xs">Модуль 1</span>
-                    <h3 class="text-xl font-black text-brandDark mt-4 mb-3">Справочник-учебник (PDF + ePub)</h3>
-                    <p class="text-gray-700 text-sm leading-relaxed mb-4">
-                        Все времена (от Indicativo до Subjuntivo), глагольные перифразы, многозначные глаголы, разбор реальных ошибок русскоязычных учеников и разговорный хит Испании — глагол <strong class="text-brandPurple">PILLAR</strong> во всех бытовых значениях.
-                    </p>
-                    <ul class="text-sm space-y-2 text-gray-600">
-                        <li>✔️ Удобно читать с телефона (формат ePub)</li>
-                        <li>✔️ PDF для печати с живыми QR-кодами на аудио и песни</li>
-                        <li>✔️ Разрушаем мифы классических уровней</li>
-                    </ul>
-                </div>
-                <div class="mt-6 pt-4 border-t border-gray-200 text-xs font-bold text-brandPurple uppercase tracking-wider">
-                    📦 Получение через 2 недели
-                </div>
-            </div>
-
-            <div class="paper-card p-8 rounded-2xl flex flex-col justify-between">
-                <div>
-                    <span class="badge-tag px-3 py-1 text-xs">Модуль 2</span>
-                    <h3 class="text-xl font-black text-brandDark mt-4 mb-3">Закрытая интерактивная платформа</h3>
-                    <p class="text-gray-700 text-sm leading-relaxed mb-4">
-                        Веб-кабинет с тренажерами и упражнениями, шкалой прогресса и трекингом пройденных тем.
-                    </p>
-                    <ul class="text-sm space-y-2 text-gray-600">
-                        <li>✔️ Наглядные визуальные схемы и живые истории вместо сухой теории</li>
-                        <li>✔️ Автопроверка упражнений и интерактивные блоки</li>
-                        <li>✔️ Много аудиоматериалов и видео-разборов прямо в кабинете</li>
-                    </ul>
-                </div>
-                <div class="mt-6 pt-4 border-t border-gray-200 text-xs font-bold text-brandPurple uppercase tracking-wider">
-                    🚀 Получение через 3 недели
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Блок: Бонус — Закрытые вебинары по системе глаголов -->
-    <section class="max-w-5xl mx-auto px-4 py-12">
-        <div class="paper-card p-8 md:p-10 rounded-2xl bg-gradient-to-br from-amber-50 to-orange-50 border-4 border-brandDark">
-            <span class="badge-tag px-3 py-1 text-xs mb-3 inline-block">🎁 Подарок для участников</span>
-            <h3 class="text-2xl font-black text-brandDark mb-4">Не хотите ждать? Посмотрите мастер-классы прямо сейчас!</h3>
-            <p class="text-gray-700 text-sm md:text-base leading-relaxed mb-6">
-                Специально для тех, кто присоединяется к ранней предпродаже, я открываю доступ к моим закрытым вебинарам по системе испанских глаголов. Погружайтесь в методологию и начинайте наводить порядок в грамматике уже сегодня!
-            </p>
-            <div class="p-4 bg-white rounded-xl border-2 border-brandDark shadow-[3px_3px_0px_#3A2052] flex flex-col sm:flex-row items-center justify-between gap-4">
-                <div>
-                    <p class="font-extrabold text-brandDark">🎥 Доступ к закрытым эфирам по системе времен</p>
-                    <p class="text-xs text-gray-600 mt-1">Ссылки на видео будут доступны сразу после оформления предзаказа или заполнения анкеты.</p>
-                </div>
-                <a href="#buy" class="bg-brandAccent hover:bg-brandOrange text-brandDark font-extrabold px-5 py-3 rounded-xl border-2 border-brandDark text-sm whitespace-nowrap shadow-[2px_2px_0px_#3A2052]">
-                    Получить доступ
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Блок: История создания Chuleta -->
-    <section class="py-12 px-4 max-w-4xl mx-auto">
-        <div class="bg-white rounded-2xl border-4 border-brandDark p-8 shadow-[6px_6px_0px_#2B1B41] relative overflow-hidden">
-            <div class="absolute top-0 left-0 right-0 h-3 bg-brandPurple/20 border-b-2 border-brandDark"></div>
-            
-            <h3 class="text-2xl font-extrabold text-brandDark mb-4 flex items-center gap-3">
-                <span class="text-3xl">📖</span> Как появилась «Chuleta Verbal»?
-            </h3>
-            <p class="text-gray-700 text-lg leading-relaxed mb-4">
-                Всё началось с обычной карманной шпаргалки (<span class="italic font-semibold">chuleta</span>) для учеников, которым надоело путаться в заковыристых временах и исключениях. Я собирала её годами, оттачивая формулировки, пока простой листочек не превратился в настоящий монументальный труд.
-            </p>
-            <p class="text-gray-700 text-lg leading-relaxed">
-                Это исчерпывающий справочник, в котором разложено по полочкам всё, что нужно знать о глаголах и временах испанского языка. Без скучной зубрежки, сухой теории и академического занудства — только чистая суть, логика и живой язык.
-            </p>
-        </div>
-    </section>
-
-    <!-- Блок: Об авторе -->
-    <section class="max-w-4xl mx-auto px-4 py-12">
-        <div class="paper-card p-8 md:p-10 rounded-2xl flex flex-col md:flex-row items-center gap-8 bg-white">
-            <div class="w-40 h-40 md:w-48 md:h-48 rounded-2xl border-3 border-brandDark overflow-hidden flex-shrink-0 bg-gray-200 shadow-[3px_3px_0px_#4A2E65]">
-                <img src="DSC06141.jpg" alt="Ксения Северинова" class="w-full h-full object-cover">
-            </div>
-            <div>
-                <span class="badge-tag px-3 py-1 text-xs">Автор проекта</span>
-                <h3 class="text-2xl font-black text-brandDark mt-3 mb-3">Ксения Северинова</h3>
-                <p class="text-gray-700 text-sm leading-relaxed mb-4">
-                    Специалист по испанской филологии топ-3 университета мира по испанскому языку (<strong class="text-brandPurple">Alcalá de Henares 🇪🇸</strong>), преподаватель с 14-летним стажем, экс-переводчик латиноамериканских послов и автор EdTech-проекта <em class="font-bold">Bla-Bla e.Spanish</em>.
-                </p>
-                <p class="text-xs text-gray-600 italic">
-                    «Мои ученики говорят, что со мной нет шанса не заговорить. Я обожаю сложные случаи и упаковываю грамматику в понятные, живые системы без воды и зубрежки».
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Блок предпродажи / Оплаты с формой сбора телефона перед редиректом -->
-    <section id="buy" class="max-w-3xl mx-auto px-4 py-12 text-center">
-        <div class="paper-card p-8 md:p-12 rounded-3xl bg-amber-50/50">
-            <span class="badge-tag px-4 py-1.5 text-sm mb-4 inline-block">Оформление предзаказа</span>
-            <h2 class="text-3xl font-black text-brandDark mb-4">Получите доступ по лучшей цене</h2>
-            <p class="text-gray-600 mb-8 text-sm">Заполните данные для заказа, выберите регион, и система переведет вас к оплате:</p>
-            
-            <form id="orderForm" class="space-y-4 text-left max-w-lg mx-auto">
-                <div>
-                    <label class="block text-xs font-bold uppercase text-brandDark mb-1">Ваше имя</label>
-                    <input type="text" name="name" required class="w-full px-4 py-2 border-2 border-brandDark rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-brandAccent">
-                </div>
-                <div>
-                    <label class="block text-xs font-bold uppercase text-brandDark mb-1">Email или мессенджер</label>
-                    <input type="text" name="contact" required class="w-full px-4 py-2 border-2 border-brandDark rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-brandAccent">
-                </div>
-                <div>
-                    <label class="block text-xs font-bold uppercase text-brandDark mb-1">Телефон для связи (WhatsApp / Telegram)</label>
-                    <input type="text" name="phone" required class="w-full px-4 py-2 border-2 border-brandDark rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-brandAccent" placeholder="+34 ... или +7 ...">
-                </div>
-                <div>
-                    <label class="block text-xs font-bold uppercase text-brandDark mb-1">Регион оплаты</label>
-                    <select name="country" id="paymentRegion" class="w-full px-4 py-2 border-2 border-brandDark rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-brandAccent">
-                        <option value="Europe (EUR)">Европа / UK (EUR)</option>
-                        <option value="Russia (RUB)">Россия (RUB)</option>
-                    </select>
-                </div>
-                <!-- Скрытые поля для передачи статуса и суммы заказа -->
-                <input type="hidden" name="type" value="Заказ (Попытка оплаты)">
-                <input type="hidden" name="amount" id="orderAmount" value="24 EUR">
-
-                <button type="submit" id="orderBtn" class="w-full bg-brandAccent hover:bg-brandOrange text-brandDark font-extrabold py-4 rounded-xl border-2 border-brandDark shadow-[3px_3px_0px_#3A2052] transition text-center">
-                    🔥 Оплатить со скидкой 50%
-                </button>
-            </form>
-            <p class="text-xs text-gray-500 mt-6">После нажатия вы перейдете на страницу подтверждения и выдачи бонусов.</p>
-        </div>
-    </section>
-
-    <!-- Скрипт обработки формы заказа с отправкой в таблицу и редиректом -->
-    <script>
-        const orderForm = document.getElementById('orderForm');
-        const orderBtn = document.getElementById('orderBtn');
-        const paymentRegion = document.getElementById('paymentRegion');
-        const orderAmount = document.getElementById('orderAmount');
-
-        // Меняем сумму в зависимости от выбранного региона (можешь поставить свои цифры)
-        paymentRegion.addEventListener('change', () => {
-            if (paymentRegion.value.includes('EUR')) {
-                orderAmount.value = '24 EUR';
-            } else {
-                orderAmount.value = '1990 RUB';
-            }
-        });
-
-        orderForm.addEventListener('submit', e => {
-            e.preventDefault();
-            orderBtn.disabled = true;
-            orderBtn.textContent = 'Сохранение заказа...';
-
-            // Отправляем данные в ту же Google Таблицу через Apps Script
-            fetch(scriptURL, { method: 'POST', body: new FormData(orderForm), mode: 'no-cors' })
-                .then(() => {
-                    // Перенаправляем на страницу успешной оплаты (или здесь же можно перенаправлять на реальную ссылку Stripe/Prodamus)
-                    window.location.href = 'thanks.html';
-                })
-                .catch(error => {
-                    console.error('Error!', error.message);
-                    window.location.href = 'thanks.html';
-                });
-        });
-    </script>
-
-    <!-- Блок: Анкета предзаписи -->
-    <form id="leadForm" class="space-y-4">
-                <div>
-                    <label class="block text-xs font-bold uppercase text-brandDark mb-1">Ваше имя</label>
-                    <input type="text" name="name" required class="w-full px-4 py-2 border-2 border-brandDark rounded-lg focus:outline-none focus:ring-2 focus:ring-brandAccent">
-                </div>
-                <div>
-                    <label class="block text-xs font-bold uppercase text-brandDark mb-1">Email или основной контакт</label>
-                    <input type="text" name="contact" required class="w-full px-4 py-2 border-2 border-brandDark rounded-lg focus:outline-none focus:ring-2 focus:ring-brandAccent">
-                </div>
-                <div>
-                    <label class="block text-xs font-bold uppercase text-brandDark mb-1">Номер телефона для WhatsApp / Telegram</label>
-                    <input type="text" name="phone" placeholder="+34 ... или +7 ..." class="w-full px-4 py-2 border-2 border-brandDark rounded-lg focus:outline-none focus:ring-2 focus:ring-brandAccent">
-                </div>
-                <div>
-                    <label class="block text-xs font-bold uppercase text-brandDark mb-1">Страна проживания</label>
-                    <select name="country" class="w-full px-4 py-2 border-2 border-brandDark rounded-lg focus:outline-none focus:ring-2 focus:ring-brandAccent">
-                        <option value="Spain/Europe">Испания / Еврозона</option>
-                        <option value="UK">Великобритания</option>
-                        <option value="Russia">Россия</option>
-                        <option value="LatinAmerica">Латинская Америка</option>
-                        <option value="Other">Другая страна</option>
-                    </select>
-                </div>
-                <button type="submit" id="submitBtn" class="w-full bg-brandPurple hover:bg-brandDark text-white font-extrabold py-3 rounded-lg border-2 border-brandDark shadow-[3px_3px_0px_#F49F1C] transition">
-                    Получить уведомление и бонусы на старте
-                </button>
-            </form>
-
-    <!-- Блок: Анонс Verboleo в финале -->
-    <section class="py-12 px-4 max-w-4xl mx-auto">
-        <div class="bg-amber-50 rounded-2xl border-4 border-brandDark p-8 shadow-[6px_6px_0px_#2B1B41] relative">
-            <div class="absolute top-0 left-0 right-0 h-3 bg-amber-300 border-b-2 border-brandDark"></div>
-            
-            <h3 class="text-2xl font-extrabold text-brandDark mb-4 flex items-center gap-3">
-                <span class="text-3xl">💃</span> Что будет дальше? Экосистема Verboleo
-            </h3>
-            <p class="text-gray-700 text-lg leading-relaxed mb-4">
-                Пособие «Chuleta Verbal» — это только первая, фундаментальная ступень моего большого авторского проекта <strong class="text-brandPurple font-bold">Verboleo</strong>.
-            </p>
-            <p class="text-gray-700 text-lg leading-relaxed mb-4">
-                Почему именно <span class="italic font-semibold">Verboleo</span>? Я придумала это название, соединив испанское слово <span class="italic">verbo</span> (глагол) и вдохновившись ритмом знаменитой песни <span class="italic">Bamboleo</span>. Ведь изучение испанских глаголов — это вовсе не каторга и не страх сделать ошибку.
-            </p>
-            <p class="text-brandDark font-bold text-lg bg-white p-4 rounded-xl border-2 border-brandDark shadow-[2px_2px_0px_#2B1B41]">
-                Я предлагаю вам покорить их не шатаясь под тяжестью правил, а играючи, легко и танцуя! Впереди — закрытая интерактивная платформа с тренировкой чанков и полным погружением в живой язык.
-            </p>
-        </div>
-    </section>
-
-    <!-- Блок: Подвал сайта (Footer) -->
-    <footer class="bg-brandDark text-white py-8 px-4 border-t-4 border-brandDark mt-12">
-        <div class="max-w-4xl mx-auto text-center flex flex-col gap-3">
-            <p class="font-bold text-lg">Ксения Северинова · Licenciada en Filología Hispánica de la Universidad de Alcalá de Henares, Madrid, España, profesora de español, autora de la plataforma Bla-Bla e.Spanis y Verboleo</p>
-            <p class="text-sm text-gray-300">
-                Mendoza, Argentina · Monotributo
-            </p>
-            <p class="text-xs text-gray-400 mt-2">
-                Все права защищены © 2026 · <a href="https://verboleo.com" class="underline hover:text-amber-400">verboleo.com</a>
-            </p>
-        </div>
-    </footer>
-
-    <!-- Плавающий виджет связи -->
-    <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-2.5">
-        <a href="https://wa.me/5491168169407?text=Здравствуйте,%20Ксения!%20Хочу%20узнать%20про%20Chuleta%20Verbal" target="_blank" class="bg-emerald-500 hover:bg-emerald-600 text-white w-12 h-12 rounded-full shadow-lg border-2 border-brandDark flex items-center justify-center transition transform hover:scale-110" title="Написать в WhatsApp">
-            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-        </a>
-        <a href="https://t.me/KseniaSevera" target="_blank" class="bg-sky-500 hover:bg-sky-600 text-white w-12 h-12 rounded-full shadow-lg border-2 border-brandDark flex items-center justify-center transition transform hover:scale-110" title="Написать в Telegram">
-            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18 1.897-.962 6.502-1.359 8.627-.168.9-.5 1.201-.82 1.23-.697.064-1.226-.461-1.901-.903-1.056-.693-1.653-1.124-2.678-1.8-1.185-.781-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635.099-.002.321.023.465.14.12.098.153.228.166.331.016.126.032.412.016.643z"/></svg>
-        </a>
-        <a href="mailto:blablaespanish@gmail.com?subject=Вопрос%20по%20Chuleta%20Verbal" class="bg-amber-500 hover:bg-amber-600 text-brandDark w-12 h-12 rounded-full shadow-lg border-2 border-brandDark flex items-center justify-center transition transform hover:scale-110" title="Написать на Email">
-            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.818l10 8.118 10-8.118v11.818h-20z"/></svg>
-        </a>
+      </div>
     </div>
 
-    <!-- Скрипт отправки формы -->
-    <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbzZHDur74Ba9bvbRzDDsUjY3KvfrHAn-vGzypemt1C6Ihoa3k1Xoo4WIhETfbFFPSYeKA/exec';
-        const form = document.getElementById('leadForm');
-        const submitBtn = document.getElementById('submitBtn');
+    <!-- ================= 2. Манифест: Хватит ¡basta! ================= -->
+    <section class="wrap section basta" aria-labelledby="basta-title">
+      <div class="head">
+        <h2 id="basta-title" class="basta__title">Хватит <span class="es-word">¡basta!</span></h2>
+      </div>
 
-        form.addEventListener('submit', e => {
-            e.preventDefault();
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Отправка...';
+      <ol class="myths">
+        <li class="myth">
+          <svg class="myth__x" viewBox="0 0 56 56" aria-hidden="true"><path d="M10 9c12 12 23 24 37 38M46 8C34 21 22 33 9 46" fill="none" stroke="var(--color-pen)" stroke-width="5" stroke-linecap="round"/></svg>
+          <div>
+            <p class="myth__quote"><span class="strike">«Indefinido — это совершенный вид, Imperfecto — несовершенный»</span></p>
+            <p>Хватит разбирать 100500 видов сложноподчинённых предложений для Subjuntivo, рыться в куче разрозненных правил — и так и не мочь использовать субхунтив в живой речи.</p>
+          </div>
+        </li>
+        <li class="myth">
+          <svg class="myth__x" viewBox="0 0 56 56" aria-hidden="true"><path d="M9 11c13 11 24 22 38 36M45 9C33 22 21 34 10 45" fill="none" stroke="var(--color-pen)" stroke-width="5" stroke-linecap="round"/></svg>
+          <div>
+            <p class="myth__quote"><span class="strike">«Вот маркер YA — значит, тут точно Pretérito Perfecto Compuesto»</span></p>
+            <p>Маркеры-хамелеоны (ya, antes, hace, desde hace, mientras) подсказывают, но не решают! Время выбирают по смыслу и логике ситуации, а не слепо по слову-сигналу.</p>
+          </div>
+        </li>
+        <li class="myth">
+          <svg class="myth__x" viewBox="0 0 56 56" aria-hidden="true"><path d="M11 9c11 13 22 24 36 37M46 10C35 22 22 33 9 47" fill="none" stroke="var(--color-pen)" stroke-width="5" stroke-linecap="round"/></svg>
+          <div>
+            <p class="myth__quote"><span class="strike">«Я сижу» = «я сажусь»</span></p>
+            <p>Хватит переводить дословно и собирать франкенштейнов вроде <code>Yo seré trabajar</code> — или впихивать английскую логику времён в живой и гибкий испанский язык.</p>
+            <p class="myth__pen">estoy sentado ≠ me siento</p>
+          </div>
+        </li>
+        <li class="myth">
+          <svg class="myth__x" viewBox="0 0 56 56" aria-hidden="true"><path d="M10 10c12 12 24 23 37 37M45 8C34 21 21 34 10 46" fill="none" stroke="var(--color-pen)" stroke-width="5" stroke-linecap="round"/></svg>
+          <div>
+            <p class="myth__quote"><span class="strike">Относиться к испанским глаголам как к английским или русским</span></p>
+            <p>Пора понять три базовые истины, на которых держится вся система.</p>
+          </div>
+        </li>
+      </ol>
 
-            fetch(scriptURL, { method: 'POST', body: new FormData(form), mode: 'no-cors' })
-                .then(() => {
-                    window.location.href = 'lead-thanks.html';
-                })
-                .catch(error => {
-                    console.error('Error!', error.message);
-                    window.location.href = 'lead-thanks.html';
-                });
+      <div class="truths">
+        <article class="truth sketch">
+          <p class="truth__kicker">истина № 1</p>
+          <h3>В испанском много точных глаголов для конкретных действий</h3>
+          <ul class="vocab">
+            <li><b>madrugar</b><span>вставать ни свет ни заря</span></li>
+            <li><b>amamantar</b><span>кормить грудью</span></li>
+            <li><b>estrenar</b><span>надевать или использовать что-то в первый раз</span></li>
+          </ul>
+        </article>
+
+        <article class="truth sketch snyat" aria-labelledby="snyat-h">
+          <p class="truth__kicker">истина № 2 · нажмите</p>
+          <h3 id="snyat-h">Привычный русский глагол подходит не везде</h3>
+          <p class="snyat__word" aria-hidden="true">снять…</p>
+          <div class="snyat__chips" role="group" aria-label="Что снять">
+            <button class="chip" type="button" aria-pressed="true" data-k="0">квартиру</button>
+            <button class="chip" type="button" aria-pressed="false" data-k="1">деньги с карты</button>
+            <button class="chip" type="button" aria-pressed="false" data-k="2">шляпу</button>
+            <button class="chip" type="button" aria-pressed="false" data-k="3">фильм</button>
+            <button class="chip" type="button" aria-pressed="false" data-k="4">напряжение</button>
+            <button class="chip" type="button" aria-pressed="false" data-k="5">на видео</button>
+          </div>
+          <div class="snyat__answer" aria-live="polite">
+            <p class="snyat__verb" id="snyat-verb">alquilar</p>
+            <p class="snyat__ex" id="snyat-ex"><i>Alquilamos un piso en Madrid.</i><span>Мы сняли квартиру в Мадриде.</span></p>
+          </div>
+          <p class="snyat__count"><span id="snyat-seen">1</span> из 6 — и ни одного общего глагола</p>
+        </article>
+
+        <article class="truth sketch dir">
+          <p class="truth__kicker">истина № 3</p>
+          <h3>Направление и фокус меняют сам глагол</h3>
+          <svg class="dir__scene" viewBox="0 0 280 110" aria-hidden="true">
+            <path d="M8 96c60-3 190-3 264 1" fill="none" stroke="var(--color-line-soft)" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="140" cy="30" r="10" fill="var(--color-surface-warm)" stroke="var(--color-line)" stroke-width="2.4"/>
+            <path d="M140 40v28m0-16-12 8m12-8 12 8m-12 16-9 18m9-18 9 18" fill="none" stroke="var(--color-line)" stroke-width="2.4" stroke-linecap="round"/>
+            <text x="140" y="12" text-anchor="middle" style="font-family:var(--font-hand)" font-weight="700" font-size="17" fill="var(--color-text-muted)">я</text>
+            <path d="M14 46c30 0 62 2 98 8m-10-10 10 10-12 6" fill="none" stroke="var(--color-accent-text)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M168 54c30-6 62-8 98-8m-11-8 11 8-10 9" fill="none" stroke="var(--color-accent-text)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="56" y="36" text-anchor="middle" style="font-family:var(--font-hand)" font-weight="700" font-size="22" fill="var(--color-text-strong)">traer · venir</text>
+            <text x="222" y="36" text-anchor="middle" style="font-family:var(--font-hand)" font-weight="700" font-size="22" fill="var(--color-text-strong)">llevar · irse</text>
+          </svg>
+          <p>Одно и то же действие — разные слова в зависимости от направления движения или фокуса:</p>
+          <p class="dir__list"><span>traer</span><span>llevar</span><span>venir</span><span>irse</span><span>sacar</span><span>meter</span></p>
+        </article>
+      </div>
+
+      <div class="basta__end sketch">
+        <svg viewBox="0 0 84 84" aria-hidden="true">
+          <path d="M42 10c-14 0-24 10-24 23 0 9 5 14 9 19 3 3 4 6 4 10h22c0-4 1-7 4-10 4-5 9-10 9-19 0-13-10-23-24-23Z" fill="var(--color-accent)" stroke="var(--color-text-on-ink)" stroke-width="2.6" stroke-linejoin="round"/>
+          <path d="M32 68h20M34 75h16M42 2v-0M14 14l-5-5M70 14l5-5M6 36H1M83 36h-5" fill="none" stroke="var(--color-text-on-ink)" stroke-width="2.6" stroke-linecap="round"/>
+        </svg>
+        <p>Пора прекратить хаос в голове. Испанский — это <span>чёткая, красивая и логичная система смыслов.</span> И мы разберём её до винтика.</p>
+      </div>
+    </section>
+
+    <!-- ================= 3. Для кого ================= -->
+    <section class="wrap section" aria-labelledby="who-title">
+      <div class="head">
+        <h2 id="who-title">Кому подойдёт</h2>
+        <p class="head__note">спойлер: не всем</p>
+      </div>
+      <div class="who">
+        <article class="who__card sketch">
+          <span class="tape" aria-hidden="true"></span>
+          <div class="who__levels"><span>A2</span><span>B1</span><span>B2</span></div>
+          <h3>Студентам</h3>
+          <p>Вы уже знаете базовые правила, но упёрлись в стеклянный потолок в речи, путаете времена в диалогах и хотите раз и навсегда разложить систему глаголов по полочкам (включая маркеры-хамелеоны и подготовку к экзамену DELE).</p>
+          <p class="who__warn">
+            <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><path d="M13 3v13m0 5v1" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/></svg>
+            не для новичков «с нуля»
+          </p>
+        </article>
+        <article class="who__card sketch">
+          <span class="tape" aria-hidden="true"></span>
+          <svg class="who__icon" viewBox="0 0 64 64" aria-hidden="true">
+            <path d="M6 12c10-2 22-2 26 4 4-6 16-6 26-4v40c-10-2-22-2-26 4-4-6-16-6-26-4Z" fill="var(--color-surface)" stroke="var(--color-line)" stroke-width="2.6" stroke-linejoin="round"/>
+            <path d="M32 16v40M12 22c5-1 10-1 14 1M12 30c5-1 10-1 14 1M38 23c4-2 9-2 14-1M38 31c4-2 9-2 14-1" fill="none" stroke="var(--color-line)" stroke-width="2" stroke-linecap="round"/>
+            <path d="M44 4l4 10" fill="none" stroke="var(--color-accent)" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          <h3>Преподавателям испанского</h3>
+          <p>Вам и вашим ученикам станет кристально понятно, как объяснять сложные времена без нудной зубрёжки — на готовых визуальных схемах, историях и логике.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= 4. Что входит и этапы ================= -->
+    <section class="wrap section" aria-labelledby="inc-title">
+      <div class="head">
+        <h2 id="inc-title">Что вы получите и когда</h2>
+      </div>
+      <div class="path">
+        <svg class="path__line" viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true"><path d="M30 20c120-10 240 12 380 2s260-12 400 0 240 10 360-4" fill="none" stroke="var(--color-line)" stroke-width="3" stroke-dasharray="2 12" stroke-linecap="round"/></svg>
+
+        <article class="stop stop--gift">
+          <div class="stop__when">
+            <span class="stop__dot"><svg viewBox="0 0 68 68" aria-hidden="true"><path d="M34 4c17-.4 30 12.6 30 29.8 0 16.6-13.6 30-30.4 30C17 63.8 4 50.2 4.2 33.4 4.4 17.4 18 4.4 34 4Z" fill="var(--color-surface-ink)" stroke="var(--color-line)" stroke-width="2.6"/></svg><svg width="30" height="30" viewBox="0 0 24 24" style="position:relative;color:var(--color-accent)" aria-hidden="true"><use href="#star"/></svg></span>
+            <span class="stop__label">сразу после предзаказа</span>
+          </div>
+          <div class="stop__card sketch">
+            <p class="stop__tag">подарок участникам</p>
+            <h3>Закрытые эфиры по системе времён</h3>
+            <p>Не хотите ждать? Смотрите мои закрытые вебинары по системе испанских глаголов уже сегодня — и начинайте наводить порядок в грамматике.</p>
+            <p class="ticket__note">Ссылки на видео откроются сразу после предзаказа или заполнения анкеты.</p>
+            <a class="btn btn--ink sketch" href="#buy">Получить доступ</a>
+          </div>
+        </article>
+
+        <article class="stop">
+          <div class="stop__when">
+            <span class="stop__dot"><svg viewBox="0 0 68 68" aria-hidden="true"><path d="M34 4c17-.4 30 12.6 30 29.8 0 16.6-13.6 30-30.4 30C17 63.8 4 50.2 4.2 33.4 4.4 17.4 18 4.4 34 4Z" fill="var(--color-accent)" stroke="var(--color-line)" stroke-width="2.6"/></svg><span>2<br>нед.</span></span>
+            <span class="stop__label">модуль 1</span>
+          </div>
+          <div class="stop__card sketch">
+            <p class="stop__tag">PDF + ePub</p>
+            <h3>Справочник-учебник</h3>
+            <p>Все времена от Indicativo до Subjuntivo, глагольные перифразы, многозначные глаголы, маркеры-хамелеоны (ya, antes, hace...) и разговорный хит Испании — <span class="es">pillar</span> во всех бытовых значениях.</p>
+            <ul class="checks">
+              <li><svg width="22" height="22" style="color:var(--color-ok)"><use href="#check"/></svg>Удобно читать с телефона в ePub</li>
+              <li><svg width="22" height="22" style="color:var(--color-ok)"><use href="#check"/></svg>PDF для печати с живыми QR-кодами на аудио и песни</li>
+              <li><svg width="22" height="22" style="color:var(--color-ok)"><use href="#check"/></svg>Разрушаем мифы классических уровней и фишки DELE</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="stop">
+          <div class="stop__when">
+            <span class="stop__dot"><svg viewBox="0 0 68 68" aria-hidden="true"><path d="M34 4c17-.4 30 12.6 30 29.8 0 16.6-13.6 30-30.4 30C17 63.8 4 50.2 4.2 33.4 4.4 17.4 18 4.4 34 4Z" fill="var(--color-surface)" stroke="var(--color-line)" stroke-width="2.6"/></svg><span>3<br>нед.</span></span>
+            <span class="stop__label">модуль 2</span>
+          </div>
+          <div class="stop__card sketch">
+            <p class="stop__tag">веб-кабинет</p>
+            <h3>Закрытая интерактивная платформа</h3>
+            <p>Тренажёры и упражнения, шкала прогресса и трекинг пройденных тем.</p>
+            <ul class="checks">
+              <li><svg width="22" height="22" style="color:var(--color-ok)"><use href="#check"/></svg>Визуальные схемы и живые истории вместо сухой теории</li>
+              <li><svg width="22" height="22" style="color:var(--color-ok)"><use href="#check"/></svg>Автопроверка упражнений и интерактивные блоки</li>
+              <li><svg width="22" height="22" style="color:var(--color-ok)"><use href="#check"/></svg>Аудио и видеоразборы прямо в кабинете</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= 5. История ================= -->
+    <section class="wrap section" aria-labelledby="story-title">
+      <div class="story">
+        <div class="grow" aria-hidden="true">
+          <svg viewBox="0 0 400 320">
+            <g transform="rotate(-8 70 230)">
+              <path d="M30 196c26-2 54-1 80 1l-2 62c-26-1-52-1-78 1Z" fill="var(--color-surface-warm)" stroke="var(--color-line)" stroke-width="2.6" stroke-linejoin="round"/>
+              <path d="M40 212h56M40 224h44M40 236h52M40 248h30" stroke="var(--color-line-soft)" stroke-width="2" stroke-linecap="round"/>
+            </g>
+            <path d="M128 214c26-14 52-18 82-12m-12-10 12 10-14 6" fill="none" stroke="var(--color-line-soft)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="168" y="188" text-anchor="middle" style="font-family:var(--font-hand)" font-weight="700" font-size="22" fill="var(--color-text-muted)">годы</text>
+            <path d="M226 272c46-3 102-3 150 0v28c-48-3-104-3-150 0Z" fill="var(--color-surface-ink)" stroke="var(--color-line)" stroke-width="2.6" stroke-linejoin="round"/>
+            <path d="M232 244c44-4 96-4 140 1v27c-44-3-96-3-140 0Z" fill="var(--color-accent)" stroke="var(--color-line)" stroke-width="2.6" stroke-linejoin="round"/>
+            <path d="M240 214c40-3 86-3 126 1v29c-40-4-86-4-126-1Z" fill="var(--color-surface)" stroke="var(--color-line)" stroke-width="2.6" stroke-linejoin="round"/>
+            <path d="M236 184c44-4 92-3 134 0v30c-42-3-90-3-134 1Z" fill="var(--color-tint)" stroke="var(--color-line)" stroke-width="2.6" stroke-linejoin="round"/>
+            <path d="M244 150c40-3 82-3 120 1v33c-38-3-80-3-120 0Z" fill="var(--color-surface-warm)" stroke="var(--color-line)" stroke-width="2.6" stroke-linejoin="round"/>
+            <text x="304" y="174" text-anchor="middle" style="font-family:var(--font-display)" font-size="15" fill="var(--color-text-strong)">CHULETA</text>
+            <text x="302" y="235" text-anchor="middle" style="font-family:var(--font-display)" font-size="13" fill="var(--color-text-strong)">VERBAL</text>
+            <path d="M292 140c4-12 10-20 20-26M318 128c8-8 16-10 26-10M276 132c-4-10-4-18 0-28" fill="none" stroke="var(--color-accent)" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="story__text">
+          <h2 id="story-title">Как шпаргалка выросла в справочник</h2>
+          <p>Всё началось с обычной карманной шпаргалки — <span class="es">chuleta</span> — для учеников, которым надоело путаться в заковыристых временах и исключениях. Я собирала её годами, оттачивая формулировки, пока листочек не превратился в монументальный труд.</p>
+          <p>Теперь это исчерпывающий курс-справочник: всё, что нужно знать о глаголах и временах испанского языка, разложено по полочкам. Без зубрёжки, сухой теории и академического занудства — только суть, логика и живой язык.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 6. Автор ================= -->
+    <section class="wrap section" aria-labelledby="author-title">
+      <div class="author">
+        <figure class="polaroid">
+          <span class="tape tape--a" aria-hidden="true"></span>
+          <span class="tape tape--b" aria-hidden="true"></span>
+          <img src="DSC06141.jpg" alt="Ксения Северинова, автор Chuleta Verbal" width="600" height="900" loading="lazy" decoding="async">
+          <figcaption>¡Hola! Soy Ksenia</figcaption>
+        </figure>
+        <div>
+          <h2 id="author-title" class="author__name">Ксения Северинова</h2>
+          <ul class="creds">
+            <li><svg width="26" height="26" style="color:var(--color-accent-text)"><use href="#star"/></svg><span>Испанская филология, Universidad de Alcalá de Henares (Мадрид) — один из лучших университетов мира по испанскому языку</span></li>
+            <li><svg width="26" height="26" style="color:var(--color-accent-text)"><use href="#star"/></svg><span>Преподаёт 14 лет, автор EdTech-проектов Bla-Bla e.Spanish и Verboleo</span></li>
+            <li><svg width="26" height="26" style="color:var(--color-accent-text)"><use href="#star"/></svg><span>Бывший переводчик латиноамериканских послов</span></li>
+          </ul>
+          <blockquote class="author__quote">«Мои ученики говорят, что со мной нет шанса не заговорить. Я обожаю сложные случаи и упаковываю грамматику в понятные живые системы — без воды и зубрёжки»</blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 7. Оформление заказа (Вариант Б) ================= -->
+    <section class="wrap section" id="buy" aria-labelledby="buy-title">
+      <div class="ticket sketch">
+        <div class="ticket__main">
+          <h2 id="buy-title">Предзаказ по лучшей цене</h2>
+          <div class="ticket__price">
+            <span class="big" id="ticketBigPrice">4&nbsp;990&nbsp;₽<svg viewBox="0 0 200 100" preserveAspectRatio="none" aria-hidden="true"><path d="M104 6C50 4 6 24 8 52s46 44 98 42 88-18 86-46S140 2 78 10" fill="none" stroke="var(--color-pen)" stroke-width="3" stroke-linecap="round"/></svg></span>
+            <span class="label"><s class="old strike" id="ticketOldPrice">9&nbsp;980&nbsp;₽</s> цена предпродажи −50%</span>
+          </div>
+          <p>Минимальная цена действует только 2 недели ранней предпродажи. После релиза цена поднимется до 7 900 ₽ (79 €), а полная стоимость составит 9 980 ₽ (98 €).</p>
+          <p class="ticket__note">После отправки заказа вы перейдете к оплате и получите мгновенный доступ к закрытым вебинарам.</p>
+        </div>
+
+        <div class="ticket__side">
+          <form id="orderForm" novalidate>
+            <div class="field">
+              <label for="o-name">Ваше имя</label>
+              <input id="o-name" name="name" placeholder="Мария" required>
+              <span class="field__err" id="oe-name" aria-live="polite"></span>
+            </div>
+            <div class="field">
+              <label for="o-contact">Email для материалов</label>
+              <input id="o-contact" name="contact" type="email" placeholder="maria@mail.com" required>
+              <span class="field__err" id="oe-contact" aria-live="polite"></span>
+            </div>
+            <div class="field">
+              <label for="o-phone">Телефон (WhatsApp / Telegram)</label>
+              <input id="o-phone" name="phone" placeholder="+7 ... или +34 ..." required>
+              <span class="field__err" id="oe-phone" aria-live="polite"></span>
+            </div>
+            <div class="field">
+              <label for="o-region">Регион и валюта оплаты</label>
+              <select id="o-region" name="country">
+                <option value="Russia (RUB)">Россия — 4 990 ₽ (в рублях)</option>
+                <option value="Europe / UK (EUR)">Европа / UK — 49 € (в евро)</option>
+              </select>
+            </div>
+
+            <!-- Служебные поля для свода в таблице -->
+            <input type="hidden" name="type" value="Заказ (Попытка оплаты)">
+            <input type="hidden" name="amount" id="orderAmount" value="4 990 RUB">
+
+            <button class="btn btn--main sketch" type="submit" id="orderSubmitBtn">
+              🔥 Перейти к оплате со скидкой 50%
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 8. Анкета предзаписи ================= -->
+    <section class="wrap section" id="leadform" aria-labelledby="lead-title">
+      <div class="lead">
+        <div class="lead__intro">
+          <h2 id="lead-title">Хотите узнать о запуске первыми?</h2>
+          <p style="margin-top:var(--space-5)">Заполните анкету — пришлём уведомление, лучшие условия предпродажи и ссылки на вебинары.</p>
+          <svg class="lead__arrow" width="160" height="70" viewBox="0 0 160 70" aria-hidden="true"><path d="M6 14c40 40 90 46 140 30m-14-14 14 14-18 8" fill="none" stroke="var(--color-line)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+
+        <form class="form sketch" id="leadForm" novalidate>
+          <div class="form__fields">
+            <div class="field">
+              <label for="f-name">Как вас зовут</label>
+              <input id="f-name" name="name" autocomplete="given-name" placeholder="Мария" required>
+              <span class="field__err" id="e-name" aria-live="polite"></span>
+            </div>
+            <div class="field">
+              <label for="f-contact">Email или контакт</label>
+              <input id="f-contact" name="contact" placeholder="@maria или maria@mail.com" required>
+              <span class="field__err" id="e-contact" aria-live="polite"></span>
+            </div>
+            <div class="field">
+              <label for="f-phone">Телефон (WhatsApp / Telegram)</label>
+              <input id="f-phone" name="phone" placeholder="+7 ... или +34 ..." required>
+              <span class="field__err" id="e-phone" aria-live="polite"></span>
+            </div>
+            <div class="field">
+              <label for="f-country">Где вы живёте</label>
+              <select id="f-country" name="country" autocomplete="country-name">
+                <option value="Испания / еврозона">Испания / еврозона</option>
+                <option value="Великобритания">Великобритания</option>
+                <option value="Россия">Россия</option>
+                <option value="Латинская Америка">Латинская Америка</option>
+                <option value="Другая страна">Другая страна</option>
+              </select>
+            </div>
+            
+            <input type="hidden" name="type" value="Предзапись">
+            <input type="hidden" name="amount" value="0">
+
+            <button class="btn btn--main sketch" type="submit" id="leadSubmitBtn">Получить уведомление и бонусы</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ================= 9. Verboleo ================= -->
+    <section class="wrap eco" id="eco" aria-labelledby="eco-title">
+      <h2 id="eco-title" class="sr-only">Что дальше: экосистема Verboleo</h2>
+      <p class="eco__word" aria-hidden="true">
+        <span class="v" style="--i:0">V</span><span style="--i:1">e</span><span style="--i:2">r</span><span style="--i:3">b</span><span style="--i:4">o</span><span style="--i:5">l</span><span style="--i:6">e</span><span style="--i:7">o</span>
+      </p>
+      <div class="eco__cols">
+        <div>
+          <p class="eco__formula">verbo <span class="op">+</span> Bamboleo <span class="op">=</span> Verboleo</p>
+          <p>Я соединила испанское <span class="es">verbo</span> — глагол — с ритмом знаменитой песни <span class="es">Bamboleo</span>. Испанские глаголы — не каторга и не страх ошибиться. Их можно покорить не шатаясь под тяжестью правил, а играючи, легко и танцуя.</p>
+        </div>
+        <div class="steps">
+          <div class="steps__item sketch">
+            <span class="steps__n">1</span>
+            <div><b>Chuleta Verbal</b><span>фундамент — справочник, который вы берёте сейчас</span></div>
+          </div>
+          <div class="steps__item sketch">
+            <span class="steps__n">2</span>
+            <div><b>Платформа Verboleo</b><span>тренировка чанков и полное погружение в живой язык</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot__grid">
+        <div>
+          <p class="foot__name">Ксения Северинова</p>
+          <p>Licenciada en Filología Hispánica, Universidad de Alcalá de Henares, Madrid. Profesora de español, autora de Bla-Bla e.Spanish y Verboleo.</p>
+        </div>
+        <div class="foot__links">
+          <a href="https://t.me/KseniaSevera" target="_blank">Telegram</a>
+          <a href="https://wa.me/5491168169407?text=Здравствуйте,%20Ксения!%20Хочу%20узнать%20про%20Chuleta%20Verbal" target="_blank">WhatsApp</a>
+          <a href="mailto:blablaespanish@gmail.com?subject=Вопрос%20по%20Chuleta%20Verbal">Почта</a>
+        </div>
+      </div>
+      <div class="foot__legal">
+        <span>Mendoza, Argentina — Monotributo</span>
+        <span>© 2026 verboleo.com</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Dock -->
+  <nav class="dock" aria-label="Быстрые действия">
+    <a class="dock__cta btn btn--main sketch" href="#buy">Забрать −50%</a>
+    <a href="https://wa.me/5491168169407?text=Здравствуйте,%20Ксения!%20Хочу%20узнать%20про%20Chuleta%20Verbal" target="_blank" aria-label="WhatsApp">
+      <svg class="ring" width="52" height="52" viewBox="0 0 52 52"><use href="#ring"/></svg>
+      <svg class="ico" width="24" height="24" aria-hidden="true"><use href="#i-wa"/></svg>
+    </a>
+    <a href="https://t.me/KseniaSevera" target="_blank" aria-label="Telegram">
+      <svg class="ring" width="52" height="52" viewBox="0 0 52 52"><use href="#ring"/></svg>
+      <svg class="ico" width="24" height="24" aria-hidden="true"><use href="#i-tg"/></svg>
+    </a>
+    <a href="mailto:blablaespanish@gmail.com?subject=Вопрос%20по%20Chuleta%20Verbal" aria-label="Почта">
+      <svg class="ring" width="52" height="52" viewBox="0 0 52 52"><use href="#ring"/></svg>
+      <svg class="ico" width="24" height="24" aria-hidden="true"><use href="#i-mail"/></svg>
+    </a>
+  </nav>
+
+  <!-- Scripts -->
+  <script>
+    document.documentElement.classList.add('js');
+
+    // Твой актуальный рабочий скрипт Google Таблицы (Версия 4)
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwoqSoLRtYjZU6VfO9XxYMDc98HOb_LxbOUYE-0K5V-ya1fes0JUUksr_LH8ith3DVFPg/exec';
+
+    // Длины рисованных линий для анимации
+    document.querySelectorAll('.draw path').forEach(p => {
+      try { p.style.setProperty('--len', Math.ceil(p.getTotalLength() + 4)); } catch (e) {}
+    });
+
+    // Красная ручка зачёркивает мифы при скролле
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        e.target.classList.add(e.target.id === 'eco' ? 'is-dancing' : 'is-seen');
+        io.unobserve(e.target);
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.myth, #eco').forEach(el => io.observe(el));
+
+    // Появление дока при скролле
+    const onScroll = () => document.body.classList.toggle('is-scrolled', scrollY > innerHeight * 0.9);
+    addEventListener('scroll', onScroll, { passive: true }); onScroll();
+    const inView = new Set();
+    const ioBuy = new IntersectionObserver(es => {
+      es.forEach(e => e.isIntersecting ? inView.add(e.target.id) : inView.delete(e.target.id));
+      document.body.classList.toggle('is-buy', inView.size > 0);
+    }, { threshold: 0.15 });
+    ['buy', 'leadform'].forEach(id => ioBuy.observe(document.getElementById(id)));
+
+    // Интерактив «Снять»
+    const SNYAT = [
+      ['alquilar', 'Alquilamos un piso en Madrid.', 'Мы сняли квартиру в Мадриде.'],
+      ['sacar', 'Saqué dinero del cajero.', 'Я снял деньги в банкомате.'],
+      ['quitarse', 'Quítate el sombrero.', 'Сними шляпу.'],
+      ['rodar', 'Rodaron la película en Mendoza.', 'Фильм сняли в Мендосе.'],
+      ['aliviar', 'El yoga alivia la tensión.', 'Йога снимает напряжение.'],
+      ['grabar', 'Lo grabé con el móvil.', 'Я снял это на телефон.']
+    ];
+    const seen = new Set([0]);
+    const chips = document.querySelectorAll('.chip');
+    chips.forEach(chip => chip.addEventListener('click', () => {
+      const k = +chip.dataset.k;
+      chips.forEach(c => c.setAttribute('aria-pressed', String(c === chip)));
+      const [verb, es, ru] = SNYAT[k];
+      document.getElementById('snyat-verb').textContent = verb;
+      const ex = document.getElementById('snyat-ex');
+      ex.innerHTML = '';
+      const i = document.createElement('i'); i.textContent = es;
+      const s = document.createElement('span'); s.textContent = ru;
+      ex.append(i, s);
+      seen.add(k);
+      document.getElementById('snyat-seen').textContent = seen.size;
+    }));
+
+    // Переключение валюты и цен в блоке заказа (#buy)
+    const orderRegion = document.getElementById('o-region');
+    const orderAmount = document.getElementById('orderAmount');
+    const ticketBigPrice = document.getElementById('ticketBigPrice');
+    const ticketOldPrice = document.getElementById('ticketOldPrice');
+
+    orderRegion.addEventListener('change', () => {
+      if (orderRegion.value.includes('EUR')) {
+        ticketBigPrice.innerHTML = '49&nbsp;€<svg viewBox="0 0 200 100" preserveAspectRatio="none" aria-hidden="true"><path d="M104 6C50 4 6 24 8 52s46 44 98 42 88-18 86-46S140 2 78 10" fill="none" stroke="var(--color-pen)" stroke-width="3" stroke-linecap="round"/></svg>';
+        ticketOldPrice.textContent = '98 €';
+        orderAmount.value = '49 EUR';
+      } else {
+        ticketBigPrice.innerHTML = '4&nbsp;990&nbsp;₽<svg viewBox="0 0 200 100" preserveAspectRatio="none" aria-hidden="true"><path d="M104 6C50 4 6 24 8 52s46 44 98 42 88-18 86-46S140 2 78 10" fill="none" stroke="var(--color-pen)" stroke-width="3" stroke-linecap="round"/></svg>';
+        ticketOldPrice.textContent = '9 980 ₽';
+        orderAmount.value = '4 990 RUB';
+      }
+    });
+
+    // Обработка формы заказа (#orderForm) -> Таблица -> thanks.html
+    const orderForm = document.getElementById('orderForm');
+    const orderSubmitBtn = document.getElementById('orderSubmitBtn');
+
+    orderForm.addEventListener('submit', ev => {
+      ev.preventDefault();
+      const name = orderForm.elements.name, contact = orderForm.elements.contact, phone = orderForm.elements.phone;
+      const checks = [
+        [name, 'oe-name', name.value.trim() ? '' : 'Напишите, как к вам обращаться'],
+        [contact, 'oe-contact', contact.value.trim() ? '' : 'Укажите email для отправки книги'],
+        [phone, 'oe-phone', phone.value.trim() ? '' : 'Укажите номер WhatsApp / Telegram']
+      ];
+      let firstBad = null;
+      checks.forEach(([input, id, msg]) => {
+        input.closest('.field').classList.toggle('is-error', !!msg);
+        document.getElementById(id).textContent = msg;
+        if (msg && !firstBad) firstBad = input;
+      });
+      if (firstBad) { firstBad.focus(); return; }
+
+      orderSubmitBtn.disabled = true;
+      orderSubmitBtn.textContent = 'Оформляем...';
+
+      fetch(scriptURL, { method: 'POST', body: new FormData(orderForm), mode: 'no-cors' })
+        .then(() => { window.location.href = 'thanks.html'; })
+        .catch(err => {
+          console.error(err);
+          window.location.href = 'thanks.html';
         });
-    </script>
+    });
+
+    // Обработка анкеты (#leadForm) -> Таблица -> lead-thanks.html
+    const leadForm = document.getElementById('leadForm');
+    const leadSubmitBtn = document.getElementById('leadSubmitBtn');
+
+    leadForm.addEventListener('submit', ev => {
+      ev.preventDefault();
+      const name = leadForm.elements.name, contact = leadForm.elements.contact, phone = leadForm.elements.phone;
+      const checks = [
+        [name, 'e-name', name.value.trim() ? '' : 'Напишите, как к вам обращаться'],
+        [contact, 'e-contact', contact.value.trim() ? '' : 'Укажите email или ник в мессенджере'],
+        [phone, 'e-phone', phone.value.trim() ? '' : 'Укажите номер WhatsApp / Telegram']
+      ];
+      let firstBad = null;
+      checks.forEach(([input, id, msg]) => {
+        input.closest('.field').classList.toggle('is-error', !!msg);
+        document.getElementById(id).textContent = msg;
+        if (msg && !firstBad) firstBad = input;
+      });
+      if (firstBad) { firstBad.focus(); return; }
+
+      leadSubmitBtn.disabled = true;
+      leadSubmitBtn.textContent = 'Отправка...';
+
+      fetch(scriptURL, { method: 'POST', body: new FormData(leadForm), mode: 'no-cors' })
+        .then(() => { window.location.href = 'lead-thanks.html'; })
+        .catch(err => {
+          console.error(err);
+          window.location.href = 'lead-thanks.html';
+        });
+    });
+  </script>
 </body>
 </html>
