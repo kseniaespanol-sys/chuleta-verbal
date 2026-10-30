@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Спасибо за предзаказ! | Chuleta Verbal</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Dela+Gothic+One&family=Golos+Text:wght@400;500;600;700&display=swap">
+  <style>
+/* Verboleo — тетрадь в клетку, фиолетовые чернила, оранжевый маркер, красная ручка преподавателя.
+   Шрифты — Google Fonts, подключаются ссылкой в <head> прототипа:
+   https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Dela+Gothic+One&family=Golos+Text:wght@400;500;600;700&display=swap */
+
+/* Слой 1. Палитра — единственное место, где цвета записаны значениями. */
+:root {
+  --palette-paper: #f9f8f4;
+  --palette-paper-warm: #fff8e8;
+  --palette-sheet: #ffffff;
+  --palette-grid: #e2e9f2;
+  --palette-grid-strong: #c9d6e6;
+  --palette-ink-900: #2b1744;
+  --palette-ink-700: #3a2052;
+  --palette-ink-500: #6a5683;
+  --palette-ink-300: #b7aac6;
+  --palette-ink-100: #ece6f2;
+  --palette-marigold-300: #ffd98a;
+  --palette-marigold-500: #f2a93b;
+  --palette-marigold-700: #b86f0c;
+  --palette-red-500: #e0442e;
+  --palette-red-100: #fde7e2;
+  --palette-red-700: #b42a18;
+  --palette-mint-500: #2f9e6e;
+}
+
+/* Слой 2. Смысловые токены ссылаются только на палитру. */
+:root {
+  --color-bg: var(--palette-paper);
+  --color-grid: var(--palette-grid);
+  --color-grid-strong: var(--palette-grid-strong);
+  --color-surface: var(--palette-sheet);
+  --color-surface-warm: var(--palette-paper-warm);
+  --color-surface-ink: var(--palette-ink-700);
+  --color-text: var(--palette-ink-700);
+  --color-text-strong: var(--palette-ink-900);
+  --color-text-muted: var(--palette-ink-500);
+  --color-text-on-ink: var(--palette-paper);
+  --color-text-on-ink-muted: var(--palette-ink-300);
+  --color-line: var(--palette-ink-700);
+  --color-line-soft: var(--palette-ink-300);
+  --color-tint: var(--palette-ink-100);
+  --color-accent: var(--palette-marigold-500);
+  --color-accent-soft: var(--palette-marigold-300);
+  --color-accent-text: var(--palette-marigold-700);
+  --color-pen: var(--palette-red-500);
+  --color-pen-soft: var(--palette-red-100);
+  --color-pen-text: var(--palette-red-700);
+  --color-ok: var(--palette-mint-500);
+  --color-focus: var(--palette-red-500);
+
+  /* Шрифты: плакатный для заголовков, рукописный для пометок, гротеск для текста. */
+  --font-display: 'Dela Gothic One', 'Arial Black', system-ui, sans-serif;
+  --font-hand: 'Caveat', 'Segoe Print', 'Bradley Hand', cursive;
+  --font-body: 'Golos Text', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Шкала 1.25 от 17 px; display — отдельные плакатные размеры. */
+  --text-xs: 0.8125rem;
+  --text-sm: 0.9375rem;
+  --text-md: 1.0625rem;
+  --text-lg: 1.3125rem;
+  --text-xl: 1.625rem;
+  --text-2xl: clamp(1.875rem, 1.3rem + 2.2vw, 2.75rem);
+  --text-h2-compact: clamp(2rem, 1.3rem + 2.4vw, 3.25rem);
+  --text-done: clamp(2.5rem, 1.4rem + 3.4vw, 4rem);
+  --text-price: clamp(2.75rem, 1.6rem + 4.6vw, 5.5rem);
+  --text-3xl: clamp(2.5rem, 1.4rem + 4.6vw, 4.75rem);
+  --text-hero: clamp(3.25rem, 1.2rem + 9vw, 8.5rem);
+  --text-hand-xs: 1.1rem;
+  --text-hand-sm: 1.4rem;
+  --text-hand-md: 1.6rem;
+  --text-hand-xl: 2rem;
+  --text-display-sm: 2.4rem;
+  --text-sticker-sm: 1.35rem;
+  --text-hand-lg: clamp(1.75rem, 1.3rem + 1.6vw, 2.5rem);
+  --leading-tight: 1.02;
+  --leading-snug: 1.25;
+  --leading-body: 1.6;
+
+  /* Отступы, шаг 4 px. Клетка фона — 28 px. */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 72px;
+  --space-9: 112px;
+  --grid-cell: 28px;
+  --page-max: 1200px;
+  --gutter: clamp(16px, 4vw, 40px);
+  --measure: 64ch;
+
+  /* Рисованные контуры: толщина, сдвиг штрихованной тени, неровные радиусы. */
+  --stroke: 2.5px;
+  --stroke-bold: 3px;
+  --shadow-offset: 7px;
+  --radius-sketch: 18px 7px 20px 6px / 6px 20px 7px 18px;
+  --radius-sketch-alt: 7px 20px 6px 18px / 18px 6px 20px 7px;
+  --radius-chip: 12px 5px 13px 4px / 4px 13px 5px 12px;
+  --radius-pill: 999px;
+
+  /* Движение. */
+  --dur-1: 120ms;
+  --dur-2: 220ms;
+  --dur-3: 480ms;
+  --dur-draw: 900ms;
+  --ease-out: cubic-bezier(.2, .8, .2, 1);
+  --ease-spring: cubic-bezier(.34, 1.56, .64, 1);
+}
+
+</style>
+  <style>
+/* Общие стили сайта Verboleo: база, рисованные приёмы, кнопки, лента, шапка, подвал. Подключают все страницы после tokens.css. */
+/* ---------- База ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: clip; }
+body {
+  margin: 0;
+  font: 400 var(--text-md)/var(--leading-body) var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  background-image:
+    linear-gradient(to right, var(--color-grid) 1px, transparent 1px),
+    linear-gradient(var(--color-grid) 1px, transparent 1px);
+  background-size: var(--grid-cell) var(--grid-cell);
+  overflow-x: clip;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+p { margin: 0 0 var(--space-4); }
+h1, h2, h3 { margin: 0; color: var(--color-text-strong); font-weight: 400; text-wrap: balance; }
+h2 { font-family: var(--font-display); font-size: var(--text-3xl); line-height: var(--leading-tight); letter-spacing: -0.01em; }
+h3 { font-family: var(--font-body); font-weight: 700; font-size: var(--text-xl); line-height: var(--leading-snug); }
+em { font-style: italic; }
+:focus-visible { outline: 3px solid var(--color-focus); outline-offset: 3px; border-radius: 6px; }
+.only-narrow { display: none; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.wrap { width: min(100% - 2 * var(--gutter), var(--page-max)); margin-inline: auto; }
+.hand { font-family: var(--font-hand); font-weight: 700; line-height: 1.1; }
+.es { font-style: italic; font-weight: 600; color: var(--color-text-strong); }
+
+/* ---------- Рисованные приёмы ---------- */
+/* Неровная обводка и штриховая тень — псевдоэлементы с фильтром #rough, текст не искажается. */
+.sketch { position: relative; isolation: isolate; }
+.sketch::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: var(--sk-bg, var(--color-surface));
+  border: var(--stroke) solid var(--color-line);
+  border-radius: var(--sk-radius, var(--radius-sketch));
+  filter: url(#rough);
+}
+.sketch::after {
+  content: ""; position: absolute; inset: 0; z-index: -2;
+  transform: translate(var(--sk-shadow, var(--shadow-offset)), var(--sk-shadow, var(--shadow-offset)));
+  border-radius: var(--sk-radius, var(--radius-sketch));
+  background: repeating-linear-gradient(-45deg, var(--color-line) 0 1.6px, transparent 1.6px 6px);
+  filter: url(#rough);
+  transition: transform var(--dur-1) var(--ease-out);
+}
+.tape {
+  position: absolute; width: 96px; height: 26px; z-index: 3;
+  background: color-mix(in srgb, var(--color-accent-soft) 75%, transparent);
+  border-left: 2px dashed color-mix(in srgb, var(--color-accent) 70%, transparent);
+  border-right: 2px dashed color-mix(in srgb, var(--color-accent) 70%, transparent);
+  box-shadow: 0 1px 0 rgba(58, 32, 82, .08);
+}
+.marker {
+  background: linear-gradient(transparent 52%, color-mix(in srgb, var(--color-accent-soft) 90%, transparent) 52%, color-mix(in srgb, var(--color-accent-soft) 90%, transparent) 90%, transparent 90%);
+  padding-inline: .1em; box-decoration-break: clone; -webkit-box-decoration-break: clone;
+}
+.draw path { stroke-dasharray: var(--len, 1200); stroke-dashoffset: 0; }
+
+/* ---------- Кнопки ---------- */
+.btn {
+  --sk-shadow: 5px; --sk-radius: 14px 6px 16px 5px / 5px 16px 6px 14px;
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 56px; padding: 14px 26px;
+  font: 700 var(--text-md)/1.2 var(--font-body); color: var(--color-text-strong);
+  text-decoration: none; cursor: pointer; border: 0; background: none;
+  transition: transform var(--dur-1) var(--ease-out);
+}
+.btn--main { --sk-bg: var(--color-accent); }
+.btn--paper { --sk-bg: var(--color-surface); }
+.btn--ink { --sk-bg: var(--color-surface-ink); color: var(--color-text-on-ink); }
+.btn:hover { transform: translate(-1px, -1px); }
+.btn:hover::after { transform: translate(7px, 7px); }
+.btn:active { transform: translate(4px, 4px); }
+.btn:active::after { transform: translate(1px, 1px); }
+.btn svg { flex: none; }
+
+/* ---------- Лента предпродажи ---------- */
+.ribbon {
+  background: var(--color-surface-ink); color: var(--color-text-on-ink);
+  font-size: var(--text-sm); text-align: center; padding: 10px var(--gutter);
+}
+.ribbon b { color: var(--color-accent); font-weight: 700; }
+
+/* ---------- Шапка ---------- */
+.top { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); padding-block: var(--space-5); }
+.logo { display: flex; align-items: center; gap: var(--space-4); text-decoration: none; }
+.logo__label {
+  --sk-bg: var(--color-accent); --sk-shadow: 4px; --sk-radius: 6px 3px 7px 3px / 3px 7px 3px 6px;
+  font-family: var(--font-display); font-size: var(--text-hand-xs); line-height: 1; padding: 10px 14px 9px; transform: rotate(-2deg); color: var(--color-text-strong);
+}
+.logo__by { font-family: var(--font-hand); font-size: var(--text-hand-sm); font-weight: 700; color: var(--color-text-muted); line-height: 1; }
+.top .btn { min-height: 48px; padding: 10px 20px; font-size: var(--text-sm); }
+.top__end { display: flex; align-items: center; gap: var(--space-5); }
+.top__contacts { display: flex; gap: 6px; }
+.top__contacts a { width: 44px; height: 44px; display: grid; place-items: center; color: var(--color-text-strong); border: 2px solid var(--color-line); border-radius: 50% 46% 52% 44% / 48% 54% 44% 50%; background: var(--color-surface); transition: transform var(--dur-1) var(--ease-out); }
+.top__contacts a:hover { transform: rotate(-8deg); }
+
+/* ---------- Подвал ---------- */
+.foot { background: var(--color-surface-ink); color: var(--color-text-on-ink); padding: var(--space-8) 0 calc(var(--space-7) + 60px); position: relative; }
+.foot::before { content: ""; position: absolute; left: 0; right: 0; top: -18px; height: 20px; background: var(--color-surface-ink); clip-path: polygon(0 60%, 4% 30%, 9% 70%, 14% 25%, 20% 65%, 26% 35%, 31% 75%, 37% 30%, 43% 60%, 49% 20%, 55% 70%, 61% 35%, 67% 65%, 72% 25%, 78% 70%, 84% 40%, 90% 65%, 95% 30%, 100% 55%, 100% 100%, 0 100%); }
+.foot__grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--space-7); align-items: end; }
+.foot .foot__name { font-family: var(--font-display); font-size: var(--text-xl); color: var(--color-text-on-ink); margin-bottom: var(--space-3); }
+.foot p { color: var(--color-text-on-ink-muted); font-size: var(--text-sm); max-width: 60ch; }
+.foot__links { display: flex; flex-wrap: wrap; gap: var(--space-3); justify-content: flex-end; }
+.foot__links a { font-weight: 600; font-size: var(--text-sm); padding: 8px 14px; border: 2px solid var(--color-text-on-ink-muted); border-radius: var(--radius-chip); text-decoration: none; }
+.foot__links a:hover { border-color: var(--color-accent); color: var(--color-accent); }
+.foot__legal { margin-top: var(--space-6); padding-top: var(--space-5); border-top: 1.5px dashed color-mix(in srgb, var(--color-text-on-ink-muted) 35%, transparent); display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-3); font-size: var(--text-xs); color: var(--color-text-on-ink-muted); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn, .sketch::after, .top__contacts a { transition: none !important; }
+}
+@media (max-width: 720px) {
+  body { font-size: var(--text-md); }
+  .top { padding-block: var(--space-4); }
+  .logo__by { display: none; }
+  .logo__label { white-space: nowrap; }
+  .only-wide { display: none; }
+  .only-narrow { display: inline; }
+  .top__contacts { display: none; }
+  .top .btn { padding: 8px 14px; min-height: 44px; }
+  .ribbon { font-size: var(--text-xs); }
+  .foot__grid { grid-template-columns: 1fr; }
+  .foot__links { justify-content: flex-start; }
+}
+
+</style>
+  <style>
+    /* ---------- Первый экран: штамп и благодарность ---------- */
+    .done { position: relative; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: var(--space-8); align-items: center; padding-block: var(--space-7) var(--space-9); }
+    .stamp { position: relative; width: 184px; height: 184px; display: grid; place-items: center; margin-bottom: var(--space-5); color: var(--color-ok); transform: rotate(-10deg); }
+    .stamp svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+    .stamp span { position: relative; font-family: var(--font-display); font-size: var(--text-lg); line-height: 1; text-align: center; }
+    .stamp small { display: block; font-family: var(--font-hand); font-weight: 700; font-size: var(--text-hand-sm); }
+    .done h1 { font-family: var(--font-display); font-size: var(--text-done); line-height: var(--leading-tight); letter-spacing: -0.01em; }
+    .done h1 .marker { padding-inline: .05em; }
+    .done__lead { max-width: 30em; margin-top: var(--space-5); font-size: var(--text-lg); line-height: 1.5; }
+    .done__lead b { color: var(--color-text-strong); }
+
+    /* Что дальше: шаги — настоящая последовательность, поэтому с номерами */
+    .next { --sk-bg: linear-gradient(90deg, transparent 22px, color-mix(in srgb, var(--color-pen) 45%, transparent) 22px 24px, transparent 24px), repeating-linear-gradient(transparent 0 35px, var(--color-grid-strong) 35px 36px) 0 10px, var(--color-surface-warm); --sk-shadow: 10px; padding: 40px 32px 32px 48px; transform: rotate(1.5deg); }
+    .next .tape { top: -13px; left: 40%; transform: rotate(-3deg); }
+    .next h2 { font-family: var(--font-hand); font-weight: 700; font-size: var(--text-hand-xl); line-height: 1; margin-bottom: var(--space-5); }
+    .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-5); counter-reset: step; }
+    .step { display: grid; grid-template-columns: 36px minmax(0, 1fr); gap: var(--space-4); align-items: start; }
+    .step__box { position: relative; width: 32px; height: 32px; margin-top: 2px; color: var(--color-text-strong); }
+    .step__box svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+    .step__when { display: block; font-weight: 600; font-size: var(--text-sm); color: var(--color-accent-text); }
+    .step__what { display: block; font-size: var(--text-md); line-height: 1.45; color: var(--color-text); }
+    .step--done .step__what { color: var(--color-text-strong); font-weight: 600; }
+
+    /* ---------- Вопросы ---------- */
+    .help { padding-bottom: var(--space-9); }
+    .help__card { --sk-bg: var(--color-surface); max-width: 920px; padding: var(--space-7) clamp(22px, 5vw, 56px); display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-5); }
+    .help__card h2 { font-family: var(--font-display); font-size: var(--text-2xl); line-height: 1.1; margin-bottom: var(--space-3); }
+    .help__card p { margin: 0; color: var(--color-text-muted); max-width: 36em; }
+    .help__links { display: flex; flex-wrap: wrap; gap: var(--space-3) var(--space-4); }
+    .help__links .btn { min-height: 52px; padding: 12px 20px; }
+    .back { display: inline-flex; align-items: center; gap: 10px; margin-top: var(--space-7); font-weight: 600; color: var(--color-text-strong); text-decoration: none; }
+    .back svg { transition: transform var(--dur-1) var(--ease-out); }
+    .back:hover svg { transform: translateX(-4px); }
+    .back span { border-bottom: 2px solid var(--color-accent); }
+
+    /* ---------- Праздник: рисованные звёзды и завитки, один раз ---------- */
+    .party { position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: -1; }
+    .party i { position: absolute; top: var(--y); left: var(--x); width: var(--s); height: var(--s); color: var(--c); transform: rotate(var(--r)); }
+    .party svg { width: 100%; height: 100%; display: block; }
+    @media (prefers-reduced-motion: no-preference) {
+      .js .stamp { animation: stamp 520ms var(--ease-spring) .15s both; }
+      .js .stamp .tick { stroke-dashoffset: var(--len); animation: draw 700ms var(--ease-out) .55s forwards; }
+      .js .party i { animation: fall 1.6s var(--ease-out) both; animation-delay: var(--d); }
+    }
+    @keyframes stamp { from { opacity: 0; transform: rotate(-24deg) scale(1.8); } to { opacity: 1; transform: rotate(-10deg) scale(1); } }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    @keyframes fall { from { opacity: 0; transform: translateY(-60px) rotate(calc(var(--r) - 90deg)); } to { opacity: 1; transform: rotate(var(--r)); } }
+    .stamp .tick { stroke-dasharray: var(--len); }
+
+    @media (max-width: 1020px) {
+      .done { grid-template-columns: minmax(0, 1fr); gap: var(--space-8); }
+    }
+    @media (max-width: 720px) {
+      .done { padding-top: var(--space-4); gap: var(--space-7); }
+      .stamp { width: 140px; height: 140px; }
+      .stamp span { font-size: var(--text-md); }
+      .next { padding: 34px 20px 26px 40px; transform: rotate(1deg); }
+      .help__links .btn { width: 100%; justify-content: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <filter id="rough" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="7" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="3.2" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <symbol id="star" viewBox="0 0 24 24"><path d="M12 2.5c.6 3.9 1.8 6.9 9.5 9.4-6.9 1.5-8.6 3.8-9.4 9.6-1-5.6-2.9-8.2-9.6-9.4 6.6-2 8.6-4.5 9.5-9.6Z" fill="currentColor"/></symbol>
+    <symbol id="curl" viewBox="0 0 24 24"><path d="M3 16c3-7 8-9 9-5s-4 6-5 2 5-9 13-7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12 3.2c-5 0-9 3.7-9 8.4 0 1.7.5 3.3 1.5 4.6L3.6 20.6l4.6-1.3c1.2.6 2.5.9 3.8.9 5 0 9-3.8 9-8.6 0-4.7-4-8.4-9-8.4Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M9 9.2c.2 2.6 2.6 5.3 5.8 5.8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+    <symbol id="i-tg" viewBox="0 0 24 24"><path d="M3 11.6 20.6 4.2c.6-.2 1.1.3 1 .9l-3 14.2c-.1.6-.8.9-1.3.5l-4.6-3.5-2.4 2.4c-.3.3-.8.1-.8-.3l.2-3.6L17.4 8.2 7.6 13.8 3.3 12.6c-.6-.2-.6-.8-.3-1Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3.5 6.2c5.6-.4 11.4-.4 17 0 .3 4 .3 7.8 0 11.6-5.6.4-11.4.4-17 0-.3-3.8-.3-7.6 0-11.6Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M4 7c3 3 5.4 5 8 6.2C14.6 12 17 10 20 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+    <symbol id="box" viewBox="0 0 32 32"><path d="M5 6c7-1 15-1 22 0 1 7 1 14 0 21-7 1-15 1-22 0-1-7-1-14 0-21Z" fill="var(--color-surface)" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></symbol>
+  </svg>
+
+  <header class="wrap top">
+    <a class="logo" href="index.html">
+      <span class="logo__label sketch">Chuleta Verbal</span>
+      <span class="logo__by">Bla-Bla e.Spanish con Ksenia</span>
+    </a>
+    <div class="top__end">
+      <nav class="top__contacts" aria-label="Написать Ксении">
+        <a href="https://wa.me/5491168169407?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5,%20%D0%9A%D1%81%D0%B5%D0%BD%D0%B8%D1%8F!%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%20Chuleta%20Verbal" aria-label="WhatsApp"><svg width="22" height="22" aria-hidden="true"><use href="#i-wa"/></svg></a>
+        <a href="https://t.me/KseniaSevera" aria-label="Telegram"><svg width="22" height="22" aria-hidden="true"><use href="#i-tg"/></svg></a>
+        <a href="mailto:blablaespanish@gmail.com?subject=%D0%92%D0%BE%D0%BF%D1%80%D0%BE%D1%81%20%D0%BF%D0%BE%20Chuleta%20Verbal" aria-label="Почта"><svg width="22" height="22" aria-hidden="true"><use href="#i-mail"/></svg></a>
+      </nav>
+      <a class="btn btn--paper sketch" href="index.html">На главную</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="wrap done" aria-labelledby="done-title">
+      <div class="party" aria-hidden="true">
+        <i style="--x:64%;--y:34%;--s:26px;--r:-12deg;--c:var(--color-accent);--d:.1s"><svg><use href="#star"/></svg></i>
+        <i style="--x:38%;--y:2%;--s:34px;--r:20deg;--c:var(--color-line-soft);--d:.25s"><svg><use href="#curl"/></svg></i>
+        <i style="--x:52%;--y:16%;--s:18px;--r:8deg;--c:var(--color-accent);--d:.4s"><svg><use href="#star"/></svg></i>
+        <i style="--x:93%;--y:4%;--s:30px;--r:-24deg;--c:var(--color-accent);--d:.2s"><svg><use href="#star"/></svg></i>
+        <i style="--x:88%;--y:82%;--s:36px;--r:150deg;--c:var(--color-line-soft);--d:.5s"><svg><use href="#curl"/></svg></i>
+        <i style="--x:45%;--y:88%;--s:22px;--r:30deg;--c:var(--color-accent);--d:.35s"><svg><use href="#star"/></svg></i>
+        <i style="--x:2%;--y:70%;--s:20px;--r:-40deg;--c:var(--color-line-soft);--d:.45s"><svg><use href="#star"/></svg></i>
+      </div>
+
+      <div>
+        <div class="stamp" aria-hidden="true">
+          <svg viewBox="0 0 168 168">
+            <path d="M84 8c42-1 76 33 76 75 0 43-34 77-77 77C41 160 7 126 8 83 9 42 42 9 84 8Z" fill="none" stroke="currentColor" stroke-width="4"/>
+            <path d="M84 22c34-1 62 27 62 61s-28 63-62 63-62-28-62-62 28-61 62-62Z" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="3 7" stroke-linecap="round"/>
+            <path class="tick" style="--len:120" d="M54 112c8 5 13 11 17 18 12-24 26-40 46-54" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity=".28"/>
+          </svg>
+          <span>¡Pagado!<small>оплачено</small></span>
+        </div>
+        <h1 id="done-title">Оплата прошла <span class="marker">успешно!</span></h1>
+        <p class="done__lead">Огромное спасибо за доверие! Вы в числе участников <b>ранней предпродажи</b> проекта Chuleta Verbal.</p>
+      </div>
+
+      <section class="next sketch" aria-labelledby="next-title">
+        <span class="tape" aria-hidden="true"></span>
+        <h2 id="next-title">Что дальше?</h2>
+        <ol class="steps">
+          <li class="step step--done">
+            <span class="step__box" aria-hidden="true"><svg viewBox="0 0 32 32"><use href="#box"/><path d="M7 16c4 2 6 5 8 9 4-9 9-16 17-22" fill="none" stroke="var(--color-ok)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <div><span class="step__when">Уже сейчас</span><span class="step__what">Вся информация и чек отправлены на вашу электронную почту.</span></div>
+          </li>
+          <li class="step">
+            <span class="step__box" aria-hidden="true"><svg viewBox="0 0 32 32"><use href="#box"/></svg></span>
+            <div><span class="step__when">Через 2 недели</span><span class="step__what">Справочник (PDF + ePub) прилетит к вам на почту.</span></div>
+          </li>
+          <li class="step">
+            <span class="step__box" aria-hidden="true"><svg viewBox="0 0 32 32"><use href="#box"/></svg></span>
+            <div><span class="step__when">Через 3 недели</span><span class="step__what">Откроется доступ к закрытой интерактивной платформе.</span></div>
+          </li>
+        </ol>
+      </section>
+    </section>
+
+    <section class="wrap help" aria-labelledby="help-title">
+      <div class="help__card sketch">
+        <div>
+          <h2 id="help-title">Остались вопросы?</h2><!-- [текст] заголовок; подпись ниже — с живой страницы -->
+          <p>Если что-то пошло не так, напишите мне любым удобным способом.</p>
+        </div>
+        <div class="help__links">
+          <a class="btn btn--main sketch" href="https://wa.me/5491168169407?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5,%20%D0%9A%D1%81%D0%B5%D0%BD%D0%B8%D1%8F!%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%20Chuleta%20Verbal"><svg width="22" height="22" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
+          <a class="btn btn--ink sketch" href="https://t.me/KseniaSevera"><svg width="22" height="22" aria-hidden="true"><use href="#i-tg"/></svg>Telegram</a>
+          <a class="btn btn--paper sketch" href="mailto:blablaespanish@gmail.com?subject=%D0%92%D0%BE%D0%BF%D1%80%D0%BE%D1%81%20%D0%BF%D0%BE%20Chuleta%20Verbal"><svg width="22" height="22" aria-hidden="true"><use href="#i-mail"/></svg>Почта</a>
+        </div>
+      </div>
+      <a class="back" href="index.html">
+        <svg width="28" height="16" viewBox="0 0 28 16" aria-hidden="true"><path d="M26 9C18 8 10 8 3 8m6-6L3 8l6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Вернуться на главную страницу</span>
+      </a>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot__grid">
+        <div>
+          <p class="foot__name">Ксения Северинова</p>
+          <p>Licenciada en Filología Hispánica, Universidad de Alcalá de Henares, Madrid. Profesora de español, autora de Bla-Bla e.Spanish y Verboleo.</p>
+        </div>
+        <div class="foot__links">
+          <a href="https://t.me/KseniaSevera">Telegram</a>
+          <a href="https://wa.me/5491168169407?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5,%20%D0%9A%D1%81%D0%B5%D0%BD%D0%B8%D1%8F!%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%20Chuleta%20Verbal">WhatsApp</a>
+          <a href="mailto:blablaespanish@gmail.com?subject=%D0%92%D0%BE%D0%BF%D1%80%D0%BE%D1%81%20%D0%BF%D0%BE%20Chuleta%20Verbal">Почта</a>
+        </div>
+      </div>
+      <div class="foot__legal">
+        <span>Mendoza, Argentina — Monotributo</span>
+        <span>© 2026 verboleo.com</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.documentElement.classList.add('js');
+  </script>
+</body>
+</html>
