@@ -1,51 +1,263 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Спасибо за заявку! | Verboleo</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body {
-            background-color: #F9F8F6;
-            font-family: system-ui, sans-serif;
-            color: #2D3748;
-        }
-        .paper-card {
-            background: #ffffff;
-            border: 2px solid #4A2E65;
-            box-shadow: 4px 4px 0px #4A2E65;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Вы в списке предзаписи! | Chuleta Verbal</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Dela+Gothic+One&family=Golos+Text:wght@400;500;600;700&display=swap">
+  
+  <style>
+:root {
+  --palette-paper: #f9f8f4;
+  --palette-paper-warm: #fff8e8;
+  --palette-sheet: #ffffff;
+  --palette-grid: #e2e9f2;
+  --palette-grid-strong: #c9d6e6;
+  --palette-ink-900: #2b1744;
+  --palette-ink-700: #3a2052;
+  --palette-ink-500: #6a5683;
+  --palette-ink-300: #b7aac6;
+  --palette-ink-100: #ece6f2;
+  --palette-marigold-300: #ffd98a;
+  --palette-marigold-500: #f2a93b;
+  --palette-marigold-700: #b86f0c;
+  --palette-red-500: #e0442e;
+  --palette-red-100: #fde7e2;
+  --palette-red-700: #b42a18;
+  --palette-mint-500: #2f9e6e;
+
+  --color-bg: var(--palette-paper);
+  --color-grid: var(--palette-grid);
+  --color-surface: var(--palette-sheet);
+  --color-surface-warm: var(--palette-paper-warm);
+  --color-surface-ink: var(--palette-ink-700);
+  --color-text: var(--palette-ink-700);
+  --color-text-strong: var(--palette-ink-900);
+  --color-text-muted: var(--palette-ink-500);
+  --color-text-on-ink: var(--palette-paper);
+  --color-text-on-ink-muted: var(--palette-ink-300);
+  --color-line: var(--palette-ink-700);
+  --color-line-soft: var(--palette-ink-300);
+  --color-accent: var(--palette-marigold-500);
+  --color-accent-soft: var(--palette-marigold-300);
+  --color-accent-text: var(--palette-marigold-700);
+  --color-pen: var(--palette-red-500);
+  --color-ok: var(--palette-mint-500);
+
+  --font-display: 'Dela Gothic One', system-ui, sans-serif;
+  --font-hand: 'Caveat', cursive;
+  --font-body: 'Golos Text', system-ui, sans-serif;
+
+  --text-sm: 0.9375rem;
+  --text-md: 1.0625rem;
+  --text-lg: 1.3125rem;
+  --text-xl: 1.625rem;
+  --text-done: clamp(2.2rem, 1.4rem + 3vw, 3.6rem);
+  --text-hand-sm: 1.4rem;
+  --text-hand-xl: 2rem;
+
+  --space-3: 12px; --space-4: 16px; --space-5: 24px; --space-6: 32px; --space-7: 48px; --space-8: 72px;
+  --grid-cell: 28px; --page-max: 1100px; --gutter: clamp(16px, 4vw, 40px);
+
+  --stroke: 2.5px;
+  --shadow-offset: 7px;
+  --radius-sketch: 18px 7px 20px 6px / 6px 20px 7px 18px;
+  --radius-chip: 12px 5px 13px 4px / 4px 13px 5px 12px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0; font: 400 var(--text-md)/1.6 var(--font-body);
+  color: var(--color-text); background-color: var(--color-bg);
+  background-image: linear-gradient(to right, var(--color-grid) 1px, transparent 1px), linear-gradient(var(--color-grid) 1px, transparent 1px);
+  background-size: var(--grid-cell) var(--grid-cell);
+}
+.wrap { width: min(100% - 2 * var(--gutter), var(--page-max)); margin-inline: auto; }
+
+.sketch { position: relative; isolation: isolate; }
+.sketch::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: var(--sk-bg, var(--color-surface));
+  border: var(--stroke) solid var(--color-line);
+  border-radius: var(--radius-sketch);
+  filter: url(#rough);
+}
+.sketch::after {
+  content: ""; position: absolute; inset: 0; z-index: -2;
+  transform: translate(var(--shadow-offset), var(--shadow-offset));
+  border-radius: var(--radius-sketch);
+  background: repeating-linear-gradient(-45deg, var(--color-line) 0 1.6px, transparent 1.6px 6px);
+  filter: url(#rough);
+}
+.tape {
+  position: absolute; width: 96px; height: 26px; z-index: 3;
+  background: color-mix(in srgb, var(--color-accent-soft) 75%, transparent);
+  border-left: 2px dashed color-mix(in srgb, var(--color-accent) 70%, transparent);
+  border-right: 2px dashed color-mix(in srgb, var(--color-accent) 70%, transparent);
+}
+.marker {
+  background: linear-gradient(transparent 52%, color-mix(in srgb, var(--color-accent-soft) 90%, transparent) 52%, color-mix(in srgb, var(--color-accent-soft) 90%, transparent) 90%, transparent 90%);
+  padding-inline: .1em;
+}
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 52px; padding: 12px 24px;
+  font: 700 var(--text-md)/1.2 var(--font-body); color: var(--color-text-strong);
+  text-decoration: none; cursor: pointer; border: 0; background: none;
+}
+.btn--main { --sk-bg: var(--color-accent); }
+.btn--paper { --sk-bg: var(--color-surface); }
+
+.top { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); padding-block: var(--space-5); }
+.logo { display: flex; align-items: center; gap: var(--space-4); text-decoration: none; }
+.logo__label {
+  --sk-bg: var(--color-accent);
+  font-family: var(--font-display); font-size: 1.1rem; line-height: 1; padding: 10px 14px 9px; transform: rotate(-2deg); color: var(--color-text-strong);
+}
+.logo__by { font-family: var(--font-hand); font-size: var(--text-hand-sm); font-weight: 700; color: var(--color-text-muted); }
+
+.done { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: var(--space-8); align-items: center; padding-block: var(--space-6) var(--space-8); }
+.stamp { position: relative; width: 170px; height: 170px; display: grid; place-items: center; margin-bottom: var(--space-4); color: var(--color-ok); transform: rotate(-10deg); }
+.stamp svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.stamp span { position: relative; font-family: var(--font-display); font-size: var(--text-lg); text-align: center; }
+.stamp small { display: block; font-family: var(--font-hand); font-weight: 700; font-size: var(--text-hand-sm); }
+.done h1 { font-family: var(--font-display); font-size: var(--text-done); line-height: 1.05; letter-spacing: -0.01em; margin: 0; }
+.done__lead { max-width: 32em; margin-top: var(--space-4); font-size: var(--text-lg); }
+
+.next { --sk-bg: var(--color-surface-warm); padding: 36px 28px 28px 40px; transform: rotate(1.5deg); }
+.next .tape { top: -13px; left: 40%; transform: rotate(-3deg); }
+.next h2 { font-family: var(--font-hand); font-weight: 700; font-size: var(--text-hand-xl); margin: 0 0 var(--space-4); }
+.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-4); }
+.step { display: grid; grid-template-columns: 32px minmax(0, 1fr); gap: var(--space-3); align-items: start; }
+.step__box { position: relative; width: 28px; height: 28px; margin-top: 2px; }
+.step__box svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.step__when { display: block; font-weight: 700; font-size: var(--text-sm); color: var(--color-accent-text); }
+.step__what { display: block; font-size: var(--text-md); line-height: 1.4; }
+
+.webinar-gift {
+  --sk-bg: var(--color-surface-ink);
+  color: var(--color-text-on-ink); padding: var(--space-7); margin-bottom: var(--space-8);
+}
+.webinar-gift h2 { font-family: var(--font-display); font-size: var(--text-xl); color: var(--color-accent); margin: 0 0 var(--space-2); }
+.webinar-gift p { color: var(--color-text-on-ink-muted); margin: 0 0 var(--space-5); max-width: 60ch; }
+.webinar-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-4); }
+.webinar-item {
+  background: rgba(255,255,255,0.08); border: 1.5px dashed var(--color-accent); border-radius: var(--radius-chip);
+  padding: var(--space-4); display: flex; flex-direction: column; justify-content: space-between; gap: 12px;
+}
+.webinar-item b { font-size: var(--text-md); color: var(--color-text-on-ink); display: block; }
+.webinar-item span { font-size: var(--text-xs); color: var(--color-text-on-ink-muted); }
+
+.help__card { --sk-bg: var(--color-surface); padding: var(--space-6) var(--space-7); display: grid; gap: var(--space-4); max-width: 900px; }
+.help__card h2 { font-family: var(--font-display); font-size: var(--text-xl); margin: 0; }
+.help__links { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+.back { display: inline-flex; align-items: center; gap: 8px; margin-top: var(--space-6); font-weight: 700; text-decoration: none; }
+.back span { border-bottom: 2px solid var(--color-accent); }
+
+@media (max-width: 900px) {
+  .done { grid-template-columns: 1fr; }
+  .logo__by { display: none; }
+}
+  </style>
 </head>
-<body class="antialiased flex items-center justify-center min-h-screen p-4">
-    <div class="max-w-xl w-full paper-card p-8 md:p-10 rounded-3xl text-center">
-        <div class="text-5xl mb-4">✨</div>
-        <h1 class="text-3xl font-black mb-4" style="color: #4A2E65;">¡Gracias! Вы в списке!</h1>
-        <p class="text-gray-700 text-sm leading-relaxed mb-6">
-            Ваши данные успешно сохранены. Совсем скоро я свяжусь с вами и пришлю лучшие условия ранней предпродажи проекта <strong style="color: #4A2E65;">Chuleta Verbal</strong>.
-        </p>
-        
-        <p class="text-xs text-gray-500 mb-4">
-            А если у вас есть вопросы прямо сейчас, вы можете написать мне в мессенджер:
-        </p>
-        
-        <!-- Блок контактов -->
-        <div class="flex justify-center items-center gap-4 mb-8">
-            <a href="https://wa.me/5491168169407?text=Здравствуйте,%20Ксения!%20Я%20заполнил(а)%20анкету%20по%20Chuleta%20Verbal" target="_blank" class="bg-emerald-500 hover:bg-emerald-600 text-white w-12 h-12 rounded-full shadow-[2px_2px_0px_#4A2E65] border-2 border-[#4A2E65] flex items-center justify-center transition transform hover:scale-110" title="Написать в WhatsApp">
-                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-            </a>
-            <a href="https://t.me/KseniaSevera" target="_blank" class="bg-sky-500 hover:bg-sky-600 text-white w-12 h-12 rounded-full shadow-[2px_2px_0px_#4A2E65] border-2 border-[#4A2E65] flex items-center justify-center transition transform hover:scale-110" title="Написать в Telegram">
-                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18 1.897-.962 6.502-1.359 8.627-.168.9-.5 1.201-.82 1.23-.697.064-1.226-.461-1.901-.903-1.056-.693-1.653-1.124-2.678-1.8-1.185-.781-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635.099-.002.321.023.465.14.12.098.153.228.166.331.016.126.032.412.016.643z"/></svg>
-            </a>
-            <a href="mailto:blablaespanish@gmail.com?subject=Вопрос%20по%20Chuleta%20Verbal" class="bg-amber-400 hover:bg-amber-500 text-[#4A2E65] w-12 h-12 rounded-full shadow-[2px_2px_0px_#4A2E65] border-2 border-[#4A2E65] flex items-center justify-center transition transform hover:scale-110" title="Написать на Email">
-                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.818l10 8.118 10-8.118v11.818h-20z"/></svg>
-            </a>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <filter id="rough" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="7" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="3.2" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <symbol id="box" viewBox="0 0 32 32"><path d="M5 6c7-1 15-1 22 0 1 7 1 14 0 21-7 1-15 1-22 0-1-7-1-14 0-21Z" fill="var(--color-surface)" stroke="currentColor" stroke-width="2.4"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12 3.2c-5 0-9 3.7-9 8.4 0 1.7.5 3.3 1.5 4.6L3.6 20.6l4.6-1.3c1.2.6 2.5.9 3.8.9 5 0 9-3.8 9-8.6 0-4.7-4-8.4-9-8.4Z" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M9 9.2c.2 2.6 2.6 5.3 5.8 5.8" fill="none" stroke="currentColor" stroke-width="2.2"/></symbol>
+    <symbol id="i-tg" viewBox="0 0 24 24"><path d="M3 11.6 20.6 4.2c.6-.2 1.1.3 1 .9l-3 14.2c-.1.6-.8.9-1.3.5l-4.6-3.5-2.4 2.4c-.3.3-.8.1-.8-.3l.2-3.6L17.4 8.2 7.6 13.8 3.3 12.6c-.6-.2-.6-.8-.3-1Z" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3.5 6.2c5.6-.4 11.4-.4 17 0 .3 4 .3 7.8 0 11.6-5.6.4-11.4.4-17 0-.3-3.8-.3-7.6 0-11.6Z" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M4 7c3 3 5.4 5 8 6.2C14.6 12 17 10 20 7" fill="none" stroke="currentColor" stroke-width="2.2"/></symbol>
+  </svg>
+
+  <header class="wrap top">
+    <a class="logo" href="index.html">
+      <span class="logo__label sketch">Chuleta Verbal</span>
+      <span class="logo__by">Bla-Bla e.Spanish con Ksenia</span>
+    </a>
+    <a class="btn btn--paper sketch" href="index.html">На главную</a>
+  </header>
+
+  <main class="wrap">
+    <section class="done">
+      <div>
+        <div class="stamp" aria-hidden="true">
+          <svg viewBox="0 0 168 168">
+            <path d="M84 8c42-1 76 33 76 75 0 43-34 77-77 77C41 160 7 126 8 83 9 42 42 9 84 8Z" fill="none" stroke="currentColor" stroke-width="4"/>
+            <path d="M84 22c34-1 62 27 62 61s-28 63-62 63-62-28-62-62 28-61 62-62Z" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="3 7"/>
+            <path d="M54 112c8 5 13 11 17 18 12-24 26-40 46-54" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+          </svg>
+          <span>¡Listo!<small>в предзаписи</small></span>
+        </div>
+        <h1>Вы в списке <span class="marker">предзаписи!</span></h1>
+        <p class="done__lead">Контакты сохранены. За вами зафиксированы <b>специальные условия и скидка 50%</b> на курс-справочник Chuleta Verbal.</p>
+      </div>
+
+      <div class="next sketch">
+        <span class="tape"></span>
+        <h2>Что будет дальше?</h2>
+        <ol class="steps">
+          <li class="step">
+            <span class="step__box"><svg viewBox="0 0 32 32"><use href="#box"/><path d="M7 16c4 2 6 5 8 9 4-9 9-16 17-22" fill="none" stroke="var(--color-ok)" stroke-width="3.4"/></svg></span>
+            <div><span class="step__when">Уже сейчас</span><span class="step__what">Вам открыт доступ к закрытым вебинарам Ксении Севериновой (смотрите блок ниже).</span></div>
+          </li>
+          <li class="step">
+            <span class="step__box"><svg viewBox="0 0 32 32"><use href="#box"/></svg></span>
+            <div><span class="step__when">До 17 ноября</span><span class="step__what">Мы пришлем в мессенджер напоминание о старте по минимальной цене предпродажи.</span></div>
+          </li>
+          <li class="step">
+            <span class="step__box"><svg viewBox="0 0 32 32"><use href="#box"/></svg></span>
+            <div><span class="step__when">17 ноября</span><span class="step__what">Релиз книги-справочника и отправка файлов первым участникам.</span></div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- БЛОК ПОДАРКА: ЗАКРЫТЫЕ ВЕБИНАРЫ -->
+    <section class="webinar-gift sketch">
+      <h2>🎁 Ваши подарки за предзапись</h2>
+      <p>Смотрите закрытые практические разборы уже сейчас — наводите порядок во временах и сослагательном наклонении:</p>
+      
+      <div class="webinar-list">
+        <div class="webinar-item">
+          <div>
+            <b>Эфир 1. Логика прошедших времён без зубрежки</b>
+            <span>Разбор Indefinido vs. Imperfecto vs. Perfecto на живых ситуациях</span>
+          </div>
+          <a class="btn btn--main sketch" href="https://t.me/KseniaSevera" target="_blank">Смотреть запись →</a>
         </div>
 
-        <div>
-            <a href="index.html" class="text-xs text-purple-700 underline font-bold hover:text-purple-900">Вернуться на главную страницу</a>
+        <div class="webinar-item">
+          <div>
+            <b>Эфир 2. Subjuntivo за 3 простых шага</b>
+            <span>Понятный алгоритм выбора сослагательного наклонения в живой речи</span>
+          </div>
+          <a class="btn btn--main sketch" href="https://t.me/KseniaSevera" target="_blank">Смотреть запись →</a>
         </div>
-    </div>
+      </div>
+    </section>
+
+    <!-- Контакты -->
+    <section class="help" style="padding-bottom: var(--space-8);">
+      <div class="help__card sketch">
+        <div>
+          <h2>Хотите сразу забронировать место по спеццене?</h2>
+          <p style="color: var(--color-text-muted); margin: 6px 0 0;">Если вы решили не откладывать и хотите оплатить участие со скидкой прямо сейчас, напишите мне:</p>
+        </div>
+        <div class="help__links">
+          <a class="btn btn--main sketch" href="https://wa.me/5491168169407?text=Здравствуйте,%20Ксения!%20Я%20в%20предзаписи,%20хочу%20оплатить%20со%20скидкой%2050%" target="_blank"><svg width="20" height="20"><use href="#i-wa"/></svg>WhatsApp</a>
+          <a class="btn btn--ink sketch" href="https://t.me/KseniaSevera" target="_blank"><svg width="20" height="20"><use href="#i-tg"/></svg>Telegram</a>
+          <a class="btn btn--paper sketch" href="index.html#buy">Перейти к тарифам на сайте</a>
+        </div>
+      </div>
+      <a class="back" href="index.html">← <span>Вернуться на главную страницу</span></a>
+    </section>
+  </main>
 </body>
 </html>
