@@ -1317,35 +1317,68 @@ em { font-style: italic; }
     });
 
     // Обработка анкеты предзаписи (#leadForm) -> Google Таблица -> lead-thanks.html
-    const leadForm = document.getElementById('leadForm');
-    const leadSubmitBtn = document.getElementById('leadSubmitBtn');
+const leadForm = document.getElementById('leadForm');
+const leadSubmitBtn = document.getElementById('leadSubmitBtn');
 
-    leadForm.addEventListener('submit', ev => {
-      ev.preventDefault();
-      const name = leadForm.elements.name, contact = leadForm.elements.contact, phone = leadForm.elements.phone;
-      const checks = [
-        [name, 'e-name', name.value.trim() ? '' : 'Напишите, как к вам обращаться'],
-        [contact, 'e-contact', contact.value.trim() ? '' : 'Укажите email или ник в мессенджере'],
-        [phone, 'e-phone', phone.value.trim() ? '' : 'Укажите номер WhatsApp / Telegram']
-      ];
-      let firstBad = null;
-      checks.forEach(([input, id, msg]) => {
-        input.closest('.field').classList.toggle('is-error', !!msg);
-        document.getElementById(id).textContent = msg;
-        if (msg && !firstBad) firstBad = input;
-      });
-      if (firstBad) { firstBad.focus(); return; }
+if (leadForm) {
+  leadForm.addEventListener('submit', function (ev) {
+    ev.preventDefault();
 
+    const nameInput = leadForm.querySelector('[name="name"]');
+    const contactInput = leadForm.querySelector('[name="contact"]');
+    const phoneInput = leadForm.querySelector('[name="phone"]');
+
+    let hasError = false;
+
+    if (!nameInput || !nameInput.value.trim()) {
+      document.getElementById('e-name').textContent = 'Напишите, как к вам обращаться';
+      if (nameInput) nameInput.closest('.field').classList.add('is-error');
+      hasError = true;
+    } else {
+      document.getElementById('e-name').textContent = '';
+      nameInput.closest('.field').classList.remove('is-error');
+    }
+
+    if (!contactInput || !contactInput.value.trim()) {
+      document.getElementById('e-contact').textContent = 'Укажите email или ник в мессенджере';
+      if (contactInput) contactInput.closest('.field').classList.add('is-error');
+      hasError = true;
+    } else {
+      document.getElementById('e-contact').textContent = '';
+      contactInput.closest('.field').classList.remove('is-error');
+    }
+
+    if (!phoneInput || !phoneInput.value.trim()) {
+      document.getElementById('e-phone').textContent = 'Укажите номер WhatsApp / Telegram';
+      if (phoneInput) phoneInput.closest('.field').classList.add('is-error');
+      hasError = true;
+    } else {
+      document.getElementById('e-phone').textContent = '';
+      phoneInput.closest('.field').classList.remove('is-error');
+    }
+
+    if (hasError) return;
+
+    if (leadSubmitBtn) {
       leadSubmitBtn.disabled = true;
       leadSubmitBtn.textContent = 'Отправка...';
+    }
 
-      fetch(scriptURL, { method: 'POST', body: new FormData(leadForm), mode: 'no-cors' })
-        .then(() => { window.location.href = 'lead-thanks.html'; })
-        .catch(err => {
-          console.error(err);
-          window.location.href = 'lead-thanks.html';
-        });
+    fetch(scriptURL, {
+      method: 'POST',
+      body: new FormData(leadForm),
+      mode: 'no-cors'
+    })
+    .then(function () {
+      window.location.href = 'lead-thanks.html';
+    })
+    .catch(function (err) {
+      console.error('Ошибка отправки:', err);
+      // При ошибке сети все равно переводим на страницу благодарности
+      window.location.href = 'lead-thanks.html';
     });
+  });
+}
   </script>
 </body>
 </html>
