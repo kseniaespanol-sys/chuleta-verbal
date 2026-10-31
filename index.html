@@ -1021,7 +1021,7 @@ em { font-style: italic; }
       </div>
     </section>
 
-    <!-- ================= 9. Оформление заказа ================= -->
+   <!-- ================= 9. Оформление заказа ================= -->
     <section class="wrap section" id="buy" aria-labelledby="buy-title">
       <div class="ticket sketch">
         <div class="ticket__main">
@@ -1047,24 +1047,26 @@ em { font-style: italic; }
         </div>
 
         <div class="ticket__side" style="display: flex; flex-direction: column; gap: 16px; justify-content: center;">
-          <p class="ticket__ask" style="margin: 0; font-size: var(--text-lg); font-weight: 700;">Выберите удобный способ оплаты:</p>
+          <p class="ticket__ask" style="margin: 0; font-size: var(--text-lg); font-weight: 700;">Выберите валюту оплаты:</p>
           
-          <!-- Кнопка оплаты в рублях (РФ) -->
-          <a class="btn btn--main sketch" id="btnPayRub" href="https://blablaespanish.com/buy/8865356" target="_blank" style="width: 100%; justify-content: flex-start;">
-            <svg class="flag" viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="7" fill="#fff"/><rect y="7" width="28" height="6" fill="#2d4ba0"/><rect y="13" width="28" height="7" fill="#d23a2c"/></svg>
-            Оплатить из России — 4 990 ₽
+          <!-- Кнопка оплаты в рублях (Иконка ₽ вместо флага) -->
+          <a class="btn btn--main sketch" id="btnPayRub" href="https://blablaespanish.com/buy/8865356" target="_blank" style="width: 100%; justify-content: flex-start; gap: 14px;">
+            <span style="display: inline-grid; place-items: center; width: 28px; height: 28px; background: rgba(58, 32, 82, 0.12); border-radius: 50%; font-family: var(--font-display); font-size: 1.1rem; line-height: 1; color: var(--color-text-strong); flex: none;">
+              ₽
+            </span>
+            <span>Оплатить в рублях — 4 990 ₽</span>
           </a>
 
-          <!-- Кнопка оплаты в евро (Европа / мир) -->
-          <a class="btn btn--ink sketch" id="btnPayEur" href="https://blablaespanish.com/buy/8867094" target="_blank" style="width: 100%; justify-content: flex-start;">
-            <svg class="flag" viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="20" fill="#2d4ba0"/><g fill="#ffd34d"><circle cx="14" cy="4.5" r="1.1"/><circle cx="19.5" cy="10" r="1.1"/><circle cx="14" cy="15.5" r="1.1"/><circle cx="8.5" cy="10" r="1.1"/><circle cx="17.9" cy="6.1" r="1.1"/><circle cx="17.9" cy="13.9" r="1.1"/><circle cx="10.1" cy="13.9" r="1.1"/><circle cx="10.1" cy="6.1" r="1.1"/></g></svg>
-            Оплатить зарубежной картой — 49 €
+          <!-- Кнопка оплаты в евро (Европейский флаг) -->
+          <a class="btn btn--ink sketch" id="btnPayEur" href="https://blablaespanish.com/buy/8867094" target="_blank" style="width: 100%; justify-content: flex-start; gap: 14px;">
+            <svg class="flag" viewBox="0 0 28 20" aria-hidden="true" style="width: 28px; height: 20px; border-radius: 3px; flex: none;"><rect width="28" height="20" fill="#2d4ba0"/><g fill="#ffd34d"><circle cx="14" cy="4.5" r="1.1"/><circle cx="19.5" cy="10" r="1.1"/><circle cx="14" cy="15.5" r="1.1"/><circle cx="8.5" cy="10" r="1.1"/><circle cx="17.9" cy="6.1" r="1.1"/><circle cx="17.9" cy="13.9" r="1.1"/><circle cx="10.1" cy="13.9" r="1.1"/><circle cx="10.1" cy="6.1" r="1.1"/></g></svg>
+            <span>Оплатить в евро — 49 €</span>
           </a>
 
           <!-- Альтернативные реквизиты (IBAN, Wise, PayPal) -->
           <div style="border-top: 1.5px dashed var(--color-line-soft); padding-top: 12px; margin-top: 4px;">
             <p style="font-size: var(--text-xs); color: var(--color-text-muted); margin: 0 0 8px;">
-              Нужен прямой перевод в евро? Оплату можно сделать прям переводом по IBAN или на PayPal?
+              Нужен прямой перевод на IBAN, Wise или PayPal?
             </p>
             <a href="https://wa.me/5491168169407?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5,%20%D0%9A%D1%81%D0%B5%D0%BD%D0%B8%D1%8F!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BE%D0%BF%D0%BB%D0%B0%D1%82%D0%B8%D1%82%D1%8C%20Chuleta%20Verbal%20%D1%87%D0%B5%D1%80%D0%B5%D0%B7%20IBAN/Wise%20(49%20%E2%82%AC)" target="_blank" style="font-weight: 700; font-size: var(--text-sm); color: var(--color-text-strong); text-decoration: underline;">
               Написать в WhatsApp для реквизитов →
