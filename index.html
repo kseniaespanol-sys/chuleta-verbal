@@ -1316,69 +1316,58 @@ em { font-style: italic; }
         });
     });
 
-    // Обработка анкеты предзаписи (#leadForm) -> Google Таблица -> lead-thanks.html
-const leadForm = document.getElementById('leadForm');
-const leadSubmitBtn = document.getElementById('leadSubmitBtn');
+    // Обработка анкеты предзаписи (#leadForm) с железным редиректом
+    const leadForm = document.getElementById('leadForm');
+    const leadSubmitBtn = document.getElementById('leadSubmitBtn');
 
-if (leadForm) {
-  leadForm.addEventListener('submit', function (ev) {
-    ev.preventDefault();
+    if (leadForm) {
+      leadForm.addEventListener('submit', function (ev) {
+        ev.preventDefault();
 
-    const nameInput = leadForm.querySelector('[name="name"]');
-    const contactInput = leadForm.querySelector('[name="contact"]');
-    const phoneInput = leadForm.querySelector('[name="phone"]');
+        const nameInput = leadForm.querySelector('[name="name"]');
+        const contactInput = leadForm.querySelector('[name="contact"]');
+        const phoneInput = leadForm.querySelector('[name="phone"]');
 
-    let hasError = false;
+        // Простая проверка заполнения
+        if (!nameInput || !nameInput.value.trim()) {
+          alert('Пожалуйста, напишите ваше имя');
+          if (nameInput) nameInput.focus();
+          return;
+        }
 
-    if (!nameInput || !nameInput.value.trim()) {
-      document.getElementById('e-name').textContent = 'Напишите, как к вам обращаться';
-      if (nameInput) nameInput.closest('.field').classList.add('is-error');
-      hasError = true;
-    } else {
-      document.getElementById('e-name').textContent = '';
-      nameInput.closest('.field').classList.remove('is-error');
+        if (!contactInput || !contactInput.value.trim()) {
+          alert('Пожалуйста, укажите ваш email или контакт');
+          if (contactInput) contactInput.focus();
+          return;
+        }
+
+        if (leadSubmitBtn) {
+          leadSubmitBtn.disabled = true;
+          leadSubmitBtn.textContent = 'Отправляем...';
+        }
+
+        // Таймер страховки: если интернет медленный или скрипт подвис — через 1 секунду все равно редиректим
+        const safetyRedirect = setTimeout(function () {
+          window.location.href = 'lead-thanks.html';
+        }, 1200);
+
+        // Отправка в Google Таблицу
+        fetch(scriptURL, {
+          method: 'POST',
+          body: new FormData(leadForm),
+          mode: 'no-cors'
+        })
+        .then(function () {
+          clearTimeout(safetyRedirect);
+          window.location.href = 'lead-thanks.html';
+        })
+        .catch(function (err) {
+          console.error('Ошибка отправки:', err);
+          clearTimeout(safetyRedirect);
+          window.location.href = 'lead-thanks.html';
+        });
+      });
     }
-
-    if (!contactInput || !contactInput.value.trim()) {
-      document.getElementById('e-contact').textContent = 'Укажите email или ник в мессенджере';
-      if (contactInput) contactInput.closest('.field').classList.add('is-error');
-      hasError = true;
-    } else {
-      document.getElementById('e-contact').textContent = '';
-      contactInput.closest('.field').classList.remove('is-error');
-    }
-
-    if (!phoneInput || !phoneInput.value.trim()) {
-      document.getElementById('e-phone').textContent = 'Укажите номер WhatsApp / Telegram';
-      if (phoneInput) phoneInput.closest('.field').classList.add('is-error');
-      hasError = true;
-    } else {
-      document.getElementById('e-phone').textContent = '';
-      phoneInput.closest('.field').classList.remove('is-error');
-    }
-
-    if (hasError) return;
-
-    if (leadSubmitBtn) {
-      leadSubmitBtn.disabled = true;
-      leadSubmitBtn.textContent = 'Отправка...';
-    }
-
-    fetch(scriptURL, {
-      method: 'POST',
-      body: new FormData(leadForm),
-      mode: 'no-cors'
-    })
-    .then(function () {
-      window.location.href = 'lead-thanks.html';
-    })
-    .catch(function (err) {
-      console.error('Ошибка отправки:', err);
-      // При ошибке сети все равно переводим на страницу благодарности
-      window.location.href = 'lead-thanks.html';
-    });
-  });
-}
   </script>
 </body>
 </html>
