@@ -553,8 +553,8 @@ em { font-style: italic; }
 
   <!-- Ribbon -->
   <div class="ribbon" role="note">
-    🚀 <b>ПРЕДПРОДАЖА КУРСА-СПРАВОЧНИКА:</b> скидка 50% на первые 48 часов (49 € / 4 990 ₽)! Книга — 17 ноября, платформа — через 4 недели.
-  </div>
+  🚀 <b>FLASH SALE КУРСА-СПРАВОЧНИКА:</b> минимальная цена  49 евро / 4 990 ₽ действует только до 4 ноября! Книга — 17 ноября, платформа — через 4 недели.
+</div>
 
   <!-- Header -->
   <header class="wrap top">
@@ -604,9 +604,9 @@ em { font-style: italic; }
 
       <div class="chuleta" role="group" aria-label="Пример шпаргалки из справочника">
         <div class="sticker" aria-hidden="true">
-          <svg viewBox="0 0 128 128" width="140" height="140"><path d="M64 4l9 12 14-7 4 15 15-2-2 15 15 4-7 14 12 9-12 9 7 14-15 4 2 15-15-2-4 15-14-7-9 12-9-12-14 7-4-15-15 2 2-15-15-4 7-14L4 64l12-9-7-14 15-4-2-15 15 2 4-15 14 7Z" fill="var(--color-accent)" stroke="var(--color-line)" stroke-width="3" stroke-linejoin="round"/></svg>
-          <span>−50%<small>до 17 ноя</small></span>
-        </div>
+  <svg viewBox="0 0 128 128" width="140" height="140"><path d="M64 4l9 12 14-7 4 15 15-2-2 15 15 4-7 14 12 9-12 9 7 14-15 4 2 15-15-2-4 15-14-7-9 12-9-12-14 7-4-15-15 2 2-15-15-4 7-14L4 64l12-9-7-14 15-4-2-15 15 2 4-15 14 7Z" fill="var(--color-accent)" stroke="var(--color-line)" stroke-width="3" stroke-linejoin="round"/></svg>
+  <span>−50%<small>до 4 ноя</small></span>
+      </div>
         <div class="chuleta__sheet sketch">
           <span class="tape tape--a" aria-hidden="true"></span>
           <p class="chuleta__title">mi chuleta <small>· шпаргалка</small></p>
@@ -1011,7 +1011,7 @@ em { font-style: italic; }
         <div class="ticket__main">
           <h2 id="buy-title">Предзаказ по лучшей цене</h2>
           
-          <!-- Счетчик обратного отсчета -->
+          <!-- Счетчик обратного отсчета до 4 ноября -->
           <p style="font-family: var(--font-hand); font-weight: 700; font-size: 1.35rem; color: var(--color-pen); margin: 0 0 6px;">
             ⏰ Минимальная цена −50% сгорит через:
           </p>
@@ -1024,9 +1024,17 @@ em { font-style: italic; }
 
           <div class="ticket__price">
             <span class="big" id="ticketBigPrice">4&nbsp;990&nbsp;₽<svg viewBox="0 0 200 100" preserveAspectRatio="none" aria-hidden="true"><path d="M104 6C50 4 6 24 8 52s46 44 98 42 88-18 86-46S140 2 78 10" fill="none" stroke="var(--color-pen)" stroke-width="3" stroke-linecap="round"/></svg></span>
-            <span class="label"><s class="old strike" id="ticketOldPrice">9&nbsp;980&nbsp;₽</s> цена предпродажи −50%</span>
+            <span class="label"><s class="old strike" id="ticketOldPrice">9&nbsp;980&nbsp;₽</s> Flash Sale: первые 48 часов</span>
           </div>
-          <p>Скидка 50% действует первые 48 часов. Следующий этап предзаказа — 6 990 ₽ (69 €), после выхода книги — 8 990 ₽ (89 €), полная стоимость после запуска платформы — 9 980 ₽ (98 €).</p>
+
+          <p style="margin-bottom: 12px;"><b>График повышения стоимости:</b></p>
+          <ul style="margin: 0 0 16px; padding-left: 20px; font-size: var(--text-sm); line-height: 1.6; color: var(--color-text);">
+            <li><b>До 4 ноября:</b> 4 990 ₽ / 49 € <span style="color: var(--color-pen); font-weight: 700;">(−50% — сейчас)</span></li>
+            <li><b>С 4 по 16 ноября:</b> 6 990 ₽ / 69 € (этап предзаказа)</li>
+            <li><b>С 17 ноября (релиз книги):</b> 8 990 ₽ / 89 €</li>
+            <li><b>После запуска Verboleo (30 ноября):</b> 9 980 ₽ / 98 € (полная цена)</li>
+          </ul>
+
           <p class="ticket__note">После оплаты на GetCourse вы моментально получите доступ к закрытым вебинарам.</p>
         </div>
 
@@ -1204,8 +1212,8 @@ em { font-style: italic; }
       if (el) ioBuy.observe(el);
     });
 
-    // Таймер обратного отсчета до 17 ноября 2026 23:59:59
-    const deadline = new Date(2026, 10, 17, 23, 59, 59).getTime(); // месяц 10 = ноябрь
+    // Таймер обратного отсчета до 4 ноября 2026 23:59:59
+    const deadline = new Date(2026, 10, 4, 23, 59, 59).getTime(); // месяц 10 в JS = ноябрь, число 4
     function updateTimer() {
       const now = new Date().getTime();
       const diff = deadline - now;
