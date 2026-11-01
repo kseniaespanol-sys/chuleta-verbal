@@ -79,32 +79,17 @@
   --leading-snug: 1.25;
   --leading-body: 1.6;
 
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 12px;
-  --space-4: 16px;
-  --space-5: 24px;
-  --space-6: 32px;
-  --space-7: 48px;
-  --space-8: 72px;
-  --space-9: 112px;
-  --grid-cell: 28px;
-  --page-max: 1200px;
-  --gutter: clamp(16px, 4vw, 40px);
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 24px;
+  --space-6: 32px; --space-7: 48px; --space-8: 72px; --space-9: 112px;
+  --grid-cell: 28px; --page-max: 1200px; --gutter: clamp(16px, 4vw, 40px);
   --measure: 64ch;
 
-  --stroke: 2.5px;
-  --stroke-bold: 3px;
-  --shadow-offset: 7px;
+  --stroke: 2.5px; --stroke-bold: 3px; --shadow-offset: 7px;
   --radius-sketch: 18px 7px 20px 6px / 6px 20px 7px 18px;
   --radius-sketch-alt: 7px 20px 6px 18px / 18px 6px 20px 7px;
   --radius-chip: 12px 5px 13px 4px / 4px 13px 5px 12px;
-  --radius-pill: 999px;
 
-  --dur-1: 120ms;
-  --dur-2: 220ms;
-  --dur-3: 480ms;
-  --dur-draw: 900ms;
+  --dur-1: 120ms; --dur-2: 220ms; --dur-3: 480ms; --dur-draw: 900ms;
   --ease-out: cubic-bezier(.2, .8, .2, 1);
   --ease-spring: cubic-bezier(.34, 1.56, .64, 1);
 }
@@ -133,7 +118,6 @@ em { font-style: italic; }
 .only-narrow { display: none; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .wrap { width: min(100% - 2 * var(--gutter), var(--page-max)); margin-inline: auto; }
-.hand { font-family: var(--font-hand); font-weight: 700; line-height: 1.1; }
 .es { font-style: italic; font-weight: 600; color: var(--color-text-strong); }
 
 .sketch { position: relative; isolation: isolate; }
@@ -569,7 +553,7 @@ em { font-style: italic; }
 
   <!-- Ribbon -->
   <div class="ribbon" role="note">
-    🚀 <b>ПРЕДПРОДАЖА КУРСА-СПРАВОЧНИКА:</b> скидка 50% держится до 17 ноября (49 € / 4 990 ₽)! Книга — 17 ноября, платформа — через 4 недели.
+    🚀 <b>ПРЕДПРОДАЖА КУРСА-СПРАВОЧНИКА:</b> скидка 50% на первые 48 часов (49 € / 4 990 ₽)! Книга — 17 ноября, платформа — через 4 недели.
   </div>
 
   <!-- Header -->
@@ -1042,7 +1026,7 @@ em { font-style: italic; }
             <span class="big" id="ticketBigPrice">4&nbsp;990&nbsp;₽<svg viewBox="0 0 200 100" preserveAspectRatio="none" aria-hidden="true"><path d="M104 6C50 4 6 24 8 52s46 44 98 42 88-18 86-46S140 2 78 10" fill="none" stroke="var(--color-pen)" stroke-width="3" stroke-linecap="round"/></svg></span>
             <span class="label"><s class="old strike" id="ticketOldPrice">9&nbsp;980&nbsp;₽</s> цена предпродажи −50%</span>
           </div>
-          <p>Скидка 50% действует только до 17 ноября. После релиза книги цена поднимется до 7 900 ₽ (79 €), а после открытия платформы составит полную стоимость 9 980 ₽ (98 €).</p>
+          <p>Скидка 50% действует первые 48 часов. Следующий этап предзаказа — 6 990 ₽ (69 €), после выхода книги — 8 990 ₽ (89 €), полная стоимость после запуска платформы — 9 980 ₽ (98 €).</p>
           <p class="ticket__note">После оплаты на GetCourse вы моментально получите доступ к закрытым вебинарам.</p>
         </div>
 
@@ -1050,7 +1034,7 @@ em { font-style: italic; }
           <p class="ticket__ask" style="margin: 0; font-size: var(--text-lg); font-weight: 700;">Выберите валюту оплаты:</p>
           
           <!-- Кнопка оплаты в рублях (Иконка ₽ вместо флага) -->
-          <a class="btn btn--main sketch" id="btnPayRub" href="https://blablaespanish.com/buy/8865356" target="_blank" style="width: 100%; justify-content: flex-start; gap: 14px;">
+          <a class="btn btn--main sketch" id="btnPayRub" href="https://blablaespanish.com/pl/sales/offer/view?id=8865356" target="_blank" style="width: 100%; justify-content: flex-start; gap: 14px;">
             <span style="display: inline-grid; place-items: center; width: 28px; height: 28px; background: rgba(58, 32, 82, 0.12); border-radius: 50%; font-family: var(--font-display); font-size: 1.1rem; line-height: 1; color: var(--color-text-strong); flex: none;">
               ₽
             </span>
@@ -1058,7 +1042,7 @@ em { font-style: italic; }
           </a>
 
           <!-- Кнопка оплаты в евро (Европейский флаг) -->
-          <a class="btn btn--ink sketch" id="btnPayEur" href="https://blablaespanish.com/buy/8867094" target="_blank" style="width: 100%; justify-content: flex-start; gap: 14px;">
+          <a class="btn btn--ink sketch" id="btnPayEur" href="https://blablaespanish.com/pl/sales/offer/view?id=8867094" target="_blank" style="width: 100%; justify-content: flex-start; gap: 14px;">
             <svg class="flag" viewBox="0 0 28 20" aria-hidden="true" style="width: 28px; height: 20px; border-radius: 3px; flex: none;"><rect width="28" height="20" fill="#2d4ba0"/><g fill="#ffd34d"><circle cx="14" cy="4.5" r="1.1"/><circle cx="19.5" cy="10" r="1.1"/><circle cx="14" cy="15.5" r="1.1"/><circle cx="8.5" cy="10" r="1.1"/><circle cx="17.9" cy="6.1" r="1.1"/><circle cx="17.9" cy="13.9" r="1.1"/><circle cx="10.1" cy="13.9" r="1.1"/><circle cx="10.1" cy="6.1" r="1.1"/></g></svg>
             <span>Оплатить в евро — 49 €</span>
           </a>
@@ -1066,7 +1050,7 @@ em { font-style: italic; }
           <!-- Альтернативные реквизиты (IBAN, Wise, PayPal) -->
           <div style="border-top: 1.5px dashed var(--color-line-soft); padding-top: 12px; margin-top: 4px;">
             <p style="font-size: var(--text-xs); color: var(--color-text-muted); margin: 0 0 8px;">
-               Нужен прямой перевод в евро, долларах, USDT? Оплату можно сделать прям переводом по реквизитам IBAN
+               Нужен прямой перевод в евро, долларах, USDT? Оплату можно сделать прямым переводом по реквизитам IBAN/Wise.
             </p>
             <a href="https://wa.me/5491168169407?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5,%20%D0%9A%D1%81%D0%B5%D0%BD%D0%B8%D1%8F!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BE%D0%BF%D0%BB%D0%B0%D1%82%D0%B8%D1%82%D1%8C%20Chuleta%20Verbal%20%D1%87%D0%B5%D1%80%D0%B5%D0%B7%20IBAN/Wise%20(49%20%E2%82%AC)" target="_blank" style="font-weight: 700; font-size: var(--text-sm); color: var(--color-text-strong); text-decoration: underline;">
               Написать в WhatsApp для реквизитов →
@@ -1153,7 +1137,7 @@ em { font-style: italic; }
       <div class="foot__grid">
         <div>
           <p class="foot__name">Ксения Северинова</p>
-          <p>Licenciada en Filología Hispánica, Universidad de Alcalá de Henares, Madrid. Profesora de español, autora de Bla-Bla e.Spanish y Verboleo.</p>
+          <p>Licenciada en Filología Hispánica, Universidad de Alcalá de Henares, Madrid. Profesora de español, autora de Bla-Bla e.Spanish и Verboleo.</p>
         </div>
         <div class="foot__links">
           <a href="https://t.me/KseniaSevera" target="_blank">Telegram</a>
@@ -1215,7 +1199,10 @@ em { font-style: italic; }
       es.forEach(e => e.isIntersecting ? inView.add(e.target.id) : inView.delete(e.target.id));
       document.body.classList.toggle('is-buy', inView.size > 0);
     }, { threshold: 0.15 });
-    ['buy', 'leadform'].forEach(id => ioBuy.observe(document.getElementById(id)));
+    ['buy', 'leadform'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) ioBuy.observe(el);
+    });
 
     // Таймер обратного отсчета до 17 ноября 2026 23:59:59
     const deadline = new Date(2026, 10, 17, 23, 59, 59).getTime(); // месяц 10 = ноябрь
@@ -1234,10 +1221,14 @@ em { font-style: italic; }
       const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
       const secs = Math.floor((diff % (1000 * 60)) / 1000);
 
-      document.getElementById('t-days').textContent = String(days).padStart(2, '0');
-      document.getElementById('t-hours').textContent = String(hours).padStart(2, '0');
-      document.getElementById('t-mins').textContent = String(mins).padStart(2, '0');
-      document.getElementById('t-secs').textContent = String(secs).padStart(2, '0');
+      const dEl = document.getElementById('t-days');
+      const hEl = document.getElementById('t-hours');
+      const mEl = document.getElementById('t-mins');
+      const sEl = document.getElementById('t-secs');
+      if (dEl) dEl.textContent = String(days).padStart(2, '0');
+      if (hEl) hEl.textContent = String(hours).padStart(2, '0');
+      if (mEl) mEl.textContent = String(mins).padStart(2, '0');
+      if (sEl) sEl.textContent = String(secs).padStart(2, '0');
     }
     updateTimer();
     setInterval(updateTimer, 1000);
@@ -1267,91 +1258,63 @@ em { font-style: italic; }
       document.getElementById('snyat-seen').textContent = seen.size;
     }));
 
-    // Переключение валют в блоке заказа
-    const orderRegion = document.getElementById('o-region');
-    const orderAmount = document.getElementById('orderAmount');
-    const ticketBigPrice = document.getElementById('ticketBigPrice');
-    const ticketOldPrice = document.getElementById('ticketOldPrice');
-
-    orderRegion.addEventListener('change', () => {
-      if (orderRegion.value.includes('EUR')) {
-        ticketBigPrice.innerHTML = '49&nbsp;€<svg viewBox="0 0 200 100" preserveAspectRatio="none" aria-hidden="true"><path d="M104 6C50 4 6 24 8 52s46 44 98 42 88-18 86-46S140 2 78 10" fill="none" stroke="var(--color-pen)" stroke-width="3" stroke-linecap="round"/></svg>';
-        ticketOldPrice.textContent = '98 €';
-        orderAmount.value = '49 EUR';
-      } else {
-        ticketBigPrice.innerHTML = '4&nbsp;990&nbsp;₽<svg viewBox="0 0 200 100" preserveAspectRatio="none" aria-hidden="true"><path d="M104 6C50 4 6 24 8 52s46 44 98 42 88-18 86-46S140 2 78 10" fill="none" stroke="var(--color-pen)" stroke-width="3" stroke-linecap="round"/></svg>';
-        ticketOldPrice.textContent = '9 980 ₽';
-        orderAmount.value = '4 990 RUB';
-      }
-    });
-
-    // Обработка формы заказа (#orderForm) -> Google Таблица -> thanks.html
-    const orderForm = document.getElementById('orderForm');
-    const orderSubmitBtn = document.getElementById('orderSubmitBtn');
-
-    orderForm.addEventListener('submit', ev => {
-      ev.preventDefault();
-      const name = orderForm.elements.name, contact = orderForm.elements.contact, phone = orderForm.elements.phone;
-      const checks = [
-        [name, 'oe-name', name.value.trim() ? '' : 'Напишите, как к вам обращаться'],
-        [contact, 'oe-contact', contact.value.trim() ? '' : 'Укажите email для отправки книги'],
-        [phone, 'oe-phone', phone.value.trim() ? '' : 'Укажите номер WhatsApp / Telegram']
-      ];
-      let firstBad = null;
-      checks.forEach(([input, id, msg]) => {
-        input.closest('.field').classList.toggle('is-error', !!msg);
-        document.getElementById(id).textContent = msg;
-        if (msg && !firstBad) firstBad = input;
-      });
-      if (firstBad) { firstBad.focus(); return; }
-
-      orderSubmitBtn.disabled = true;
-      orderSubmitBtn.textContent = 'Оформляем...';
-
-      fetch(scriptURL, { method: 'POST', body: new FormData(orderForm), mode: 'no-cors' })
-        .then(() => { window.location.href = 'thanks.html'; })
-        .catch(err => {
-          console.error(err);
-          window.location.href = 'thanks.html';
-        });
-    });
-
-    // Обработка анкеты предзаписи (#leadForm) с железным редиректом
+    // Обработка анкеты предзаписи (#leadForm) -> Google Таблица -> lead-thanks.html
     const leadForm = document.getElementById('leadForm');
     const leadSubmitBtn = document.getElementById('leadSubmitBtn');
 
     if (leadForm) {
       leadForm.addEventListener('submit', function (ev) {
         ev.preventDefault();
+        ev.stopPropagation();
 
-        const nameInput = leadForm.querySelector('[name="name"]');
-        const contactInput = leadForm.querySelector('[name="contact"]');
-        const phoneInput = leadForm.querySelector('[name="phone"]');
+        const nameInput = leadForm.querySelector('#f-name');
+        const contactInput = leadForm.querySelector('#f-contact');
+        const phoneInput = leadForm.querySelector('#f-phone');
 
-        // Простая проверка заполнения
+        const errName = document.getElementById('e-name');
+        const errContact = document.getElementById('e-contact');
+        const errPhone = document.getElementById('e-phone');
+
+        let isValid = true;
+
         if (!nameInput || !nameInput.value.trim()) {
-          alert('Пожалуйста, напишите ваше имя');
-          if (nameInput) nameInput.focus();
-          return;
+          if (errName) errName.textContent = 'Напишите, как к вам обращаться';
+          if (nameInput) nameInput.closest('.field').classList.add('is-error');
+          isValid = false;
+        } else {
+          if (errName) errName.textContent = '';
+          if (nameInput) nameInput.closest('.field').classList.remove('is-error');
         }
 
         if (!contactInput || !contactInput.value.trim()) {
-          alert('Пожалуйста, укажите ваш email или контакт');
-          if (contactInput) contactInput.focus();
-          return;
+          if (errContact) errContact.textContent = 'Укажите email или ник в Telegram';
+          if (contactInput) contactInput.closest('.field').classList.add('is-error');
+          isValid = false;
+        } else {
+          if (errContact) errContact.textContent = '';
+          if (contactInput) contactInput.closest('.field').classList.remove('is-error');
         }
+
+        if (!phoneInput || !phoneInput.value.trim()) {
+          if (errPhone) errPhone.textContent = 'Укажите номер телефона';
+          if (phoneInput) phoneInput.closest('.field').classList.add('is-error');
+          isValid = false;
+        } else {
+          if (errPhone) errPhone.textContent = '';
+          if (phoneInput) phoneInput.closest('.field').classList.remove('is-error');
+        }
+
+        if (!isValid) return;
 
         if (leadSubmitBtn) {
           leadSubmitBtn.disabled = true;
-          leadSubmitBtn.textContent = 'Отправляем...';
+          leadSubmitBtn.textContent = 'Отправка...';
         }
 
-        // Таймер страховки: если интернет медленный или скрипт подвис — через 1 секунду все равно редиректим
         const safetyRedirect = setTimeout(function () {
           window.location.href = 'lead-thanks.html';
         }, 1200);
 
-        // Отправка в Google Таблицу
         fetch(scriptURL, {
           method: 'POST',
           body: new FormData(leadForm),
