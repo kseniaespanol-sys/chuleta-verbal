@@ -551,9 +551,9 @@ em { font-style: italic; }
     <symbol id="ring" viewBox="0 0 52 52"><path d="M26 3.5c12.6-.3 22.8 9.6 22.6 22.4-.2 12.4-10.4 22.2-22.9 22-12.1-.2-22.4-10-22.2-22.6C3.7 13 13.9 3.8 26 3.5Z" fill="var(--color-surface)" stroke="var(--color-line)" stroke-width="2.4"/></symbol>
   </svg>
 
-  <!-- Ribbon -->
+ <!-- Ribbon -->
   <div class="ribbon" role="note">
-  🚀 <b>FLASH SALE КУРСА-СПРАВОЧНИКА:</b> минимальная цена  49 евро / 4 990 ₽ действует только до 4 ноября! Книга — 17 ноября, платформа — через 4 недели.
+  🚀 <b>FLASH SALE КУРСА-СПРАВОЧНИКА:</b> минимальная цена  49 евро / 4 990 ₽ действует только до 6 ноября! Книга — 17 ноября, платформа — через 4 недели.
 </div>
 
   <!-- Header -->
@@ -605,7 +605,7 @@ em { font-style: italic; }
       <div class="chuleta" role="group" aria-label="Пример шпаргалки из справочника">
         <div class="sticker" aria-hidden="true">
   <svg viewBox="0 0 128 128" width="140" height="140"><path d="M64 4l9 12 14-7 4 15 15-2-2 15 15 4-7 14 12 9-12 9 7 14-15 4 2 15-15-2-4 15-14-7-9 12-9-12-14 7-4-15-15 2 2-15-15-4 7-14L4 64l12-9-7-14 15-4-2-15 15 2 4-15 14 7Z" fill="var(--color-accent)" stroke="var(--color-line)" stroke-width="3" stroke-linejoin="round"/></svg>
-  <span>−50%<small>до 4 ноя</small></span>
+  <span>−50%<small>до 6 ноя</small></span>
       </div>
         <div class="chuleta__sheet sketch">
           <span class="tape tape--a" aria-hidden="true"></span>
@@ -1010,7 +1010,7 @@ em { font-style: italic; }
         <div class="ticket__main">
           <h2 id="buy-title">Предзаказ по лучшей цене</h2>
           
-          <!-- Счетчик обратного отсчета до 4 ноября -->
+          <!-- Счетчик обратного отсчета до 6 ноября -->
           <p style="font-family: var(--font-hand); font-weight: 700; font-size: 1.35rem; color: var(--color-pen); margin: 0 0 6px;">
             ⏰ Минимальная цена −50% сгорит через:
           </p>
@@ -1028,8 +1028,8 @@ em { font-style: italic; }
 
           <p style="margin-bottom: 12px;"><b>График повышения стоимости:</b></p>
           <ul style="margin: 0 0 16px; padding-left: 20px; font-size: var(--text-sm); line-height: 1.6; color: var(--color-text);">
-            <li><b>До 4 ноября:</b> 4 990 ₽ / 49 € <span style="color: var(--color-pen); font-weight: 700;">(−50% — сейчас)</span></li>
-            <li><b>С 4 по 16 ноября:</b> 6 990 ₽ / 69 € (этап предзаказа)</li>
+            <li><b>До 6 ноября:</b> 4 990 ₽ / 49 € <span style="color: var(--color-pen); font-weight: 700;">(−50% — сейчас)</span></li>
+            <li><b>С 7 по 16 ноября:</b> 6 990 ₽ / 69 € (этап предзаказа)</li>
             <li><b>С 17 ноября (релиз книги):</b> 8 990 ₽ / 89 €</li>
             <li><b>После запуска Verboleo (30 ноября):</b> 9 980 ₽ / 98 € (полная цена)</li>
           </ul>
@@ -1212,8 +1212,8 @@ em { font-style: italic; }
       if (el) ioBuy.observe(el);
     });
 
-    // Таймер обратного отсчета до 4 ноября 2026 23:59:59
-    const deadline = new Date(2026, 10, 4, 23, 59, 59).getTime(); // месяц 10 в JS = ноябрь, число 4
+   // Таймер Flash Sale: 6 ноября 2026, 23:59:59 (GMT-3, Аргентина)
+    const deadline = new Date("2026-11-06T23:59:59-03:00").getTime();
     function updateTimer() {
       const now = new Date().getTime();
       const diff = deadline - now;
