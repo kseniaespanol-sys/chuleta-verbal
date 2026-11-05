@@ -1006,7 +1006,10 @@ em { font-style: italic; }
     </section>
 
    <!-- ================= 9. Оформление заказа ================= -->
-   <div class="ticket sketch">
+    <section class="wrap section" id="buy" aria-labelledby="buy-title">
+      <div class="ticket sketch">
+        
+        <!-- Левая колонка: таймер, цены, этапы -->
         <div class="ticket__main">
           <h2 id="buy-title">Предзаказ по лучшей цене</h2>
           
@@ -1035,12 +1038,13 @@ em { font-style: italic; }
           </ul>
 
           <p class="ticket__note">После оплаты на GetCourse вы моментально получите доступ к закрытым вебинарам.</p>
-        </div>
+        </div><!-- конец ticket__main -->
 
+        <!-- Правая колонка: кнопки оплаты -->
         <div class="ticket__side" style="display: flex; flex-direction: column; gap: 16px; justify-content: center;">
           <p class="ticket__ask" style="margin: 0; font-size: var(--text-lg); font-weight: 700;">Выберите валюту оплаты:</p>
           
-          <!-- Кнопка оплаты в рублях -->
+          <!-- Оплата в рублях -->
           <a class="btn btn--main sketch" id="btnPayRub" href="https://blablaespanish.com/pl/lite/widget/widget?id=1677043" target="_blank" style="width: 100%; justify-content: flex-start; gap: 14px;">
             <span style="display: inline-grid; place-items: center; width: 28px; height: 28px; background: rgba(58, 32, 82, 0.12); border-radius: 50%; font-family: var(--font-display); font-size: 1.1rem; line-height: 1; color: var(--color-text-strong); flex: none;">
               ₽
@@ -1048,13 +1052,13 @@ em { font-style: italic; }
             <span>Оплатить в рублях — 4 990 ₽</span>
           </a>
 
-          <!-- Кнопка оплаты в евро -->
+          <!-- Оплата в евро -->
           <a class="btn btn--ink sketch" id="btnPayEur" href="https://blablaespanish.com/pl/lite/widget/widget?id=1677494" target="_blank" style="width: 100%; justify-content: flex-start; gap: 14px;">
             <svg class="flag" viewBox="0 0 28 20" aria-hidden="true" style="width: 28px; height: 20px; border-radius: 3px; flex: none;"><rect width="28" height="20" fill="#2d4ba0"/><g fill="#ffd34d"><circle cx="14" cy="4.5" r="1.1"/><circle cx="19.5" cy="10" r="1.1"/><circle cx="14" cy="15.5" r="1.1"/><circle cx="8.5" cy="10" r="1.1"/><circle cx="17.9" cy="6.1" r="1.1"/><circle cx="17.9" cy="13.9" r="1.1"/><circle cx="10.1" cy="13.9" r="1.1"/><circle cx="10.1" cy="6.1" r="1.1"/></g></svg>
             <span>Оплатить в евро — 49 €</span>
           </a>
 
-          <!-- Альтернативные реквизиты (IBAN, Wise, PayPal) -->
+          <!-- Реквизиты IBAN/Wise -->
           <div style="border-top: 1.5px dashed var(--color-line-soft); padding-top: 12px; margin-top: 4px;">
             <p style="font-size: var(--text-xs); color: var(--color-text-muted); margin: 0 0 8px;">
                Нужен прямой перевод в евро, долларах, USDT? Оплату можно сделать прямым переводом по реквизитам IBAN/Wise.
@@ -1063,10 +1067,10 @@ em { font-style: italic; }
               Написать в WhatsApp для реквизитов →
             </a>
           </div>
-        </div>
-      </div>
-      </div>
-    </section>
+        </div><!-- конец ticket__side -->
+
+      </div><!-- конец ticket -->
+    </section><!-- конец section#buy -->
 
     <!-- ================= 10. Анкета предзаписи ================= -->
     <section class="wrap section" id="leadform" aria-labelledby="lead-title">
