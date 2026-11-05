@@ -95,7 +95,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: clip; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
   font: 400 var(--text-md)/var(--leading-body) var(--font-body);
@@ -105,7 +105,7 @@ body {
     linear-gradient(to right, var(--color-grid) 1px, transparent 1px),
     linear-gradient(var(--color-grid) 1px, transparent 1px);
   background-size: var(--grid-cell) var(--grid-cell);
-  overflow-x: clip;
+  overflow-x: hidden;
 }
 img { max-width: 100%; display: block; }
 a { color: inherit; }
@@ -1343,6 +1343,20 @@ em { font-style: italic; }
         });
       });
     }
+  // Java script  шоб работали нормально прокрутки кнопок к формаам заявок:
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href').slice(1);
+        if (!targetId) return;
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          e.preventDefault();
+          targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          history.pushState(null, null, '#' + targetId);
+        }
+      });
+    });
+
   </script>
 </body>
 </html>
