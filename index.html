@@ -2,9 +2,9 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Chuleta Verbal — все о глаголах и временах испанского | Ксения Северинова</title>
-  <meta name="description" content="Практический курс-справочник по всей системе испанских глаголов, времён и смыслов от филолога и преподавателя с 14-летним стажем. Предпродажа −30%:  69 € / 6 990 ₽.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Chuleta Verbal - все о глаголах и временах испанского | Ксения Северинова</title>
+  <meta name="description" content="Практический курс-справочник по всей системе испанских глаголов, времён и смыслов от филолога и преподавателя с 14-летним стажем. Предпродажа −30%: 69 € / 6 990 ₽.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Dela+Gothic+One&family=Golos+Text:wght@400;500;600;700&display=swap">
@@ -376,6 +376,82 @@ em { font-style: italic; }
 .story__text h2, .ticket h2, .lead h2 { font-size: var(--text-h2-compact); }
 .story__text h2 { margin-bottom: var(--space-6); }
 
+/* FAQ Styles in Sketch Theme */
+.faq-container {
+  --sk-bg: var(--color-surface);
+  --sk-shadow: 9px;
+  padding: var(--space-7) clamp(22px, 4vw, 48px);
+  max-width: 1080px;
+  margin-inline: auto;
+}
+.faq-header {
+  margin-bottom: var(--space-6);
+}
+.faq-header h2 {
+  font-size: var(--text-h2-compact);
+  margin-bottom: var(--space-2);
+}
+.faq-subtitle {
+  font-family: var(--font-hand);
+  font-weight: 700;
+  font-size: var(--text-hand-md);
+  color: var(--color-pen);
+  margin: 0;
+}
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.faq-item {
+  border: 2px solid var(--color-line);
+  border-radius: var(--radius-sketch);
+  background: var(--color-surface);
+  overflow: hidden;
+  transition: box-shadow var(--dur-1) var(--ease-out);
+}
+.faq-item[open] {
+  --sk-bg: var(--color-surface-warm);
+  box-shadow: 3px 3px 0 var(--color-line);
+}
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  font-weight: 700;
+  font-size: var(--text-md);
+  color: var(--color-text-strong);
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+}
+.faq-question::-webkit-details-marker { display: none; }
+.faq-icon {
+  width: 12px;
+  height: 12px;
+  border-right: 2.5px solid var(--color-line);
+  border-bottom: 2.5px solid var(--color-line);
+  transform: rotate(45deg);
+  transition: transform var(--dur-1) var(--ease-out);
+  margin-left: 12px;
+  flex-shrink: 0;
+}
+.faq-item[open] .faq-icon {
+  transform: rotate(-135deg);
+}
+.faq-answer {
+  padding: 0 18px 18px 18px;
+  font-size: var(--text-sm);
+  line-height: 1.6;
+  color: var(--color-text);
+  border-top: 1.5px dashed var(--color-line-soft);
+  margin-top: 4px;
+  padding-top: 14px;
+}
+.faq-answer p { margin-bottom: 8px; }
+.faq-answer p:last-child { margin-bottom: 0; }
+
 /* Author Polaroid */
 .author { display: grid; grid-template-columns: minmax(0, 380px) minmax(0, 1fr); gap: var(--space-8); align-items: center; }
 .polaroid { position: relative; background: var(--color-surface); padding: 14px 14px 64px; transform: rotate(-3deg); box-shadow: 0 1px 0 rgba(43,23,68,.12), 10px 12px 0 -2px rgba(43,23,68,.12); border: 1.5px solid var(--color-line-soft); justify-self: center; width: min(100%, 360px); }
@@ -551,10 +627,10 @@ em { font-style: italic; }
     <symbol id="ring" viewBox="0 0 52 52"><path d="M26 3.5c12.6-.3 22.8 9.6 22.6 22.4-.2 12.4-10.4 22.2-22.9 22-12.1-.2-22.4-10-22.2-22.6C3.7 13 13.9 3.8 26 3.5Z" fill="var(--color-surface)" stroke="var(--color-line)" stroke-width="2.4"/></symbol>
   </svg>
 
- <!-- Ribbon -->
+  <!-- Ribbon -->
   <div class="ribbon" role="note">
-  🚀 <b>FLASH SALE КУРСА-СПРАВОЧНИКА:</b> минимальная цена  49 евро / 4 990 ₽ действует только до 6 ноября! Книга — 17 ноября, платформа — через 4 недели.
-</div>
+    🚀 <b>ЭТАП ПРЕДЗАКАЗА КУРСА-СПРАВОЧНИКА:</b> специальная цена 69 евро / 6 990 ₽ (−30%) действует до 16 ноября! Книга — 17 ноября, интерактивная платформа — 30 ноября.
+  </div>
 
   <!-- Header -->
   <header class="wrap top">
@@ -568,7 +644,7 @@ em { font-style: italic; }
         <a href="https://t.me/KseniaSevera" target="_blank" aria-label="Telegram"><svg width="22" height="22" aria-hidden="true"><use href="#i-tg"/></svg></a>
         <a href="mailto:blablaespanish@gmail.com?subject=Вопрос%20по%20Chuleta%20Verbal" aria-label="Email"><svg width="22" height="22" aria-hidden="true"><use href="#i-mail"/></svg></a>
       </nav>
-      <a class="btn btn--main sketch" href="#buy"><span class="only-wide">Забрать по спеццене</span><span class="only-narrow">Забрать −50%</span></a>
+      <a class="btn btn--main sketch" href="#buy"><span class="only-wide">Забрать со скидкой</span><span class="only-narrow">Забрать −30%</span></a>
     </div>
   </header>
 
@@ -596,7 +672,7 @@ em { font-style: italic; }
         </p>
         <div class="hero__cta">
           <a class="btn btn--main sketch" href="#buy">
-            🔥 Забрать курс со скидкой 50%
+            🔥 Забрать тариф предзаказа −30%
           </a>
           <a class="btn btn--paper sketch" href="#leadform">📋 Анкета предзаписи</a>
         </div>
@@ -604,9 +680,9 @@ em { font-style: italic; }
 
       <div class="chuleta" role="group" aria-label="Пример шпаргалки из справочника">
         <div class="sticker" aria-hidden="true">
-  <svg viewBox="0 0 128 128" width="140" height="140"><path d="M64 4l9 12 14-7 4 15 15-2-2 15 15 4-7 14 12 9-12 9 7 14-15 4 2 15-15-2-4 15-14-7-9 12-9-12-14 7-4-15-15 2 2-15-15-4 7-14L4 64l12-9-7-14 15-4-2-15 15 2 4-15 14 7Z" fill="var(--color-accent)" stroke="var(--color-line)" stroke-width="3" stroke-linejoin="round"/></svg>
-  <span>−50%<small>до 6 ноя</small></span>
-      </div>
+          <svg viewBox="0 0 128 128" width="140" height="140"><path d="M64 4l9 12 14-7 4 15 15-2-2 15 15 4-7 14 12 9-12 9 7 14-15 4 2 15-15-2-4 15-14-7-9 12-9-12-14 7-4-15-15 2 2-15-15-4 7-14L4 64l12-9-7-14 15-4-2-15 15 2 4-15 14 7Z" fill="var(--color-accent)" stroke="var(--color-line)" stroke-width="3" stroke-linejoin="round"/></svg>
+          <span>−30%<small>до 16 ноя</small></span>
+        </div>
         <div class="chuleta__sheet sketch">
           <span class="tape tape--a" aria-hidden="true"></span>
           <p class="chuleta__title">mi chuleta <small>· шпаргалка</small></p>
@@ -936,7 +1012,7 @@ em { font-style: italic; }
 
         <article class="stop">
           <div class="stop__when">
-            <span class="stop__dot"><svg viewBox="0 0 68 68" aria-hidden="true"><path d="M34 4c17-.4 30 12.6 30 29.8 0 16.6-13.6 30-30.4 30C17 63.8 4 50.2 4.2 33.4 4.4 17.4 18 4.4 34 4Z" fill="var(--color-surface)" stroke="var(--color-line)" stroke-width="2.6"/></svg><span>4<br>нед.</span></span>
+            <span class="stop__dot"><svg viewBox="0 0 68 68" aria-hidden="true"><path d="M34 4c17-.4 30 12.6 30 29.8 0 16.6-13.6 30-30.4 30C17 63.8 4 50.2 4.2 33.4 4.4 17.4 18 4.4 34 4Z" fill="var(--color-surface)" stroke="var(--color-line)" stroke-width="2.6"/></svg><span>30<br>ноя</span></span>
             <span class="stop__label">этап 2</span>
           </div>
           <div class="stop__card sketch">
@@ -984,78 +1060,78 @@ em { font-style: italic; }
     </section>
 
     <!-- ================= 8. Частые вопросы (FAQ) ================= -->
-<section class="wrap section" id="faq" aria-labelledby="faq-title">
-  <div class="faq-container sketch">
-    <div class="faq-header">
-      <h2 id="faq-title">Частые вопросы</h2>
-      <p class="faq-subtitle">Все детали о книге, интерактивной платформе и доступе</p>
-    </div>
-
-    <div class="faq-list">
-      <!-- Вопрос 1 -->
-      <details class="faq-item" open>
-        <summary class="faq-question">
-          <span>❓ Какой срок доступа?</span>
-          <span class="faq-icon" aria-hidden="true"></span>
-        </summary>
-        <div class="faq-answer">
-          <p>Курс состоит из двух самостоятельных частей:</p>
-          <p>✔️ <strong>Книга-справочник (да, схемы, таблички тоже будут):</strong> бессрочный доступ. Вы скачиваете PDF к себе на планшет или компьютер и пользуетесь им всю жизнь.</p>
-          <p>✔️ <strong>Интерактивная платформа Verboleo:</strong> доступ к тренажерам и упражнениям для отработки глаголов для участников предзаказа также бессрочный.</p>
+    <section class="wrap section" id="faq" aria-labelledby="faq-title">
+      <div class="faq-container sketch">
+        <div class="faq-header">
+          <h2 id="faq-title">Частые вопросы</h2>
+          <p class="faq-subtitle">Все детали о книге, интерактивной платформе и доступе</p>
         </div>
-      </details>
 
-      <!-- Вопрос 2 -->
-      <details class="faq-item">
-        <summary class="faq-question">
-          <span>❓ Подойдет ли тем, кто учит испанский с нуля?</span>
-          <span class="faq-icon" aria-hidden="true"></span>
-        </summary>
-        <div class="faq-answer">
-          <p><strong>НЕТ.</strong> Если вы только знакомитесь с первыми фразами, даже если вы уже 5 лет живете в любой испаноязычной стране, но языком всерьез не занимались, этот навигатор открывать рано: с нуля мы стартуем на программе <a href="https://blablaespanish.com/intensiv0" target="_blank" rel="noopener noreferrer" style="color: var(--color-pen, #8b1e42); font-weight: 700; text-decoration: underline;">«ФУНДАМЕНТАЛЬНЫЙ 2.0»</a>. «Chuleta Verbal» создана для уровня от твердого A2 и выше (вплоть до C1).</p>
-          <p>Chuleta Verbal в том числе <strong>ДОПОЛНЕНИЕ</strong> ко всем моим курсам испанского.</p>
-        </div>
-      </details>
+        <div class="faq-list">
+          <!-- Вопрос 1 -->
+          <details class="faq-item" open>
+            <summary class="faq-question">
+              <span>❓ Какой срок доступа?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-answer">
+              <p>Курс состоит из двух самостоятельных частей:</p>
+              <p>✔️ <strong>Книга-справочник (да, схемы, таблички тоже будут):</strong> бессрочный доступ. Вы скачиваете PDF к себе на планшет или компьютер и пользуетесь им всю жизнь.</p>
+              <p>✔️ <strong>Интерактивная платформа Verboleo:</strong> доступ к тренажерам и упражнениям для отработки глаголов для участников предзаказа также бессрочный.</p>
+            </div>
+          </details>
 
-      <!-- Вопрос 3 -->
-      <details class="faq-item">
-        <summary class="faq-question">
-          <span>❓ Заменяет ли Chuleta Verbal полноценный курс испанского?</span>
-          <span class="faq-icon" aria-hidden="true"></span>
-        </summary>
-        <div class="faq-answer">
-          <p><strong>Нет.</strong> Глагольная система - это стержень и хребет языка, но далеко не единственная его часть. На комплексных курсах мы ставим все навыки разом: письмо, чтение, восприятие беглой речи на слух и спонтанный диалог.</p>
-          <p>«Chuleta Verbal» решает конкретную проблему: наводит идеальный порядок во всех временах И всех видах глаголов и все, что с ними связано. С точки зрения когнитивного подхода, в разнице между значениями глаголов, разборы типичных ошибок русскоговорящих (особенно когда очень хочется сказать / перевести дословно, но в испанском так совсем не работает или вообще сильно смысл исказит), чтобы в разговоре вы не тратили секунды на мучительный подбор окончаний.</p>
-        </div>
-      </details>
+          <!-- Вопрос 2 -->
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>❓ Подойдет ли тем, кто учит испанский с нуля?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-answer">
+              <p><strong>НЕТ.</strong> Если вы только знакомитесь с первыми фразами, даже если вы уже 5 лет живете в любой испаноязычной стране, но языком всерьез не занимались, этот навигатор открывать рано: с нуля мы стартуем на программе <a href="https://blablaespanish.com/intensiv0" target="_blank" rel="noopener noreferrer" style="color: var(--color-pen); font-weight: 700; text-decoration: underline;">«ФУНДАМЕНТАЛЬНЫЙ 2.0»</a>. «Chuleta Verbal» создана для уровня от твердого A2 и выше (вплоть до C1).</p>
+              <p>Chuleta Verbal в том числе <strong>ДОПОЛНЕНИЕ</strong> ко всем моим курсам испанского.</p>
+            </div>
+          </details>
 
-      <!-- Вопрос 4 -->
-      <details class="faq-item">
-        <summary class="faq-question">
-          <span>❓ Подойдет ли тем, кто живет в Латинской Америке (особенно в странах, где есть voseo: Аргентина, Уругвай и некоторые другие небольшие уголки Латинской Америки)?</span>
-          <span class="faq-icon" aria-hidden="true"></span>
-        </summary>
-        <div class="faq-answer">
-          <p><strong>Да, на 100%.</strong> Тонкости использования <em>vos</em> вместо <em>tú</em> (с их двумя особенностями в двух временах) внутри подробно разобраны. Даже то, когда уместно использовать <em>usted</em>, а когда нет. Какие глаголы табу в ЛАТАМ, но в Испании - обычное слово.</p>
-          <p>В основе курса лежит академическая методология и филологическая база <em>Universidad de Alcalá</em> (топ 3 вуза по испанскому языку и один из моих преподов - член Испанской Королевской Академии по языку - RAE).</p>
-          <p>В «Chuleta Verbal» вы не найдете дилетантских пересказов правил от людей без профильного образования, решивших преподавать только потому, что они носители языка / или кто просто сдал DELE.</p>
-        </div>
-      </details>
+          <!-- Вопрос 3 -->
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>❓ Заменяет ли Chuleta Verbal полноценный курс испанского?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-answer">
+              <p><strong>Нет.</strong> Глагольная система - это стержень и хребет языка, но далеко не единственная его часть. На комплексных курсах мы ставим все навыки разом: письмо, чтение, восприятие беглой речи на слух и спонтанный диалог.</p>
+              <p>«Chuleta Verbal» решает конкретную проблему: наводит идеальный порядок во всех временах И всех видах глаголов и все, что с ними связано. С точки зрения когнитивного подхода, в разнице между значениями глаголов, разборы типичных ошибок русскоговорящих (особенно когда очень хочется сказать / перевести дословно, но в испанском так совсем не работает или вообще сильно смысл исказит), чтобы в разговоре вы не тратили секунды на мучительный подбор окончаний.</p>
+            </div>
+          </details>
 
-      <!-- Вопрос 5 (Технический) -->
-      <details class="faq-item">
-        <summary class="faq-question">
-          <span>📱 ВАЖНЫЙ технический момент: если вы оформляете заказ со смартфона</span>
-          <span class="faq-icon" aria-hidden="true"></span>
-        </summary>
-        <div class="faq-answer">
-          <p>При переходе по ссылке из Telegram встроенный браузер мессенджера иногда подрезает экран и не дает нажать на кнопку.</p>
-          <p>👉 <strong>Чтобы форма сработала мгновенно:</strong> нажмите в правом верхнем углу три точки <strong>⋮</strong> (или значок компаса внизу на iPhone) и выберите <strong>«Открыть в браузере»</strong> (Safari или Chrome).</p>
+          <!-- Вопрос 4 -->
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>❓ Подойдет ли тем, кто живет в Латинской Америке (особенно в странах, где есть voseo: Аргентина, Уругвай и некоторые другие небольшие уголки Латинской Америки)?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-answer">
+              <p><strong>Да, на 100%.</strong> Тонкости использования <em>vos</em> вместо <em>tú</em> (с их двумя особенностями в двух временах) внутри подробно разобраны. Даже то, когда уместно использовать <em>usted</em>, а когда нет. Какие глаголы табу в ЛАТАМ, но в Испании - обычное слово.</p>
+              <p>В основе курса лежит академическая методология и филологическая база <em>Universidad de Alcalá</em> (топ 3 вуза по испанскому языку и один из моих преподов - член Испанской Королевской Академии по языку - RAE).</p>
+              <p>В «Chuleta Verbal» вы не найдете дилетантских пересказов правил от людей без профильного образования, решивших преподавать только потому, что они носители языка / или кто просто сдал DELE.</p>
+            </div>
+          </details>
+
+          <!-- Вопрос 5 (Технический) -->
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>📱 ВАЖНЫЙ технический момент: если вы оформляете заказ со смартфона</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-answer">
+              <p>При переходе по ссылке из Telegram встроенный браузер мессенджера иногда подрезает экран и не дает нажать на кнопку.</p>
+              <p>👉 <strong>Чтобы форма сработала мгновенно:</strong> нажмите в правом верхнем углу три точки <strong>⋮</strong> (или значок компаса внизу на iPhone) и выберите <strong>«Открыть в браузере»</strong> (Safari или Chrome).</p>
+            </div>
+          </details>
         </div>
-      </details>
-    </div>
-  </div>
-</section>
+      </div>
+    </section>
 
     <!-- ================= 9. Автор ================= -->
     <section class="wrap section" aria-labelledby="author-title">
@@ -1079,7 +1155,7 @@ em { font-style: italic; }
       </div>
     </section>
 
-  <!-- ================= 10. Оформление заказа ================= -->
+    <!-- ================= 10. Оформление заказа ================= -->
     <section class="wrap section" id="buy" aria-labelledby="buy-title">
       <div class="ticket sketch">
         
@@ -1104,7 +1180,8 @@ em { font-style: italic; }
           </div>
 
           <p style="margin-bottom: 12px;"><b>График повышения стоимости:</b></p>
-          <ul style="margin: 0 0 16px; padding-left: 20px; font-size: var(--text-sm); line-height: 1.6; color: var(--color-text);"
+          <ul style="margin: 0 0 16px; padding-left: 20px; font-size: var(--text-sm); line-height: 1.6; color: var(--color-text);">
+            <li><s style="color: var(--color-text-muted);">До 6 ноября: 4 990 ₽ / 49 € (−50% завершено)</s></li>
             <li><b>С 7 по 16 ноября:</b> 6 990 ₽ / 69 € <span style="color: var(--color-pen); font-weight: 700;">(−30% — сейчас)</span></li>
             <li><b>С 17 ноября (релиз книги):</b> 8 990 ₽ / 89 €</li>
             <li><b>После запуска Verboleo (30 ноября):</b> 9 980 ₽ / 98 € (полная цена)</li>
@@ -1118,7 +1195,7 @@ em { font-style: italic; }
           <p class="ticket__ask" style="margin: 0; font-size: var(--text-lg); font-weight: 700;">Выберите валюту оплаты:</p>
           
           <!-- Оплата в рублях -->
-          <a class="btn btn--main sketch" id="btnPayRub" href="https://blablaespanish.com/pl/lite/widget/widget?id=1680219" target="_blank" style="width: 100%; justify-content: flex-start; gap: 14px;">
+          <a class="btn btn--main sketch" id="btnPayRub" href="https://blablaespanish.com/pl/lite/widget/widget?id=1680219" target="_blank" rel="noopener noreferrer" style="width: 100%; justify-content: flex-start; gap: 14px;">
             <span style="display: inline-grid; place-items: center; width: 28px; height: 28px; background: rgba(58, 32, 82, 0.12); border-radius: 50%; font-family: var(--font-display); font-size: 1.1rem; line-height: 1; color: var(--color-text-strong); flex: none;">
               ₽
             </span>
@@ -1126,7 +1203,7 @@ em { font-style: italic; }
           </a>
 
           <!-- Оплата в евро -->
-          <a class="btn btn--ink sketch" id="btnPayEur" href="https://blablaespanish.com/pl/lite/widget/widget?id=1680221" target="_blank" style="width: 100%; justify-content: flex-start; gap: 14px;">
+          <a class="btn btn--ink sketch" id="btnPayEur" href="https://blablaespanish.com/pl/lite/widget/widget?id=1680221" target="_blank" rel="noopener noreferrer" style="width: 100%; justify-content: flex-start; gap: 14px;">
             <svg class="flag" viewBox="0 0 28 20" aria-hidden="true" style="width: 28px; height: 20px; border-radius: 3px; flex: none;"><rect width="28" height="20" fill="#2d4ba0"/><g fill="#ffd34d"><circle cx="14" cy="4.5" r="1.1"/><circle cx="19.5" cy="10" r="1.1"/><circle cx="14" cy="15.5" r="1.1"/><circle cx="8.5" cy="10" r="1.1"/><circle cx="17.9" cy="6.1" r="1.1"/><circle cx="17.9" cy="13.9" r="1.1"/><circle cx="10.1" cy="13.9" r="1.1"/><circle cx="10.1" cy="6.1" r="1.1"/></g></svg>
             <span>Оплатить в евро - 69 €</span>
           </a>
@@ -1136,7 +1213,7 @@ em { font-style: italic; }
             <p style="font-size: var(--text-xs); color: var(--color-text-muted); margin: 0 0 8px;">
                Нужен прямой перевод в евро, долларах, USDT? Оплату можно сделать прямым переводом по реквизитам IBAN/Wise.
             </p>
-            <a href="https://wa.me/5491168169407?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5,%20%D0%9A%D1%81%D0%B5%D0%BD%D0%B8%D1%8F!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BE%D0%BF%D0%BB%D0%B0%D1%82%D0%B8%D1%82%D1%8C%20Chuleta%20Verbal%20%D1%87%D0%B5%D1%80%D0%B5%D0%B7%20IBAN/Wise%20(69%20%E2%82%AC)" target="_blank" style="font-weight: 700; font-size: var(--text-sm); color: var(--color-text-strong); text-decoration: underline;">
+            <a href="https://wa.me/5491168169407?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5,%20%D0%9A%D1%81%D0%B5%D0%BD%D0%B8%D1%8F!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BE%D0%BF%D0%BB%D0%B0%D1%82%D0%B8%D1%82%D1%8C%20Chuleta%20Verbal%20%D1%87%D0%B5%D1%80%D0%B5%D0%B7%20IBAN/Wise%20(69%20%E2%82%AC)" target="_blank" rel="noopener noreferrer" style="font-weight: 700; font-size: var(--text-sm); color: var(--color-text-strong); text-decoration: underline;">
               Написать в WhatsApp для реквизитов →
             </a>
           </div>
@@ -1225,8 +1302,8 @@ em { font-style: italic; }
           <p>Licenciada en Filología Hispánica, Universidad de Alcalá de Henares, Madrid. Profesora de español, autora de Bla-Bla e.Spanish и Verboleo.</p>
         </div>
         <div class="foot__links">
-          <a href="https://t.me/KseniaSevera" target="_blank">Telegram</a>
-          <a href="https://wa.me/5491168169407?text=Здравствуйте,%20Ксения!%20Хочу%20узнать%20про%20Chuleta%20Verbal" target="_blank">WhatsApp</a>
+          <a href="https://t.me/KseniaSevera" target="_blank" rel="noopener noreferrer">Telegram</a>
+          <a href="https://wa.me/5491168169407?text=Здравствуйте,%20Ксения!%20Хочу%20узнать%20про%20Chuleta%20Verbal" target="_blank" rel="noopener noreferrer">WhatsApp</a>
           <a href="mailto:blablaespanish@gmail.com?subject=Вопрос%20по%20Chuleta%20Verbal">Почта</a>
         </div>
       </div>
@@ -1239,12 +1316,12 @@ em { font-style: italic; }
 
   <!-- Floating Dock -->
   <nav class="dock" aria-label="Быстрые действия">
-    <a class="dock__cta btn btn--main sketch" href="#buy">Забрать −50%</a>
-    <a href="https://wa.me/5491168169407?text=Здравствуйте,%20Ксения!%20Хочу%20узнать%20про%20Chuleta%20Verbal" target="_blank" aria-label="WhatsApp">
+    <a class="dock__cta btn btn--main sketch" href="#buy">Забрать −30%</a>
+    <a href="https://wa.me/5491168169407?text=Здравствуйте,%20Ксения!%20Хочу%20узнать%20про%20Chuleta%20Verbal" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
       <svg class="ring" width="52" height="52" viewBox="0 0 52 52"><use href="#ring"/></svg>
       <svg class="ico" width="24" height="24" aria-hidden="true"><use href="#i-wa"/></svg>
     </a>
-    <a href="https://t.me/KseniaSevera" target="_blank" aria-label="Telegram">
+    <a href="https://t.me/KseniaSevera" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
       <svg class="ring" width="52" height="52" viewBox="0 0 52 52"><use href="#ring"/></svg>
       <svg class="ico" width="24" height="24" aria-hidden="true"><use href="#i-tg"/></svg>
     </a>
@@ -1258,7 +1335,6 @@ em { font-style: italic; }
   <script>
     document.documentElement.classList.add('js');
 
-    // Твой актуальный скрипт Google Apps Script (Версия 4)
     const scriptURL = 'https://script.google.com/macros/s/AKfycbyRfCqFCV-PAocBTmx2i1zL3KQ-wHzgumcR_JKQY_4q8OdaAaVEcY3AP06kgxVtemQ8AQ/exec';
 
     // Анимация линий
@@ -1289,7 +1365,7 @@ em { font-style: italic; }
       if (el) ioBuy.observe(el);
     });
 
-   // Таймер Flash Sale: 6 ноября 2026, 23:59:59 (GMT-3, Аргентина)
+    // Таймер предзаказа: 16 ноября 2026, 23:59:59 (GMT-3, Аргентина)
     const deadline = new Date("2026-11-16T23:59:59-03:00").getTime();
     function updateTimer() {
       const now = new Date().getTime();
@@ -1343,7 +1419,7 @@ em { font-style: italic; }
       document.getElementById('snyat-seen').textContent = seen.size;
     }));
 
-    // Обработка анкеты предзаписи (#leadForm) -> Google Таблица -> lead-thanks.html
+    // Обработка анкеты предзаписи (#leadForm)
     const leadForm = document.getElementById('leadForm');
     const leadSubmitBtn = document.getElementById('leadSubmitBtn');
 
@@ -1416,7 +1492,8 @@ em { font-style: italic; }
         });
       });
     }
-  // Java script  шоб работали нормально прокрутки кнопок к формаам заявок:
+
+    // Плавная прокрутка к якорям
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         const targetId = this.getAttribute('href').slice(1);
@@ -1429,7 +1506,6 @@ em { font-style: italic; }
         }
       });
     });
-
   </script>
 </body>
 </html>
