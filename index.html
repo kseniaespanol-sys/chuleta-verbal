@@ -1365,8 +1365,8 @@ em { font-style: italic; }
       if (el) ioBuy.observe(el);
     });
 
-    // Таймер предзаказа: 16 ноября 2026, 23:59:59 (GMT-3, Аргентина)
-    const deadline = new Date("2026-11-16T23:59:59-03:00").getTime();
+    // Целевое время: 17 ноября 2026 года, 15:00:00 по времени Аргентины (UTC-3)
+const targetDate = new Date('2026-11-17T15:00:00-03:00').getTime();
     function updateTimer() {
       const now = new Date().getTime();
       const diff = deadline - now;
