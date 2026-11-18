@@ -629,7 +629,7 @@ em { font-style: italic; }
 
   <!-- Ribbon -->
   <div class="ribbon" role="note">
-    🚀 <b>ЭТАП ПРЕДЗАКАЗА КУРСА-СПРАВОЧНИКА:</b> специальная цена 69 евро / 6 990 ₽ (−30%) действует до 16 ноября! Книга доступна — 17 ноября, интерактивная платформа — 30 ноября.
+    🚀 <b>ЭТАП ПРЕДЗАКАЗА КУРСА-СПРАВОЧНИКА:</b> специальная цена 69 евро / 6 990 ₽ (−30%) действует до 19 ноября! Книга доступна — уже с 17 ноября, интерактивная платформа — 30 ноября.
   </div>
 
   <!-- Header -->
@@ -681,7 +681,7 @@ em { font-style: italic; }
       <div class="chuleta" role="group" aria-label="Пример шпаргалки из справочника">
         <div class="sticker" aria-hidden="true">
           <svg viewBox="0 0 128 128" width="140" height="140"><path d="M64 4l9 12 14-7 4 15 15-2-2 15 15 4-7 14 12 9-12 9 7 14-15 4 2 15-15-2-4 15-14-7-9 12-9-12-14 7-4-15-15 2 2-15-15-4 7-14L4 64l12-9-7-14 15-4-2-15 15 2 4-15 14 7Z" fill="var(--color-accent)" stroke="var(--color-line)" stroke-width="3" stroke-linejoin="round"/></svg>
-          <span>−30%<small>до 16 ноя</small></span>
+          <span>−30%<small>до 19 ноя</small></span>
         </div>
         <div class="chuleta__sheet sketch">
           <span class="tape tape--a" aria-hidden="true"></span>
@@ -1182,8 +1182,8 @@ em { font-style: italic; }
 
           <p style="margin-bottom: 12px;"><b>График повышения стоимости:</b></p>
           <ul style="margin: 0 0 16px; padding-left: 20px; font-size: var(--text-sm); line-height: 1.6; color: var(--color-text);">
-            <li><b>До 16 ноября включительно:</b> 6 990 ₽ / 69 € <span style="color: var(--color-pen); font-weight: 700;">(−30% - действует сейчас)</span></li>
-            <li><b>С 17 ноября (релиз книги):</b> 8 990 ₽ / 89 €</li>
+            <li><b>До 19 ноября включительно:</b> 6 990 ₽ / 69 € <span style="color: var(--color-pen); font-weight: 700;">(−30% - действует сейчас)</span></li>
+            <li><b>С 20 ноября (книга уже в доступе!):</b> 8 990 ₽ / 89 €</li>
             <li><b>С 30 ноября (запуск платформы):</b> 9 980 ₽ / 98 € (полная стоимость)</li>
           </ul>
 
@@ -1365,8 +1365,8 @@ em { font-style: italic; }
       if (el) ioBuy.observe(el);
     });
 
-    // Целевое время: 17 ноября 2026 года, 15:00:00 по времени Аргентины (UTC-3)
-const targetDate = new Date('2026-11-17T15:00:00-03:00').getTime();
+    // Целевое время: 19 ноября 2026 включительно (до полуночи по Канарским островам, WET / UTC+0)
+const targetDate = new Date('2026-11-20T00:00:00+00:00').getTime();
     function updateTimer() {
       const now = new Date().getTime();
       const diff = deadline - now;
