@@ -1365,8 +1365,8 @@ em { font-style: italic; }
       if (el) ioBuy.observe(el);
     });
 
-    // Целевое время: 19 ноября 2026 включительно (до полуночи по Канарским островам, WET / UTC+0)
-const targetDate = new Date('2026-11-20T00:00:00+00:00').getTime();
+    // Целевое время: 30 ноября 2026 включительно (до полуночи по Канарским островам, WET / UTC+0)
+const deadline = new Date('2026-12-01T00:00:00+00:00').getTime();
     function updateTimer() {
       const now = new Date().getTime();
       const diff = deadline - now;
